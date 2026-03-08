@@ -2,19 +2,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eyedit Group | Final Holding Portal</title>
+  <title>Eyedit Group | Definitive Portal</title>
   <style>
     :root {
       --bg: #05070b;
-      --panel: rgba(12, 18, 26, 0.92);
+      --panel: rgba(10, 16, 24, 0.94);
       --line: rgba(255,255,255,0.08);
       --text: #eef4fb;
-      --muted: #94a6b8;
+      --muted: #93a5b8;
       --blue: #39a4ff;
       --green: #1fd47f;
       --orange: #ff8c34;
-      --max: 1180px;
-      --radius: 22px;
+      --max: 1240px;
+      --radius: 24px;
     }* { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -67,7 +67,7 @@ a { color: inherit; text-decoration: none; }
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(5,7,11,0.72);
+  background: rgba(5,7,11,0.76);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
@@ -131,20 +131,18 @@ a { color: inherit; text-decoration: none; }
 .grid-3,
 .grid-2,
 .contact-grid,
-.portfolio-gallery {
+.portfolio-gallery,
+.portfolio-sections {
   display: grid;
-  gap: 24px;
+  gap: 28px;
 }
 
-.hero-grid { grid-template-columns: 1.05fr 0.95fr; align-items: center; }
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
+.hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
 .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .contact-grid { grid-template-columns: 0.9fr 1.1fr; }
 .portfolio-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; }
+.portfolio-sections { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .section-head { margin-bottom: 34px; }
 .section-head h2,
@@ -210,7 +208,7 @@ a { color: inherit; text-decoration: none; }
 
 .portal-card {
   position: relative;
-  min-height: 680px;
+  min-height: 820px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -233,32 +231,24 @@ a { color: inherit; text-decoration: none; }
 
 .portal-ring {
   position: absolute;
-  width: min(74vw, 540px);
-  height: min(74vw, 540px);
+  width: min(88vw, 760px);
+  height: min(88vw, 760px);
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow: inset 0 0 60px rgba(255,255,255,0.03);
 }
 
 .triangle-system {
-  width: min(95vw, 760px);
-  height: min(95vw, 760px);
-}
-  
-
-
-  
-  
-
-
-  
+  position: relative;
+  width: min(88vw, 760px);
+  height: min(88vw, 760px);
   z-index: 2;
 }
 
 .triangle-rotator {
   position: absolute;
   inset: 0;
-  animation: rotateCCW 38s linear infinite;
+  animation: rotateCCW 40s linear infinite;
   transform-origin: center center;
 }
 
@@ -274,8 +264,8 @@ a { color: inherit; text-decoration: none; }
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 110px;
-  height: 110px;
+  width: 124px;
+  height: 124px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -285,8 +275,8 @@ a { color: inherit; text-decoration: none; }
 
 .shutter {
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 78px;
+  height: 78px;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.14);
@@ -312,38 +302,39 @@ a { color: inherit; text-decoration: none; }
 
 .node {
   position: absolute;
-  width: 150px;
+  width: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-align: center;
 }
-.top { left: 50%; top: 0%; transform: translateX(-50%); }
 
-.left { left: 0%; bottom: 0%; }
-
-.right { right: 0%; bottom: 0%; }
-
+.top { left: 50%; top: -1%; transform: translateX(-50%); }
+.left { left: -2%; bottom: -1%; }
+.right { right: -2%; bottom: -1%; }
 
 .logo-shell,
 .division-logo {
-  width: 200px;
-  height: 200px;
-  padding: 10px;
-  margin-bottom: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-shell {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   padding: 10px;
 }
 
 .division-logo {
-  width: 88px;
-  height: 88px;
-  padding: 8px;
+  width: 180px;
+  height: 180px;
+  padding: 10px;
   margin-bottom: 18px;
 }
 
@@ -355,57 +346,23 @@ a { color: inherit; text-decoration: none; }
   border-radius: 50%;
 }
 
-.node-label { font-size: 0.64rem; line-height: 1.5; }
+.node-label { font-size: 0.68rem; line-height: 1.5; }
 
 .card,
 .contact-card,
 .contact-form { padding: 28px; }
 
 .structure-wrap {
-  position: relative;
-  min-height: 520px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.structure-row {
   display: grid;
-  place-items: center;
-  padding: 28px;
-}
-
-.structure-triangle {
-  position: relative;
-  width: min(100%, 760px);
-  height: 460px;
-}
-
-.structure-triangle svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.structure-node {
-  position: absolute;
-  width: 220px;
-  transform: translate(-50%, -50%);
-}
-
-.structure-node.top { left: 50%; top: 10%; }
-.structure-node.left { left: 19%; top: 79%; }
-.structure-node.right { left: 81%; top: 79%; }
-
-.structure-core {
-  position: absolute;
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 24px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.10);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1.7;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+  align-items: start;
 }
 
 .portfolio-image {
@@ -415,7 +372,7 @@ a { color: inherit; text-decoration: none; }
 
 .portfolio-image img {
   width: 100%;
-  height: 230px;
+  height: 320px;
   object-fit: cover;
   border-radius: 22px;
 }
@@ -527,38 +484,34 @@ a { color: inherit; text-decoration: none; }
   to { transform: rotate(-360deg); }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1100px) {
   .hero-grid,
   .grid-3,
   .grid-2,
   .contact-grid,
-  .portfolio-gallery { grid-template-columns: 1fr; }
+  .portfolio-gallery,
+  .portfolio-sections,
+  .structure-row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 760px) {
   .topbar-inner { flex-direction: column; align-items: flex-start; padding-top: 14px; padding-bottom: 14px; }
   .nav { justify-content: flex-start; }
   .hero { min-height: auto; padding-bottom: 40px; }
-  .portal-card { min-height: 560px; }
+  .portal-card { min-height: 620px; }
   .portal-ring,
   .triangle-system,
-  .triangle-rotator { width: min(88vw, 500px); height: min(88vw, 500px); }
-  .node { width: 116px; }
-  .logo-shell { width: 84px; height: 84px; }
-  .node-label { font-size: 0.56rem; }
-  .top { top: 4%; }
-  .left { left: 2%; bottom: 12%; }
-  .right { right: 2%; bottom: 12%; }
+  .triangle-rotator { width: min(96vw, 520px); height: min(96vw, 520px); }
+  .node { width: 120px; }
+  .logo-shell { width: 96px; height: 96px; }
+  .division-logo { width: 130px; height: 130px; }
+  .node-label { font-size: 0.54rem; }
+  .top { top: 0%; }
+  .left { left: 0%; bottom: 0%; }
+  .right { right: 0%; bottom: 0%; }
   .triangle-center { width: 92px; height: 92px; }
   .shutter { width: 58px; height: 58px; }
-  .structure-wrap { min-height: 760px; }
-  .structure-core { position: relative; width: 190px; height: 190px; }
-  .structure-triangle { height: 640px; }
-  .structure-triangle svg { display: none; }
-  .structure-node { width: 100%; max-width: 340px; left: 50% !important; transform: translateX(-50%); }
-  .structure-node.top { top: 16%; }
-  .structure-node.left { top: 48%; }
-  .structure-node.right { top: 80%; }
+  .portfolio-image img { height: 240px; }
   .world { height: 460px; }
   .footer-inner { flex-direction: column; }
 }
@@ -588,9 +541,9 @@ a { color: inherit; text-decoration: none; }
     <section class="section hero" id="home">
       <div class="hero-grid">
         <div>
-          <div class="muted">Final Holding Portal</div>
+          <div class="muted">Definitive Holding Portal</div>
           <h2>Global vision.<br>Three strategic divisions.<br>One unified structure.</h2>
-          <p>This version is prepared with the exact filenames you confirmed, so the triangle logos, the division logos, the investor logos and the portfolio images all point to the correct files.</p>
+          <p>This definitive version is adjusted for large logos, a stable horizontal structure, a counter-clockwise rotating triangle, and portfolio images that appear clearly.</p>
           <div class="btn-row">
             <a class="btn primary" href="#portfolio">View Portfolio</a>
             <a class="btn" href="#contact">Contact</a>
@@ -648,44 +601,32 @@ a { color: inherit; text-decoration: none; }
   <div class="section-head">
     <div class="muted">Holding Architecture</div>
     <h2>Structure</h2>
-    <p>The structure stays horizontal on desktop, and the three blocks keep the logos visible with clean spacing.</p>
+    <p>The three structure blocks are now fixed side by side on desktop, with large logos and no overlap.</p>
   </div>
 
-  <div class="panel structure-wrap">
-    <div class="structure-triangle">
-      <svg viewBox="0 0 760 460" aria-hidden="true">
-        <polygon points="380,48 140,360 620,360" fill="none" stroke="#b7fff0" stroke-width="2.4" />
-      </svg>
-
-      <div class="structure-node top">
-        <div class="card">
-          <div class="division-logo"><img src="logo-eye-vision.png" alt="EyeVision logo"></div>
-          <div class="tag">Top Division</div>
-          <h3>EyeVision</h3>
-          <p>Security services, transport logistics, telecommunications and satellite-oriented infrastructure vision.</p>
-        </div>
+  <div class="structure-wrap">
+    <div class="structure-row">
+      <div class="card">
+        <div class="division-logo"><img src="logo-eye-vision.png" alt="EyeVision logo"></div>
+        <div class="tag">Top Division</div>
+        <h3>EyeVision</h3>
+        <p>Security services, transport logistics, telecommunications and satellite-oriented infrastructure vision.</p>
       </div>
 
-      <div class="structure-node left">
-        <div class="card">
-          <div class="division-logo"><img src="logo-ccs-canssam.png" alt="CCS logo"></div>
-          <div class="tag">Left Division</div>
-          <h3>CCS Canssam</h3>
-          <p>Natural therapies, alternative medicine, holistic wellbeing and wellness-oriented initiatives.</p>
-        </div>
+      <div class="card">
+        <div class="division-logo"><img src="logo-ccs-canssam.png" alt="CCS logo"></div>
+        <div class="tag">Left Division</div>
+        <h3>CCS Canssam</h3>
+        <p>Natural therapies, alternative medicine, holistic wellbeing and wellness-oriented initiatives.</p>
       </div>
 
-      <div class="structure-node right">
-        <div class="card">
-          <div class="division-logo"><img src="logo-eye-dit.png" alt="EyeDit logo"></div>
-          <div class="tag">Right Division</div>
-          <h3>EyeDit</h3>
-          <p>Image Quick Service, photography, audiovisual production and creative media communication.</p>
-        </div>
+      <div class="card">
+        <div class="division-logo"><img src="logo-eye-dit.png" alt="EyeDit logo"></div>
+        <div class="tag">Right Division</div>
+        <h3>EyeDit</h3>
+        <p>Image Quick Service, photography, audiovisual production and creative media communication.</p>
       </div>
     </div>
-
-    <div class="structure-core">Eyedit Group<br>Global Strategic Holding</div>
   </div>
 </section>
 
@@ -693,7 +634,7 @@ a { color: inherit; text-decoration: none; }
   <div class="section-head">
     <div class="muted">Three Operating Arms</div>
     <h2>Divisions</h2>
-    <p>The division cards below use the exact logo filenames and keep the layout side by side on desktop.</p>
+    <p>Large logos, clean spacing and no overlapping blocks.</p>
   </div>
 
   <div class="grid-3">
@@ -724,10 +665,10 @@ a { color: inherit; text-decoration: none; }
   <div class="section-head">
     <div class="muted">Visual Portfolio</div>
     <h2>Project Portfolios</h2>
-    <p>Each project has its own logo and its own image gallery using the filenames you confirmed.</p>
+    <p>Each portfolio block includes a large logo and larger project images.</p>
   </div>
 
-  <div class="grid-3">
+  <div class="portfolio-sections">
     <article class="card">
       <div class="division-logo"><img src="logo-eye-dit.png" alt="EyeDit logo"></div>
       <div class="tag">EyeDit Portfolio</div>
@@ -803,7 +744,7 @@ a { color: inherit; text-decoration: none; }
   <div class="section-head">
     <div class="muted">Investor Layer</div>
     <h2>Investors</h2>
-    <p>The investor section also uses the same exact logo filenames so the images stay consistent across the page.</p>
+    <p>The investor section also uses large logos and wider spacing.</p>
   </div>
 
   <div class="grid-3">

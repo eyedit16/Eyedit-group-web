@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EYEDIT GROUP</title>
+
+<style>
+
+body{
+background:#020713;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+.triangle{
+width:600px;
+margin:auto;
+position:relative;
+}
+
+.triangle img{
+width:100%;
+animation:spin 30s linear infinite;
+}
+
+@keyframes spin{
+from{transform:rotate(0deg);}
+to{transform:rotate(-360deg);}
+}
+
+.logo{
+position:absolute;
+width:120px;
+cursor:pointer;
+}
+
+.top{
+top:40px;
+left:50%;
+transform:translateX(-50%);
+}
+
+.left{
+bottom:40px;
+left:40px;
+}
+
+.right{
+bottom:40px;
+right:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>EYEDIT GROUP</h1>
+
+<div class="triangle">
+
+<img src="triangle-eyedit.png">
+
+<img src="Logo-eye-dit.png" class="logo top">
+
+<img src="logo-ccs-canssam.png" class="logo left">
+
+<img src="eyevision-1.png" class="logo right">
+
+</div>
+
+</body>
+
+</html>

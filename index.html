@@ -6,20 +6,18 @@
   <meta name="description" content="Eyedit Group is a global strategic holding integrating creative media, wellness initiatives and security infrastructures." />
   <style>
     :root {
-      --bg: #04070b;
-      --bg-soft: #0a1017;
-      --panel: rgba(12, 18, 26, 0.82);
-      --panel-2: rgba(255,255,255,0.04);
-      --line: rgba(255,255,255,0.1);
+      --bg: #05070b;
+      --bg-soft: #0b1118;
+      --panel: rgba(11, 16, 24, 0.86);
+      --line: rgba(255,255,255,0.08);
       --text: #eef4fb;
-      --muted: #91a1b4;
+      --muted: #9aabbe;
       --orange: #ff8c34;
       --green: #1fd47f;
       --blue: #39a4ff;
-      --glow: rgba(120,255,212,0.18);
+      --shadow: 0 24px 80px rgba(0,0,0,0.36);
+      --radius: 24px;
       --max: 1180px;
-      --radius: 22px;
-      --shadow: 0 24px 80px rgba(0,0,0,0.38);
     }* { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -27,10 +25,10 @@ body {
   font-family: Inter, Arial, Helvetica, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 50% 15%, rgba(57,164,255,0.12), transparent 26%),
-    radial-gradient(circle at 18% 82%, rgba(31,212,127,0.10), transparent 24%),
-    radial-gradient(circle at 82% 80%, rgba(255,140,52,0.12), transparent 24%),
-    linear-gradient(180deg, #09111a 0%, #04070b 100%);
+    radial-gradient(circle at 50% 14%, rgba(57,164,255,0.10), transparent 24%),
+    radial-gradient(circle at 18% 82%, rgba(31,212,127,0.09), transparent 24%),
+    radial-gradient(circle at 82% 80%, rgba(255,140,52,0.10), transparent 22%),
+    linear-gradient(180deg, #09111a 0%, #05070b 100%);
   overflow-x: hidden;
 }
 
@@ -43,75 +41,94 @@ body::before {
     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 36px 36px;
   mask-image: radial-gradient(circle at center, black 36%, transparent 96%);
-  opacity: 0.18;
+  opacity: 0.16;
   pointer-events: none;
   z-index: 0;
 }
 
 a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
+img { display: block; max-width: 100%; }
 
 .intro {
   position: fixed;
   inset: 0;
-  z-index: 100;
   display: grid;
   place-items: center;
   text-align: center;
   background: radial-gradient(circle at center, rgba(255,255,255,0.03), rgba(0,0,0,0.96));
+  z-index: 100;
   animation: introFade 4.2s forwards;
-}
-
-.intro-inner { padding: 28px; }
-.intro-kicker,
-.intro-meta {
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-size: 0.82rem;
 }
 
 .intro h1 {
   margin: 18px 0;
   font-size: clamp(2.5rem, 8vw, 6rem);
-  letter-spacing: 0.22em;
   text-transform: uppercase;
-  font-weight: 700;
-  text-shadow: 0 0 30px rgba(255,255,255,0.08);
+  letter-spacing: 0.22em;
 }
 
-.site {
-  position: relative;
-  z-index: 1;
+.kicker,
+.intro-meta,
+.eyebrow,
+.nav a,
+.tag,
+.node-label,
+.portal-title p,
+.portal-footer,
+.field label,
+.contact-note {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
+
+.kicker,
+.intro-meta,
+.eyebrow,
+.nav a,
+.tag,
+.portal-title p,
+.portal-footer,
+.field label,
+.contact-note {
+  color: var(--muted);
+}
+
+.site { position: relative; z-index: 1; }
 
 .topbar {
   position: sticky;
   top: 0;
   z-index: 20;
   backdrop-filter: blur(14px);
-  background: rgba(4,7,11,0.65);
+  background: rgba(5,7,11,0.68);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-.topbar-inner {
+.topbar-inner,
+.section,
+.footer-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 16px 22px;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.topbar-inner {
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 16px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 0.84rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.82rem;
 }
 
 .brand-mark {
@@ -119,97 +136,84 @@ img { max-width: 100%; display: block; }
   height: 12px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--blue), var(--green), var(--orange));
-  box-shadow: 0 0 16px rgba(255,255,255,0.25);
+  box-shadow: 0 0 18px rgba(255,255,255,0.24);
 }
 
 .nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
   gap: 14px;
+  justify-content: flex-end;
 }
 
 .nav a {
-  font-size: 0.76rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  transition: color 0.25s ease;
+  font-size: 0.74rem;
 }
 
-.nav a:hover { color: white; }
-
 .section {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 84px 22px;
+  padding-top: 84px;
+  padding-bottom: 84px;
 }
 
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  padding-top: 120px;
+  padding-top: 108px;
 }
 
-.hero-grid {
-  width: 100%;
+.hero-grid,
+.grid-3,
+.grid-2,
+.contact-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 36px;
-  align-items: center;
+  gap: 24px;
 }
 
-.eyebrow {
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-size: 0.78rem;
-  margin-bottom: 18px;
-}
+.hero-grid { grid-template-columns: 1.05fr 0.95fr; align-items: center; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.contact-grid { grid-template-columns: 0.92fr 1.08fr; align-items: start; }
 
-.hero h2 {
+.hero h2,
+.section-head h2 {
   margin: 0;
-  font-size: clamp(2.3rem, 5vw, 5rem);
-  line-height: 1.02;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.hero p {
-  margin: 22px 0 0;
-  max-width: 640px;
-  color: #cad5e0;
-  font-size: 1.02rem;
-  line-height: 1.75;
+.hero h2 { font-size: clamp(2.4rem, 5vw, 5rem); line-height: 1.02; }
+.section-head h2 { font-size: clamp(1.8rem, 3vw, 3rem); }
+
+.hero p,
+.section-head p,
+.card p,
+.info-card p,
+.investor-card p {
+  line-height: 1.8;
+  color: #ccd6e1;
 }
 
-.luxury-strip {
-  margin-top: 28px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+.hero p { max-width: 640px; font-size: 1.02rem; }
+.section-head { margin-bottom: 34px; }
 
-.luxury-pill {
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.03);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
+.luxury-strip,
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 30px;
+  gap: 12px;
+  margin-top: 26px;
 }
+
+.luxury-pill,
+.btn,
+.tag {
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+}
+
+.luxury-pill { padding: 10px 14px; font-size: 0.68rem; }
 
 .btn {
   display: inline-flex;
@@ -217,26 +221,21 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   min-width: 170px;
   padding: 14px 20px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
+  font-size: 0.74rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 0.74rem;
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-  background: rgba(255,255,255,0.02);
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255,255,255,0.24);
-}
+.btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.22); }
+.btn.primary { background: linear-gradient(135deg, rgba(57,164,255,0.18), rgba(31,212,127,0.16), rgba(255,140,52,0.14)); }
 
-.btn.primary {
-  background: linear-gradient(135deg, rgba(57,164,255,0.18), rgba(31,212,127,0.16), rgba(255,140,52,0.14));
-}
-
+.panel,
 .portal-card,
-.panel {
+.card,
+.info-card,
+.investor-card,
+.contact-form {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -245,31 +244,23 @@ img { max-width: 100%; display: block; }
 }
 
 .portal-card {
-  padding: 20px;
+  position: relative;
   min-height: 680px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   overflow: hidden;
+  padding: 20px;
   background:
     radial-gradient(circle at 50% 35%, rgba(255,255,255,0.04), transparent 32%),
     linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-}
-
-.portal-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.03), transparent 50%);
-  pointer-events: none;
 }
 
 .portal-card::after {
   content: "";
   position: absolute;
   inset: 14px;
-  border-radius: calc(var(--radius) - 6px);
+  border-radius: 18px;
   border: 1px solid rgba(255,255,255,0.05);
   pointer-events: none;
 }
@@ -279,26 +270,17 @@ img { max-width: 100%; display: block; }
   top: 28px;
   left: 50%;
   transform: translateX(-50%);
+  width: calc(100% - 48px);
   text-align: center;
-  width: calc(100% - 50px);
-  z-index: 2;
+  z-index: 3;
 }
 
 .portal-title h3 {
   margin: 0;
-  font-size: 1.3rem;
-  letter-spacing: 0.3em;
   text-transform: uppercase;
-  font-weight: 600;
-}
-
-.portal-title p,
-.portal-footer {
-  margin: 10px 0 0;
-  font-size: 0.74rem;
   letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--muted);
+  font-size: 1.28rem;
+  font-weight: 600;
 }
 
 .portal-ring {
@@ -315,28 +297,25 @@ img { max-width: 100%; display: block; }
 .portal-ring::after {
   content: "";
   position: absolute;
+  inset: 20px;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.05);
-  inset: 20px;
 }
 
-.portal-ring::after {
-  inset: 44px;
-  border-color: rgba(120,255,212,0.08);
-}
+.portal-ring::after { inset: 44px; border-color: rgba(120,255,212,0.08); }
 
 .triangle-system {
   position: relative;
   width: min(74vw, 560px);
   height: min(74vw, 560px);
-  z-index: 1;
+  z-index: 2;
 }
 
 .triangle-rotator {
   position: absolute;
   inset: 0;
-  animation: rotateCCW 28s linear infinite;
-  z-index: 1;
+  animation: rotateCCW 34s linear infinite;
+  transform-origin: center;
 }
 
 .triangle-svg {
@@ -344,8 +323,7 @@ img { max-width: 100%; display: block; }
   inset: 0;
   width: 100%;
   height: 100%;
-  overflow: visible;
-  filter: drop-shadow(0 0 14px var(--glow));
+  filter: drop-shadow(0 0 14px rgba(120,255,212,0.18));
 }
 
 .triangle-center {
@@ -359,7 +337,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   place-items: center;
   background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.10);
   box-shadow: 0 0 24px rgba(0,0,0,0.35), inset 0 0 28px rgba(255,255,255,0.03);
   backdrop-filter: blur(10px);
 }
@@ -371,7 +349,6 @@ img { max-width: 100%; display: block; }
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: 0 0 18px rgba(0,0,0,0.4);
 }
 
 .blade {
@@ -401,49 +378,30 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 12px;
   text-align: center;
-  transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-.node:hover {
-  transform: scale(1.05);
-  filter: brightness(1.08);
+.node-logo,
+.division-logo {
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.14);
 }
 
 .node-logo {
   width: 108px;
   height: 108px;
-  border-radius: 50%;
   padding: 7px;
-  border: 1px solid rgba(255,255,255,0.16);
-  box-shadow: 0 0 28px rgba(0,0,0,0.32), inset 0 0 26px rgba(255,255,255,0.06);
-  overflow: hidden;
   position: relative;
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.30), inset 0 0 24px rgba(255,255,255,0.05);
 }
 
-.top .node-logo {
-  box-shadow: 0 0 32px rgba(57,164,255,0.24), inset 0 0 26px rgba(255,255,255,0.06);
-}
+.top .node-logo { box-shadow: 0 0 32px rgba(57,164,255,0.22), inset 0 0 24px rgba(255,255,255,0.05); }
+.left .node-logo { box-shadow: 0 0 32px rgba(31,212,127,0.22), inset 0 0 24px rgba(255,255,255,0.05); }
+.right .node-logo { box-shadow: 0 0 32px rgba(255,140,52,0.22), inset 0 0 24px rgba(255,255,255,0.05); }
 
-.left .node-logo {
-  box-shadow: 0 0 32px rgba(31,212,127,0.24), inset 0 0 26px rgba(255,255,255,0.06);
-}
-
-.right .node-logo {
-  box-shadow: 0 0 32px rgba(255,140,52,0.24), inset 0 0 26px rgba(255,255,255,0.06);
-}
-
-.node-logo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.22), transparent 38%);
-  pointer-events: none;
-}
-
-.node-logo img {
+.node-logo img,
+.division-logo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -451,10 +409,8 @@ img { max-width: 100%; display: block; }
 }
 
 .node-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.23em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.76);
+  font-size: 0.68rem;
   line-height: 1.5;
 }
 
@@ -467,99 +423,51 @@ img { max-width: 100%; display: block; }
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
+  width: calc(100% - 48px);
   text-align: center;
-  width: calc(100% - 50px);
-}
-
-.section-head {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 34px;
-}
-
-.section-head .eyebrow { margin: 0; }
-
-.section-head h2 {
-  margin: 0;
-  font-size: clamp(1.7rem, 3.2vw, 3.2rem);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.section-head p {
-  margin: 0;
-  max-width: 820px;
-  color: #c4ced9;
-  line-height: 1.8;
-}
-
-.grid-3,
-.grid-2 {
-  display: grid;
-  gap: 22px;
-}
-
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-
-.card {
-  padding: 28px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255,255,255,0.16);
-  box-shadow: 0 30px 70px rgba(0,0,0,0.3);
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent 35%);
-  pointer-events: none;
-}
-
-.card h3 {
-  margin: 0 0 14px;
-  font-size: 1rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.card p {
-  margin: 0;
-  color: #c7d2de;
-  line-height: 1.8;
-  font-size: 0.97rem;
+  z-index: 3;
+  font-size: 0.74rem;
 }
 
 .tag {
   display: inline-block;
-  margin-bottom: 12px;
   padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  letter-spacing: 0.18em;
   font-size: 0.68rem;
-  text-transform: uppercase;
-  color: var(--muted);
+  margin-bottom: 14px;
 }
 
-.accent-blue { border-color: rgba(57,164,255,0.25); }
-.accent-green { border-color: rgba(31,212,127,0.24); }
-.accent-orange { border-color: rgba(255,140,52,0.24); }
+.card,
+.info-card,
+.investor-card,
+.contact-form { padding: 28px; }
+
+.card,
+.investor-card { transition: transform 0.28s ease, border-color 0.28s ease; }
+.card:hover,
+.investor-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.16); }
+
+.card h3,
+.info-card h3,
+.investor-card h3 {
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 1rem;
+}
+
+.division-logo {
+  width: 86px;
+  height: 86px;
+  padding: 6px;
+  margin-bottom: 18px;
+}
 
 .structure-wrap {
   position: relative;
-  min-height: 520px;
+  min-height: 540px;
+  padding: 28px;
   display: grid;
   place-items: center;
-  padding: 28px;
 }
 
 .structure-core {
@@ -570,14 +478,13 @@ img { max-width: 100%; display: block; }
   display: grid;
   place-items: center;
   text-align: center;
-  padding: 30px;
   background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
   border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 0 40px rgba(0,0,0,0.32);
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.92rem;
+  letter-spacing: 0.16em;
   line-height: 1.7;
+  padding: 26px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.30);
 }
 
 .structure-triangle {
@@ -596,7 +503,7 @@ img { max-width: 100%; display: block; }
 
 .structure-node {
   position: absolute;
-  width: 210px;
+  width: 220px;
   transform: translate(-50%, -50%);
 }
 
@@ -604,37 +511,27 @@ img { max-width: 100%; display: block; }
 .structure-node.left { left: 19%; top: 78%; }
 .structure-node.right { left: 81%; top: 78%; }
 
-.structure-node .panel {
-  padding: 22px;
-  text-align: center;
-}
-
-.network-map {
-  position: relative;
-  min-height: 420px;
-  overflow: hidden;
-  padding: 20px;
-}
+.network-map { padding: 20px; }
 
 .world {
   position: relative;
   height: 380px;
   border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: inset 0 0 70px rgba(255,255,255,0.02);
   background:
     radial-gradient(circle at 20% 40%, rgba(57,164,255,0.12), transparent 18%),
     radial-gradient(circle at 48% 38%, rgba(57,164,255,0.12), transparent 16%),
     radial-gradient(circle at 75% 42%, rgba(57,164,255,0.12), transparent 15%),
-    radial-gradient(circle at 86% 68%, rgba(255,140,52,0.1), transparent 14%),
+    radial-gradient(circle at 86% 68%, rgba(255,140,52,0.10), transparent 14%),
     linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: inset 0 0 70px rgba(255,255,255,0.02);
 }
 
 .map-line {
   position: absolute;
   height: 2px;
   transform-origin: left center;
-  background: linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,255,255,0.35), rgba(255,255,255,0.0));
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.35), rgba(255,255,255,0));
 }
 
 .map-point {
@@ -652,75 +549,74 @@ img { max-width: 100%; display: block; }
   height: 14px;
   border-radius: 50%;
   box-shadow: 0 0 18px currentColor;
+  background: currentColor;
 }
 
 .map-point strong {
   font-size: 0.76rem;
-  letter-spacing: 0.22em;
   text-transform: uppercase;
+  letter-spacing: 0.20em;
 }
 
 .map-point span {
-  font-size: 0.7rem;
   color: var(--muted);
-  letter-spacing: 0.14em;
+  font-size: 0.70rem;
   text-transform: uppercase;
+  letter-spacing: 0.14em;
 }
 
 .hq { color: var(--blue); }
 .partners { color: var(--green); }
 .expansion { color: var(--orange); }
 
-.investor-banner {
-  padding: 34px;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 24px;
-  align-items: center;
-}
+.field { display: grid; gap: 10px; margin-bottom: 18px; }
+.field label { font-size: 0.70rem; }
 
-.investor-points {
-  display: grid;
-  gap: 14px;
-}
-
-.investor-point {
-  padding: 18px 20px;
-  border-radius: 18px;
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
   background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text);
+  padding: 15px 16px;
+  font: inherit;
+  outline: none;
 }
 
-.investor-point strong {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 0.82rem;
-  letter-spacing: 0.18em;
+.field textarea { min-height: 150px; resize: vertical; }
+.field input::placeholder,
+.field textarea::placeholder { color: #8ea1b5; }
+
+.submit-btn {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 15px 18px;
+  background: linear-gradient(135deg, rgba(57,164,255,0.18), rgba(31,212,127,0.16), rgba(255,140,52,0.14));
+  color: white;
   text-transform: uppercase;
+  letter-spacing: 0.20em;
+  font-size: 0.74rem;
+  cursor: pointer;
 }
 
-.investor-point span {
-  color: #c9d3df;
-  line-height: 1.7;
-  font-size: 0.96rem;
-}
+.contact-note { margin-top: 14px; font-size: 0.68rem; }
 
 .footer {
   border-top: 1px solid rgba(255,255,255,0.07);
-  padding: 34px 22px 48px;
+  padding: 34px 0 48px;
   color: var(--muted);
 }
 
 .footer-inner {
-  max-width: var(--max);
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 18px;
-  font-size: 0.76rem;
-  letter-spacing: 0.2em;
+  gap: 16px;
   text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
 }
 
 @keyframes introFade {
@@ -747,113 +643,44 @@ img { max-width: 100%; display: block; }
   .hero-grid,
   .grid-3,
   .grid-2,
-  .investor-banner {
-    grid-template-columns: 1fr;
-  }
-
-  .portal-card {
-    min-height: 600px;
-  }
-
-  .structure-node {
-    width: 180px;
-  }
+  .contact-grid { grid-template-columns: 1fr; }
+  .portal-card { min-height: 620px; }
+  .structure-node { width: 190px; }
 }
 
 @media (max-width: 760px) {
-  .topbar-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
+  .topbar-inner { flex-direction: column; align-items: flex-start; padding-top: 14px; padding-bottom: 14px; }
   .nav { justify-content: flex-start; }
-
-  .hero {
-    min-height: auto;
-    padding-top: 110px;
-    padding-bottom: 40px;
-  }
-
-  .portal-card {
-    min-height: 560px;
-    padding: 18px;
-  }
-
+  .hero { min-height: auto; padding-top: 110px; padding-bottom: 40px; }
+  .portal-card { min-height: 560px; padding: 18px; }
   .triangle-system,
-  .triangle-rotator {
-    width: min(88vw, 500px);
-    height: min(88vw, 500px);
-  }
-
-  .portal-ring {
-    width: min(88vw, 500px);
-    height: min(88vw, 500px);
-  }
-
-  .node {
-    width: 118px;
-  }
-
-  .node-logo {
-    width: 84px;
-    height: 84px;
-  }
-
-  .node-label {
-    font-size: 0.58rem;
-    letter-spacing: 0.16em;
-  }
-
+  .triangle-rotator,
+  .portal-ring { width: min(88vw, 500px); height: min(88vw, 500px); }
+  .node { width: 118px; }
+  .node-logo { width: 84px; height: 84px; }
+  .node-label { font-size: 0.58rem; letter-spacing: 0.16em; }
   .top { top: 4%; }
   .left { left: 2%; bottom: 12%; }
   .right { right: 2%; bottom: 12%; }
-
-  .triangle-center {
-    width: 92px;
-    height: 92px;
-  }
-
-  .shutter {
-    width: 58px;
-    height: 58px;
-  }
-
-  .structure-wrap {
-    min-height: 760px;
-  }
-
-  .structure-core {
-    position: relative;
-    width: 190px;
-    height: 190px;
-    margin: 0 auto;
-  }
-
-  .structure-triangle {
-    height: 640px;
-  }
-
+  .triangle-center { width: 92px; height: 92px; }
+  .shutter { width: 58px; height: 58px; }
+  .structure-wrap { min-height: 760px; }
+  .structure-core { position: relative; width: 190px; height: 190px; }
+  .structure-triangle { height: 640px; }
   .structure-triangle svg { display: none; }
-
   .structure-node.top { left: 50%; top: 18%; }
   .structure-node.left { left: 50%; top: 52%; }
   .structure-node.right { left: 50%; top: 84%; }
-
-  .world {
-    height: 460px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-  }
+  .world { height: 460px; }
+  .footer-inner { flex-direction: column; }
 }
 
   </style>
 </head>
 <body>
   <div class="intro">
-    <div class="intro-inner">
-      <div class="intro-kicker">Global Strategic Holding</div>
+    <div>
+      <div class="kicker">Global Strategic Holding</div>
       <h1>Eyedit Group</h1>
       <div class="intro-meta">Barcelona · Europe · International Projection</div>
     </div>
@@ -876,10 +703,10 @@ img { max-width: 100%; display: block; }
   <section class="section hero" id="home">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow">Definitive Holding Portal</div>
+        <div class="eyebrow">Deluxe Holding Portal</div>
         <h2>Global vision.<br>Three strategic divisions.<br>One unified structure.</h2>
         <p>
-          Eyedit Group is an independent strategic holding integrating creative media, wellness initiatives and security infrastructures. The portal combines your animated triangle, the three logos, the institutional narrative and the international vision in one definitive GitHub-ready homepage.
+          Eyedit Group is an independent strategic holding integrating creative media, wellness initiatives and security infrastructures. This definitive homepage unifies the animated triangle, the three logos, the institutional narrative and the international vision in one premium portal.
         </p>
         <div class="luxury-strip">
           <span class="luxury-pill">Premium Entry Interface</span>
@@ -951,10 +778,10 @@ img { max-width: 100%; display: block; }
 
   <section class="section" id="structure">
     <div class="section-head">
-      <div class="eyebrow">Deluxe Holding Architecture</div>
+      <div class="eyebrow">Holding Architecture</div>
       <h2>Structure</h2>
       <p>
-        The project is built as a three-point strategic geometry: creative media, wellness, and security. At the center sits Eyedit Group as the common identity, coordination point and international umbrella.
+        The project is built as a three-point strategic geometry: creative media, wellness and security. At the center sits Eyedit Group as the common identity, coordination point and international umbrella.
       </p>
     </div>
 
@@ -972,24 +799,27 @@ img { max-width: 100%; display: block; }
         </svg>
 
         <div class="structure-node top">
-          <div class="panel">
-            <div class="tag accent-blue">Top Division</div>
+          <div class="card">
+            <div class="division-logo"><img src="Logo-eyevision.png" alt="EyeVision logo"></div>
+            <div class="tag">Top Division</div>
             <h3>EyeVision</h3>
             <p>Security services, transport logistics, telecommunications and satellite-oriented infrastructure vision.</p>
           </div>
         </div>
 
         <div class="structure-node left">
-          <div class="panel">
-            <div class="tag accent-green">Left Division</div>
+          <div class="card">
+            <div class="division-logo"><img src="Logo-ccscanssam.png" alt="CCS CAN SS AM CAN SAM logo"></div>
+            <div class="tag">Left Division</div>
             <h3>CCS CAN SS AM CAN SAM</h3>
             <p>Natural therapies, alternative medicine, holistic wellbeing and wellness-oriented initiatives.</p>
           </div>
         </div>
 
         <div class="structure-node right">
-          <div class="panel">
-            <div class="tag accent-orange">Right Division</div>
+          <div class="card">
+            <div class="division-logo"><img src="Logo-eyedit.png" alt="EyeDit logo"></div>
+            <div class="tag">Right Division</div>
             <h3>EyeDit</h3>
             <p>Image Quick Service, photography, audiovisual production and creative media communication.</p>
           </div>
@@ -1005,29 +835,32 @@ img { max-width: 100%; display: block; }
       <div class="eyebrow">Three Operating Arms</div>
       <h2>Divisions</h2>
       <p>
-        Each division can present itself independently while staying aligned with a shared narrative. This gives the holding both flexibility and a clean strategic silhouette.
+        Each division can be presented independently while staying aligned with a shared narrative. The logos below are integrated directly into the section so the page feels coherent and complete.
       </p>
     </div>
 
     <div class="grid-3">
-      <article class="card panel" id="eyedit">
-        <div class="tag accent-orange">Creative Media</div>
+      <article class="card" id="eyedit">
+        <div class="division-logo"><img src="Logo-eyedit.png" alt="EyeDit logo"></div>
+        <div class="tag">Creative Media</div>
         <h3>EyeDit</h3>
         <p>
           EyeDit develops visual production, photography, audiovisual media, rapid image services and creative communication. It represents the image engine of the holding and supports digital content, production services and brand storytelling.
         </p>
       </article>
 
-      <article class="card panel" id="ccs">
-        <div class="tag accent-green">Wellness</div>
+      <article class="card" id="ccs">
+        <div class="division-logo"><img src="Logo-ccscanssam.png" alt="CCS CAN SS AM CAN SAM logo"></div>
+        <div class="tag">Wellness</div>
         <h3>CCS CAN SS AM CAN SAM</h3>
         <p>
           CCS CAN SS AM CAN SAM focuses on natural therapies, holistic health practices and alternative medicine frameworks. It brings the wellness axis into the holding with a more organic and human-centered energy.
         </p>
       </article>
 
-      <article class="card panel" id="eyevision">
-        <div class="tag accent-blue">Security & Infrastructure</div>
+      <article class="card" id="eyevision">
+        <div class="division-logo"><img src="Logo-eyevision.png" alt="EyeVision logo"></div>
+        <div class="tag">Security & Infrastructure</div>
         <h3>EyeVision</h3>
         <p>
           EyeVision develops security, logistics, transport and telecom-oriented initiatives across terrestrial, maritime and aeronautical environments. It is the strategic systems arm of Eyedit Group.
@@ -1046,13 +879,13 @@ img { max-width: 100%; display: block; }
     </div>
 
     <div class="grid-2">
-      <div class="card panel">
+      <div class="info-card">
         <h3>Vision</h3>
         <p>
           To build a recognisable international platform capable of connecting creative production, wellbeing and advanced operational services under a single premium holding identity.
         </p>
       </div>
-      <div class="card panel">
+      <div class="info-card">
         <h3>Development Logic</h3>
         <p>
           Each branch can grow independently, collaborate across sectors and enter strategic conversations with partners, institutions, clients or investors without losing coherence.
@@ -1063,32 +896,32 @@ img { max-width: 100%; display: block; }
 
   <section class="section" id="network">
     <div class="section-head">
-      <div class="eyebrow">International Projection Deluxe</div>
+      <div class="eyebrow">International Projection</div>
       <h2>Global Network</h2>
       <p>
-        This section transforms the project from a simple company site into a networked holding narrative. Barcelona acts as the primary symbolic hub, with partner logic in North America and future expansion toward other international regions.
+        Barcelona acts as the symbolic hub, with partner logic in North America and future expansion toward other international regions. This turns the site into a networked holding narrative rather than a static company page.
       </p>
     </div>
 
     <div class="panel network-map">
       <div class="world">
-        <div class="map-line" style="left: 27%; top: 42%; width: 23%; transform: rotate(-8deg);"></div>
-        <div class="map-line" style="left: 50%; top: 43%; width: 28%; transform: rotate(3deg);"></div>
+        <div class="map-line" style="left:27%; top:42%; width:23%; transform:rotate(-8deg);"></div>
+        <div class="map-line" style="left:50%; top:43%; width:28%; transform:rotate(3deg);"></div>
 
-        <div class="map-point partners" style="left: 27%; top: 42%;">
-          <div class="map-dot" style="background: currentColor;"></div>
+        <div class="map-point partners" style="left:27%; top:42%;">
+          <div class="map-dot"></div>
           <strong>Partners</strong>
           <span>North America</span>
         </div>
 
-        <div class="map-point hq" style="left: 50%; top: 43%;">
-          <div class="map-dot" style="background: currentColor;"></div>
+        <div class="map-point hq" style="left:50%; top:43%;">
+          <div class="map-dot"></div>
           <strong>Barcelona HQ</strong>
           <span>Europe</span>
         </div>
 
-        <div class="map-point expansion" style="left: 78%; top: 45%;">
-          <div class="map-dot" style="background: currentColor;"></div>
+        <div class="map-point expansion" style="left:78%; top:45%;">
+          <div class="map-dot"></div>
           <strong>Future Expansion</strong>
           <span>Global Regions</span>
         </div>
@@ -1098,35 +931,28 @@ img { max-width: 100%; display: block; }
 
   <section class="section" id="investors">
     <div class="section-head">
-      <div class="eyebrow">Investor Entry Layer Deluxe</div>
+      <div class="eyebrow">Investor Entry Layer</div>
       <h2>Investors</h2>
       <p>
-        The project can be presented as a strategic multi-sector structure with modular development potential. This page section condenses the language already drafted for family offices, partners and institutional profiles.
+        The project can be presented as a strategic multi-sector structure with modular development potential. This section condenses the language already drafted for family offices, partners and institutional profiles.
       </p>
     </div>
 
-    <div class="panel investor-banner">
-      <div>
-        <div class="tag">Investor Overview</div>
-        <h3 style="margin:0 0 14px; font-size:1.5rem; letter-spacing:0.08em; text-transform:uppercase;">Eyedit Group Strategic Development</h3>
-        <p style="margin:0; color:#c9d3df; line-height:1.85;">
-          Eyedit Group combines creative media, wellness initiatives and security infrastructures within a unified development vision. The structure is intentionally adaptable, allowing partnerships, service development and long-range positioning across Europe and international markets.
-        </p>
+    <div class="grid-3">
+      <div class="investor-card">
+        <div class="division-logo"><img src="Logo-eyedit.png" alt="EyeDit logo"></div>
+        <h3>Creative Media</h3>
+        <p>Visual production, image services, audiovisual communication and digital media potential through EyeDit.</p>
       </div>
-
-      <div class="investor-points">
-        <div class="investor-point">
-          <strong>Creative Media</strong>
-          <span>Visual production, image services, audiovisual communication and digital media potential through EyeDit.</span>
-        </div>
-        <div class="investor-point">
-          <strong>Wellness</strong>
-          <span>Natural therapies, alternative medicine logic and wellbeing-oriented initiatives through CCS CAN SS AM CAN SAM.</span>
-        </div>
-        <div class="investor-point">
-          <strong>Security & Transport</strong>
-          <span>Security solutions, logistics and telecom infrastructure vision through EyeVision.</span>
-        </div>
+      <div class="investor-card">
+        <div class="division-logo"><img src="Logo-ccscanssam.png" alt="CCS CAN SS AM CAN SAM logo"></div>
+        <h3>Wellness</h3>
+        <p>Natural therapies, alternative medicine logic and wellbeing-oriented initiatives through CCS CAN SS AM CAN SAM.</p>
+      </div>
+      <div class="investor-card">
+        <div class="division-logo"><img src="Logo-eyevision.png" alt="EyeVision logo"></div>
+        <h3>Security & Transport</h3>
+        <p>Security solutions, logistics and telecom infrastructure vision through EyeVision.</p>
       </div>
     </div>
   </section>
@@ -1136,28 +962,44 @@ img { max-width: 100%; display: block; }
       <div class="eyebrow">Direct Contact</div>
       <h2>Contact</h2>
       <p>
-        The contact block stays simple and clean so the page feels institutional rather than noisy. You can later add a form, a PDF download button or direct links to separate project pages.
+        A clean contact block with a real visual form, plus your direct contact details. The old GitHub notes box has been removed completely.
       </p>
     </div>
 
-    <div class="grid-2">
-      <div class="card panel">
+    <div class="contact-grid">
+      <div class="info-card">
         <h3>Eyedit Group</h3>
         <p>
           Barcelona · Europe<br>
           Global Strategic Holding<br>
           Email: ms.eyedit@outlook.com
         </p>
-      </div>
-      <div class="card panel">
-        <h3>GitHub Ready File Notes</h3>
         <p>
-          Put this file as <strong>index.html</strong> and keep these images in the same folder:<br>
-          <strong>Logo-eyedit.png</strong><br>
-          <strong>Logo-ccscanssam.png</strong><br>
-          <strong>Logo-eyevision.png</strong>
+          Image · Wellness · Security<br>
+          International Projection · Creative Intelligence
         </p>
       </div>
+
+      <form class="contact-form" action="mailto:ms.eyedit@outlook.com" method="post" enctype="text/plain">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="your@email.com">
+        </div>
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" placeholder="Project, partnership, investor inquiry...">
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message here"></textarea>
+        </div>
+        <button class="submit-btn" type="submit">Send Inquiry</button>
+        <div class="contact-note">This form opens the default email app on the device.</div>
+      </form>
     </div>
   </section>
 </main>

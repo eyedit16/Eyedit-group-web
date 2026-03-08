@@ -1,78 +1,124 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EYEDIT GROUP</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EYEDIT GROUP</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #020713;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-body{
-background:#020713;
-color:white;
-font-family:Arial;
-text-align:center;
-}
+    h1 {
+      margin: 30px 0 10px;
+      font-size: clamp(2rem, 6vw, 4rem);
+    }
 
-.triangle{
-width:600px;
-margin:auto;
-position:relative;
-}
+    .subtitle {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      padding: 0 20px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+    }
 
-.triangle img{
-width:100%;
-animation:spin 30s linear infinite;
-}
+    .scene {
+      position: relative;
+      width: min(92vw, 600px);
+      height: min(92vw, 600px);
+      margin: 20px auto 40px;
+    }
 
-@keyframes spin{
-from{transform:rotate(0deg);}
-to{transform:rotate(-360deg);}
-}
+    .triangle-rotator {
+      position: absolute;
+      inset: 0;
+      animation: spin 30s linear infinite;
+    }
 
-.logo{
-position:absolute;
-width:120px;
-cursor:pointer;
-}
+    .triangle-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
 
-.top{
-top:40px;
-left:50%;
-transform:translateX(-50%);
-}
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
 
-.left{
-bottom:40px;
-left:40px;
-}
+    .logo {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      z-index: 10;
+    }
 
-.right{
-bottom:40px;
-right:40px;
-}
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
 
-</style>
+    .top {
+      top: 6%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
+    .left {
+      bottom: 8%;
+      left: 6%;
+    }
+
+    .right {
+      bottom: 8%;
+      right: 6%;
+    }
+
+    @media (max-width: 700px) {
+      .logo {
+        width: 85px;
+        height: 85px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<h1>EYEDIT GROUP</h1>
+  <h1>EYEDIT GROUP</h1>
+  <p class="subtitle">
+    Global visual communication, natural wellness and strategic security.
+  </p>
 
-<div class="triangle">
+  <div class="scene">
+    <div class="triangle-rotator">
+      <img src="triangle-eyedit.png" alt="Triangle" class="triangle-img">
+    </div>
 
-<img src="triangle-eyedit.png">
+    <div class="logo top">
+      <img src="Logo-eye-dit.png" alt="EyeDit">
+    </div>
 
-<img src="Logo-eye-dit.png" class="logo top">
+    <div class="logo left">
+      <img src="logo-ccs-canssam.png" alt="CCS CANSSAM">
+    </div>
 
-<img src="logo-ccs-canssam.png" class="logo left">
-
-<img src="eyevision-1.png" class="logo right">
-
-</div>
+    <div class="logo right">
+      <img src="logo-eyevision.png" alt="EyeVision">
+    </div>
+  </div>
 
 </body>
-
 </html>

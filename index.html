@@ -109,10 +109,7 @@ h1,h2,h3{margin:0;text-transform:uppercase;letter-spacing:2px}
 .portal-title,.portal-footer{position:absolute;left:50%;transform:translateX(-50%);width:calc(100% - 48px);text-align:center;z-index:3;pointer-events:none}
 .portal-title{top:26px}.portal-footer{bottom:22px;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.18em}
 .portal-title h3{font-size:1.2rem;letter-spacing:.26em;margin-bottom:10px}
-.portal-ring{
-  position:absolute;width:min(88vw,760px);height:min(88vw,760px);border-radius:50%;border:1px solid rgba(255,255,255,.10);
-  box-shadow:inset 0 0 60px rgba(255,255,255,.03), 0 0 80px rgba(57,164,255,.08);
-}
+.portal-ring{display:none;}
 .triangle-system{position:relative;width:min(88vw,760px);height:min(88vw,760px);z-index:2}
 .triangle-rotator{position:absolute;inset:0;animation:spin 34s linear infinite;transform-origin:center center}
 .triangle-svg{position:absolute;inset:0;width:100%;height:100%}
@@ -135,9 +132,14 @@ h1,h2,h3{margin:0;text-transform:uppercase;letter-spacing:2px}
 .left{left:-2%;bottom:-1%}
 .right{right:-2%;bottom:-1%}
 .logo-shell,.division-logo{
-  width:220px;height:220px;overflow:hidden;display:flex;align-items:center;justify-content:center;
+  width:260px;
+  height:260px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.division-logo{width:180px;height:180px;margin:0 auto 18px}
+.division-logo{width:220px;height:220px;margin:0 auto 18px}
 .logo-shell img,.division-logo img{width:100%;height:100%;object-fit:contain}
 .card,.contact-card,.contact-form{padding:30px}
 .portfolio-image{overflow:hidden;padding:0}

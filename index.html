@@ -2,14 +2,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eyedit Group</title>
+<title>Eyedit Group | International Holding</title>
 <style>body{ margin:0; font-family:Arial,Helvetica,sans-serif; background:#05070b; color:white; }
 
 section{ padding:80px 20px; max-width:1200px; margin:auto; }
 
-h2{ text-transform:uppercase; letter-spacing:2px; }
+h1,h2,h3{ text-transform:uppercase; letter-spacing:2px; }
 
-/* ---------- TRIANGLE AREA ---------- */
+p{line-height:1.6;color:#cfd6dd}
+
+button{ padding:14px 22px; border-radius:30px; border:none; background:#00c2ff; color:white; font-weight:bold; letter-spacing:1px; cursor:pointer; }
+
+button:hover{opacity:0.85}
+
+/* HERO */
+
+.hero{ min-height:90vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+
+.hero h1{ font-size:48px; margin-bottom:10px; }
+
+.hero p{max-width:650px}
+
+/* TRIANGLE */
 
 .portal{ height:90vh; display:flex; align-items:center; justify-content:center; }
 
@@ -17,7 +31,7 @@ h2{ text-transform:uppercase; letter-spacing:2px; }
 
 .triangle-rotator{ position:absolute; inset:0; animation:spin 40s linear infinite; }
 
-@keyframes spin{ from{transform:rotate(0deg);} to{transform:rotate(-360deg);} /* counter clockwise */ }
+@keyframes spin{ from{transform:rotate(0deg);} to{transform:rotate(-360deg);} }
 
 .triangle-svg{ position:absolute; width:100%; height:100%; }
 
@@ -25,31 +39,43 @@ h2{ text-transform:uppercase; letter-spacing:2px; }
 
 .top{left:50%;top:-10px;transform:translateX(-50%);} .left{left:-40px;bottom:-10px;} .right{right:-40px;bottom:-10px;}
 
-/* BIG LOGOS SAME SIZE AS GLOW CIRCLE */
-
 .logo-shell{ width:320px; height:320px; border-radius:50%; overflow:hidden; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle,rgba(255,255,255,0.15),rgba(255,255,255,0.02)); }
 
 .logo-shell img{ width:100%; height:100%; object-fit:cover; }
 
-/* ---------- STRUCTURE ---------- */
+/* STRUCTURE */
 
-.structure-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
+.structure-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:40px; }
 
 .card{ background:#0c121a; padding:30px; border-radius:20px; text-align:center; }
 
 .division-logo{ width:260px; height:260px; margin:auto; margin-bottom:20px; border-radius:50%; overflow:hidden; background:radial-gradient(circle,rgba(255,255,255,0.15),rgba(255,255,255,0.02)); }
 
-.division-logo img{ width:100%; height:100%; object-fit:contain; }
+.division-logo img{ width:100%; height:100%; object-fit:cover; }
 
-/* ---------- PORTFOLIO ---------- */
+/* PORTFOLIO */
 
-.portfolios{ display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
+.portfolios{ display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:40px; }
 
 .gallery{ display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin-top:20px; }
 
 .gallery img{ width:100%; height:280px; object-fit:cover; border-radius:16px; }
 
-/* ---------- RESPONSIVE ---------- */
+/* CONTACT */
+
+.contact{ max-width:700px; margin:auto; text-align:center; }
+
+form{ display:flex; flex-direction:column; gap:15px; margin-top:30px; }
+
+input,textarea{ padding:14px; border-radius:10px; border:none; font-size:16px; }
+
+textarea{min-height:120px}
+
+/* FOOTER */
+
+footer{ margin-top:80px; padding:30px; text-align:center; background:#0b1016; color:#aab4bd; }
+
+/* RESPONSIVE */
 
 @media(max-width:1000px){
 
@@ -65,37 +91,56 @@ h2{ text-transform:uppercase; letter-spacing:2px; }
 
 </style>
 </head>
-<body><section class="portal"><div class="triangle-system"><div class="triangle-rotator"><svg class="triangle-svg" viewBox="0 0 560 560">
+<body><section class="hero">
+<h1>Eyedit Group</h1>
+<p class="muted" style="letter-spacing:3px;text-transform:uppercase;">International Holding</p>
+<p>International holding integrating creative media, wellness initiatives and strategic security infrastructure across a unified global vision.</p>
+<button onclick="document.getElementById('structure').scrollIntoView({behavior:'smooth'})">Explore Structure</button>
+</section><section class="portal">
+<div class="triangle-system">
+<div class="triangle-rotator"><svg class="triangle-svg" viewBox="0 0 560 560">
 <polygon points="280,82 116,390 444,390" fill="none" stroke="#7fffd4" stroke-width="3"/>
 </svg><div class="node top">
 <div class="logo-shell">
 <img src="logo-eye-vision.png">
 </div>
+<p>Security · Transport · Telecom</p>
 </div><div class="node left">
 <div class="logo-shell">
 <img src="logo-ccs-canssam.png">
 </div>
+<p>Natural Therapies · Wellness</p>
 </div><div class="node right">
 <div class="logo-shell">
 <img src="logo-eye-dit.png">
 </div>
+<p>Image Quick Service · Media</p>
 </div></div>
-</div></section><section>
-<h2>Structure</h2><div class="structure-row"><div class="card">
+</div>
+</section><section id="structure">
+<h2>International Holding Structure</h2>
+<p>Eyedit Group operates as an international holding connecting three complementary divisions with scalable identity, portfolio capacity and long-term global projection.</p><div class="structure-row"><div class="card">
 <div class="division-logo"><img src="logo-eye-vision.png"></div>
 <h3>EyeVision</h3>
-<p>Security · transport · telecom</p>
+<p>Security services, transport solutions and telecommunications infrastructure.</p>
 </div><div class="card">
 <div class="division-logo"><img src="logo-ccs-canssam.png"></div>
 <h3>CCS Canssam</h3>
-<p>Natural therapies · wellness</p>
+<p>Natural therapies, alternative wellness and holistic health initiatives.</p>
 </div><div class="card">
 <div class="division-logo"><img src="logo-eye-dit.png"></div>
 <h3>EyeDit</h3>
-<p>Image quick service · media</p>
+<p>Photography, audiovisual production and rapid image services.</p>
 </div></div>
 </section><section>
-<h2>Portfolios</h2><div class="portfolios"><div class="card">
+<h2>Global Vision</h2>
+<p>Eyedit Group is designed as an international platform capable of presenting projects, services and collaborations under one premium corporate identity.</p>
+</section><section>
+<h2>Investor & Partner Focus</h2>
+<p>The holding structure is prepared to present creative, wellness and security lines in a clear format for partners, institutions and private investors.</p>
+</section><section>
+<h2>Portfolios</h2>
+<p>Visual portfolio examples from each division.</p><div class="portfolios"><div class="card">
 <div class="division-logo"><img src="logo-eye-dit.png"></div>
 <div class="gallery">
 <img src="eyedit-1.png">
@@ -117,5 +162,15 @@ h2{ text-transform:uppercase; letter-spacing:2px; }
 <img src="eyevision-3.png">
 </div>
 </div></div>
-</section></body>
+</section><section class="contact">
+<h2>Contact</h2>
+<p>For partnerships, projects or investment inquiries.</p><form action="mailto:ms.eyedit@outlook.com" method="post" enctype="text/plain">
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section><footer>
+<p>Eyedit Group · Barcelona · Global Strategic Holding</p>
+</footer></body>
 </html>

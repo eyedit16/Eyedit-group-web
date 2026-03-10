@@ -18,10 +18,7 @@
       --text: #f4f7fb;
       --muted: #9aa7b8;
       --accent: #d6e4ff;
-      --glow: rgba(150, 190, 255, 0.16);
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-      --radius: 24px;
-      --radius-lg: 34px;
       --max: 1280px;
       --transition: 0.35s ease;
     }
@@ -75,7 +72,7 @@
     }
 
     .section-subtitle {
-      max-width: 760px;
+      max-width: 860px;
       color: var(--muted);
       font-size: 1.05rem;
       line-height: 1.8;
@@ -107,7 +104,7 @@
     .nav-inner {
       width: min(94%, var(--max));
       margin: 0 auto;
-      min-height: 78px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -123,21 +120,27 @@
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
       background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.03));
       border: 1px solid rgba(255,255,255,0.12);
       display: grid;
       place-items: center;
       box-shadow: 0 12px 25px rgba(0,0,0,0.25);
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .brand-mark img {
-      width: 78%;
-      height: 78%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+      padding: 4px;
+    }
+
+    .brand-text {
+      line-height: 1.15;
     }
 
     .brand-text small {
@@ -147,7 +150,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-top: 2px;
+      margin-top: 4px;
     }
 
     .nav-links {
@@ -183,8 +186,8 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
       align-items: center;
       min-height: calc(100vh - 120px);
     }
@@ -271,28 +274,28 @@
 
     .hero-panel {
       position: relative;
-      min-height: 680px;
+      min-height: 760px;
       display: grid;
       place-items: center;
     }
 
     .orb {
       position: absolute;
-      width: 460px;
-      height: 460px;
+      width: 620px;
+      height: 620px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(150,190,255,0.14), transparent 68%);
       filter: blur(18px);
-      opacity: 0.85;
+      opacity: 0.9;
       pointer-events: none;
     }
 
     .triangle-stage {
       position: relative;
       width: 100%;
-      max-width: 620px;
-      min-height: 620px;
-      border-radius: 40px;
+      max-width: 760px;
+      min-height: 760px;
+      border-radius: 44px;
       background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
       border: 1px solid rgba(255,255,255,0.10);
       box-shadow: var(--shadow);
@@ -306,7 +309,7 @@
       content: "";
       position: absolute;
       inset: 22px;
-      border-radius: 30px;
+      border-radius: 34px;
       border: 1px solid rgba(255,255,255,0.08);
       pointer-events: none;
     }
@@ -317,20 +320,15 @@
       place-items: center;
       width: 100%;
       height: 100%;
-      padding: 60px;
+      padding: 50px;
     }
 
     .center-badge {
       position: relative;
-      width: 320px;
-      height: 320px;
-      border-radius: 36px;
-      background: transparent;
-      border: none;
+      width: min(82vw, 620px);
+      height: min(82vw, 620px);
       display: grid;
       place-items: center;
-      overflow: visible;
-      box-shadow: none;
       z-index: 6;
     }
 
@@ -341,12 +339,13 @@
       filter: drop-shadow(0 18px 38px rgba(0,0,0,0.35));
     }
 
-    .values-grid {
+    .vision-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
+    .vision-card,
     .value-card {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -356,16 +355,19 @@
       transition: var(--transition);
     }
 
+    .vision-card:hover,
     .value-card:hover {
       transform: translateY(-4px);
       background: rgba(255,255,255,0.08);
     }
 
+    .vision-card h3,
     .value-card h3 {
       margin: 0 0 12px;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
     }
 
+    .vision-card p,
     .value-card p {
       margin: 0;
       color: var(--muted);
@@ -386,17 +388,17 @@
       padding: 30px;
       box-shadow: var(--shadow);
       overflow: hidden;
-      min-height: 430px;
+      min-height: 470px;
       display: flex;
       flex-direction: column;
     }
 
     .project-logo-box {
-      width: 96px;
-      height: 96px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      width: 128px;
+      height: 128px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
       display: grid;
       place-items: center;
       margin-bottom: 24px;
@@ -404,20 +406,21 @@
     }
 
     .project-logo-box img {
-      width: 72%;
-      height: 72%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+      padding: 8px;
     }
 
     .project-card h3 {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       margin: 0 0 14px;
       letter-spacing: -0.03em;
     }
 
     .project-card p {
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.85;
       margin: 0 0 20px;
     }
 
@@ -444,12 +447,11 @@
 
     .divisions-wrap {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 26px;
-      align-items: stretch;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
-    .division-list,
+    .division-card,
     .division-panel {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -458,41 +460,43 @@
       box-shadow: var(--shadow);
     }
 
-    .division-item {
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+    .division-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      margin-bottom: 20px;
     }
 
-    .division-item:last-child {
-      border-bottom: 0;
+    .division-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
     }
 
-    .division-item h4 {
-      margin: 0 0 8px;
-      font-size: 1.1rem;
-    }
-
-    .division-item p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
+    .division-card h3,
     .division-panel h3 {
-      margin-top: 0;
-      font-size: 1.6rem;
+      margin: 0 0 12px;
+      font-size: 1.45rem;
     }
 
+    .division-card p,
     .division-panel p {
       color: var(--muted);
-      line-height: 1.85;
+      line-height: 1.8;
+      margin: 0;
     }
 
     .division-metrics {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
-      margin-top: 20px;
+      margin-top: 22px;
     }
 
     .metric {
@@ -504,14 +508,60 @@
 
     .metric strong {
       display: block;
-      font-size: 1.4rem;
-      margin-bottom: 6px;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
     }
 
     .metric span {
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.6;
       font-size: 0.92rem;
+    }
+
+    .portfolio-group {
+      margin-bottom: 60px;
+    }
+
+    .portfolio-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .portfolio-head {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .portfolio-logo {
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .portfolio-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+    }
+
+    .portfolio-text h3 {
+      margin: 0 0 8px;
+      font-size: 1.9rem;
+    }
+
+    .portfolio-text p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 820px;
     }
 
     .portfolio-grid {
@@ -562,9 +612,9 @@
       justify-content: flex-end;
     }
 
-    .portfolio-content h3 {
+    .portfolio-content h4 {
       margin: 0 0 10px;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
     }
 
     .portfolio-content p {
@@ -770,15 +820,15 @@
 
     @media (max-width: 1180px) {
       .hero-grid,
+      .projects-grid,
       .divisions-wrap,
+      .investors-grid,
       .contact-wrap,
-      .investors-grid {
+      .vision-grid {
         grid-template-columns: 1fr;
       }
 
-      .projects-grid,
-      .portfolio-grid,
-      .values-grid {
+      .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -804,10 +854,9 @@
 
       .hero-stats,
       .field-row,
-      .projects-grid,
       .portfolio-grid,
-      .values-grid,
-      .investor-pillars {
+      .investor-pillars,
+      .division-metrics {
         grid-template-columns: 1fr;
       }
 
@@ -816,8 +865,13 @@
       }
 
       .center-badge {
-        width: 220px;
-        height: 220px;
+        width: min(82vw, 420px);
+        height: min(82vw, 420px);
+      }
+
+      .portfolio-head {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
       .footer-grid {
@@ -843,17 +897,23 @@
       }
 
       .center-badge {
-        width: 180px;
-        height: 180px;
+        width: min(84vw, 300px);
+        height: min(84vw, 300px);
       }
 
       .project-card,
-      .division-list,
+      .division-card,
       .division-panel,
       .investor-card,
       .contact-info,
-      .contact-form-box {
+      .contact-form-box,
+      .vision-card,
+      .value-card {
         padding: 22px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -889,11 +949,12 @@
       <div class="container hero-grid">
         <div class="reveal visible">
           <span class="eyebrow">Barcelona · Europe · Global Reach</span>
-          <h1>Strategic vision shaped into three living vertices.</h1>
+          <h1>Eyedit Group</h1>
           <p>
-            Eyedit Group is a premium international holding designed to connect media innovation,
-            creative infrastructure, and advanced security ecosystems under one elegant strategic roof.
-            A strong visual identity, three focused projects, one unified global direction.
+            Eyedit Group is an international holding built around three strategic projects:
+            media and image services, creative and cultural development, and advanced security
+            and mobility. The group is designed as a premium platform with institutional presence,
+            visual strength and room for international expansion.
           </p>
 
           <div class="hero-actions">
@@ -904,22 +965,21 @@
           <div class="hero-stats">
             <div class="stat">
               <strong>3</strong>
-              <span>Core strategic projects integrated in one visual and operational system.</span>
+              <span>Strategic projects connected under one coordinated international structure.</span>
             </div>
             <div class="stat">
-              <strong>360°</strong>
-              <span>Media, innovation, logistics, cyber and premium service perspective.</span>
+              <strong>Premium</strong>
+              <span>Corporate identity designed for partners, institutions and investor presentation.</span>
             </div>
             <div class="stat">
               <strong>Global</strong>
-              <span>Built with international ambition, institutional tone and scalable structure.</span>
+              <span>Barcelona roots with a wider vision for international positioning and growth.</span>
             </div>
           </div>
         </div>
 
         <div class="hero-panel reveal">
           <div class="orb"></div>
-
           <div class="triangle-stage">
             <div class="triangle-core">
               <div class="center-badge">
@@ -935,33 +995,37 @@
       <div class="container">
         <div class="reveal">
           <span class="eyebrow">Holding Vision</span>
-          <h2 class="section-title">A corporate constellation with the clarity of Apple and the trajectory of SpaceX.</h2>
+          <h2 class="section-title">Three projects, one strategic direction.</h2>
           <p class="section-subtitle">
-            The Eyedit Group website is conceived as a premium institutional platform: cinematic, minimal,
-            technological, investor-ready and visually memorable. The central symbol now leads the visual identity
-            with a cleaner and more stable presentation.
+            Eyedit Group is conceived as a premium international holding where each project has its own identity
+            and purpose, while contributing to a wider corporate ecosystem. The aim is to combine visual culture,
+            operational capability and institutional presentation under one unified structure.
           </p>
         </div>
 
-        <div class="values-grid">
-          <article class="value-card reveal">
-            <h3>Design Intelligence</h3>
-            <p>Sharp visual language, high-end presentation and clean storytelling for global audiences.</p>
+        <div class="vision-grid">
+          <article class="vision-card reveal">
+            <h3>EyeDit Image Quick Service</h3>
+            <p>
+              A media and image platform focused on visual communication, image distribution,
+              editorial presence and fast-response content systems.
+            </p>
           </article>
 
-          <article class="value-card reveal">
-            <h3>Operational Vision</h3>
-            <p>Projects built to scale, connect sectors and move from concept to premium execution.</p>
+          <article class="vision-card reveal">
+            <h3>CCS Can SS AM</h3>
+            <p>
+              A creative and cultural division dedicated to design thinking, conceptual development,
+              identity systems and innovation through visual and artistic direction.
+            </p>
           </article>
 
-          <article class="value-card reveal">
-            <h3>Institutional Presence</h3>
-            <p>A serious corporate tone suitable for investors, partners, public institutions and strategic allies.</p>
-          </article>
-
-          <article class="value-card reveal">
-            <h3>Future Capacity</h3>
-            <p>Prepared to evolve into a broader ecosystem of services, assets, technologies and ventures.</p>
+          <article class="vision-card reveal">
+            <h3>EyeVision</h3>
+            <p>
+              A security and operations branch oriented toward cyber security, logistics,
+              mobility, transport and controlled high-responsibility environments.
+            </p>
           </article>
         </div>
       </div>
@@ -971,10 +1035,10 @@
       <div class="container">
         <div class="reveal">
           <span class="eyebrow">Three Strategic Projects</span>
-          <h2 class="section-title">Each project is a world.</h2>
+          <h2 class="section-title">Defined projects with clear roles inside the holding.</h2>
           <p class="section-subtitle">
-            Inside the holding, every division has its own identity, service logic and visual language,
-            while remaining aligned with the wider architecture of Eyedit Group.
+            Each project is presented as a distinct unit with its own identity, mission and development path,
+            while remaining aligned with the wider strategy of Eyedit Group.
           </p>
         </div>
 
@@ -985,8 +1049,9 @@
             </div>
             <h3>EyeDit Image Quick Service</h3>
             <p>
-              A media-driven platform focused on visual communication, image delivery, rapid editorial systems,
-              real-time presence and future-ready content infrastructure.
+              EyeDit Image Quick Service is the media-oriented branch of the holding. It focuses on
+              image delivery, editorial speed, visual communication and premium content presentation
+              designed for visibility and reach.
             </p>
             <div class="project-tags">
               <span>Media</span>
@@ -1003,8 +1068,8 @@
             </div>
             <h3>CCS Can SS AM</h3>
             <p>
-              A cultural and creative engine for design thinking, conceptual development, identity systems,
-              innovation frameworks and human-centered experimentation.
+              CCS Can SS AM is the creative and cultural core. It develops concepts, design languages,
+              visual identities and innovation structures that give the group a distinctive creative force.
             </p>
             <div class="project-tags">
               <span>Creative Direction</span>
@@ -1021,8 +1086,8 @@
             </div>
             <h3>EyeVision</h3>
             <p>
-              A security and operations branch combining private security, cyber security, transport,
-              logistics and strategic support in complex environments.
+              EyeVision is the operational security division. It combines private security,
+              cyber capability, transport, mobility and strategic support for demanding environments.
             </p>
             <div class="project-tags">
               <span>Cyber Security</span>
@@ -1040,65 +1105,73 @@
       <div class="container">
         <div class="reveal">
           <span class="eyebrow">Divisions</span>
-          <h2 class="section-title">A modular structure ready for expansion.</h2>
+          <h2 class="section-title">A modular structure with strong visual identity.</h2>
           <p class="section-subtitle">
-            The holding is presented as a modular system: each division can operate independently
-            or in synergy, allowing custom alliances, strategic growth and future segmentation.
+            The holding is structured as a modular system where each division may operate independently
+            or in coordinated synergy, allowing strategic growth, project clarity and institutional presentation.
           </p>
         </div>
 
         <div class="divisions-wrap">
-          <div class="division-list reveal">
-            <div class="division-item">
-              <h4>Media & Editorial Infrastructure</h4>
-              <p>Visual content systems, image transmission, storytelling, publishing channels and audience presence.</p>
+          <article class="division-card reveal">
+            <div class="division-logo">
+              <img src="logo-eye-dit.png" alt="EyeDit Logo">
             </div>
+            <h3>EyeDit</h3>
+            <p>
+              The image, media and visual communication division. Focused on fast distribution,
+              editorial systems, image presence and visual publishing.
+            </p>
+          </article>
 
-            <div class="division-item">
-              <h4>Creative Labs & Identity Design</h4>
-              <p>Brand conception, visual systems, conceptual architecture, artistic and cultural direction.</p>
+          <article class="division-card reveal">
+            <div class="division-logo">
+              <img src="logo-ccs-canssam.png" alt="CCS Can SS AM Logo">
             </div>
+            <h3>CCS Can SS AM</h3>
+            <p>
+              The creative and conceptual division. Dedicated to design systems, visual thinking,
+              cultural identity and innovation frameworks inside the holding.
+            </p>
+          </article>
 
-            <div class="division-item">
-              <h4>Advanced Security & Cyber</h4>
-              <p>Security strategy, digital resilience, cyber intelligence and controlled environments.</p>
+          <article class="division-card reveal">
+            <div class="division-logo">
+              <img src="logo-eye-vision.png" alt="EyeVision Logo">
             </div>
+            <h3>EyeVision</h3>
+            <p>
+              The security, cyber and mobility division. Built for operational control,
+              transport, advanced support and strategic protection environments.
+            </p>
+          </article>
+        </div>
 
-            <div class="division-item">
-              <h4>Mobility, Logistics & Premium Transport</h4>
-              <p>Terrestrial, aerial and support logistics with a future-facing strategic profile.</p>
-            </div>
-
-            <div class="division-item">
-              <h4>Institutional & Investor Relations</h4>
-              <p>Presentation structure designed for family offices, private capital, institutions and long-term partners.</p>
-            </div>
-          </div>
-
+        <div style="margin-top: 22px;">
           <aside class="division-panel reveal">
             <h3>Strategic Operating Model</h3>
             <p>
-              Eyedit Group is structured to look credible today and grow tomorrow. The website positions the holding
-              as a premium command center: elegant enough for institutional presentation, flexible enough for project launch,
-              and memorable enough to separate it from generic corporate sites.
+              Eyedit Group is presented as a premium command structure with room for future expansion.
+              The holding is designed to look credible today and scalable tomorrow, combining visual authority,
+              strategic clarity and multi-sector potential.
             </p>
 
             <div class="division-metrics">
               <div class="metric">
                 <strong>Multi-sector</strong>
-                <span>Media, design, security and logistics under one controlled narrative.</span>
+                <span>Media, creative development, security and mobility integrated into one coordinated holding model.</span>
               </div>
               <div class="metric">
                 <strong>Scalable</strong>
-                <span>Prepared for new units, sub-brands and strategic investment vehicles.</span>
+                <span>Prepared for future units, new sub-brands, strategic partners and growth into larger structures.</span>
               </div>
               <div class="metric">
                 <strong>Premium</strong>
-                <span>Luxury-tech visual language with institutional trust and clarity.</span>
+                <span>Designed with a luxury-tech visual language suitable for institutions, investors and corporate presentation.</span>
               </div>
               <div class="metric">
                 <strong>Global</strong>
-                <span>Built for Barcelona roots with international ambition and outreach.</span>
+                <span>Built from Barcelona with a wider international ambition and a platform ready for external projection.</span>
               </div>
             </div>
           </aside>
@@ -1110,94 +1183,143 @@
       <div class="container">
         <div class="reveal">
           <span class="eyebrow">Visual Portfolio</span>
-          <h2 class="section-title">A visual gallery for capability, identity and atmosphere.</h2>
+          <h2 class="section-title">Portfolio separated by project.</h2>
           <p class="section-subtitle">
-            This portfolio zone can host campaign visuals, project covers, strategy boards, institutional presentations,
-            photography, prototypes and future media assets for each division of the group.
+            The portfolio is organised by project so each division keeps its own visual atmosphere,
+            identity and message inside the wider language of the holding.
           </p>
         </div>
 
-        <div class="portfolio-grid">
-          <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image: url('eyedit-1.png');"></div>
-            <div class="portfolio-overlay"></div>
-            <div class="portfolio-content">
-              <h3>EyeDit Visual System</h3>
-              <p>Global image services, editorial identity and rapid communication infrastructure.</p>
+        <div class="portfolio-group reveal">
+          <div class="portfolio-head">
+            <div class="portfolio-logo">
+              <img src="logo-eye-dit.png" alt="EyeDit Logo">
             </div>
-          </article>
+            <div class="portfolio-text">
+              <h3>EyeDit Image Quick Service</h3>
+              <p>
+                EyeDit focuses on image, media presence, editorial systems and fast visual communication.
+                Its portfolio reflects speed, visibility, communication capacity and polished image delivery.
+              </p>
+            </div>
+          </div>
 
-          <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image: url('eyedit-2.png');"></div>
-            <div class="portfolio-overlay"></div>
-            <div class="portfolio-content">
-              <h3>EyeDit Media Presence</h3>
-              <p>Visual communication assets designed for speed, clarity and international presentation.</p>
-            </div>
-          </article>
+          <div class="portfolio-grid">
+            <article class="portfolio-card">
+              <div class="portfolio-image" style="background-image: url('eyedit-1.png');"></div>
+              <div class="portfolio-overlay"></div>
+              <div class="portfolio-content">
+                <h4>EyeDit Visual System</h4>
+                <p>Image services and editorial structure for international communication.</p>
+              </div>
+            </article>
 
-          <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image: url('eyedit-3.png');"></div>
-            <div class="portfolio-overlay"></div>
-            <div class="portfolio-content">
-              <h3>EyeDit Editorial Reach</h3>
-              <p>Premium media language and image-led storytelling for future expansion.</p>
-            </div>
-          </article>
+            <article class="portfolio-card">
+              <div class="portfolio-image" style="background-image: url('eyedit-2.png');"></div>
+              <div class="portfolio-overlay"></div>
+              <div class="portfolio-content">
+                <h4>Media Presence</h4>
+                <p>Visual assets designed for speed, clarity and strong public presentation.</p>
+              </div>
+            </article>
 
-          <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image: url('ccs-1.png');"></div>
-            <div class="portfolio-overlay"></div>
-            <div class="portfolio-content">
-              <h3>CCS Concept Design</h3>
-              <p>Creative direction, research, cultural energy and conceptual identity work.</p>
-            </div>
-          </article>
+            <article class="portfolio-card">
+              <div class="portfolio-image" style="background-image: url('eyedit-3.png');"></div>
+              <div class="portfolio-overlay"></div>
+              <div class="portfolio-content">
+                <h4>Editorial Reach</h4>
+                <p>Premium visual language for publishing, identity and image expansion.</p>
+              </div>
+            </article>
+          </div>
+        </div>
 
-          <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image: url('ccs-2.png');"></div>
-            <div class="portfolio-overlay"></div>
-            <div class="portfolio-content">
-              <h3>CCS Cultural Structure</h3>
-              <p>Ideas turned into systems, visual experiments and strategic creative frameworks.</p>
+        <div class="portfolio-group reveal">
+          <div class="portfolio-head">
+            <div class="portfolio-logo">
+              <img src="logo-ccs-canssam.png" alt="CCS Can SS AM Logo">
             </div>
-          </article>
+            <div class="portfolio-text">
+              <h3>CCS Can SS AM</h3>
+              <p>
+                CCS Can SS AM is the creative and conceptual field of the holding. Its portfolio expresses
+                identity work, conceptual development, visual culture and innovation through design.
+              </p>
+            </div>
+          </div>
 
-          <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image: url('ccs-3.png');"></div>
-            <div class="portfolio-overlay"></div>
-            <div class="portfolio-content">
-              <h3>CCS Innovation Layer</h3>
-              <p>A platform for culture, design intelligence and new interdisciplinary directions.</p>
-            </div>
-          </article>
+          <div class="portfolio-grid">
+            <article class="portfolio-card">
+              <div class="portfolio-image" style="background-image: url('ccs-1.png');"></div>
+              <div class="portfolio-overlay"></div>
+              <div class="portfolio-content">
+                <h4>Concept Design</h4>
+                <p>Creative direction and conceptual identity for the cultural branch.</p>
+              </div>
+            </article>
 
-          <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image: url('eyevision-1.png');"></div>
-            <div class="portfolio-overlay"></div>
-            <div class="portfolio-content">
-              <h3>EyeVision Security</h3>
-              <p>Operational aesthetics for private security, mobility and advanced protection systems.</p>
-            </div>
-          </article>
+            <article class="portfolio-card">
+              <div class="portfolio-image" style="background-image: url('ccs-2.png');"></div>
+              <div class="portfolio-overlay"></div>
+              <div class="portfolio-content">
+                <h4>Cultural Structure</h4>
+                <p>Ideas transformed into frameworks, identity and visual exploration.</p>
+              </div>
+            </article>
 
-          <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image: url('eyevision-2.png');"></div>
-            <div class="portfolio-overlay"></div>
-            <div class="portfolio-content">
-              <h3>EyeVision Cyber Layer</h3>
-              <p>Cyber resilience, strategic surveillance and controlled digital environments.</p>
-            </div>
-          </article>
+            <article class="portfolio-card">
+              <div class="portfolio-image" style="background-image: url('ccs-3.png');"></div>
+              <div class="portfolio-overlay"></div>
+              <div class="portfolio-content">
+                <h4>Innovation Layer</h4>
+                <p>Design intelligence and interdisciplinary creative development.</p>
+              </div>
+            </article>
+          </div>
+        </div>
 
-          <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image: url('eyevision-3.png');"></div>
-            <div class="portfolio-overlay"></div>
-            <div class="portfolio-content">
-              <h3>EyeVision Mobility</h3>
-              <p>Transport, logistics and future-ready operational support within the holding.</p>
+        <div class="portfolio-group reveal">
+          <div class="portfolio-head">
+            <div class="portfolio-logo">
+              <img src="logo-eye-vision.png" alt="EyeVision Logo">
             </div>
-          </article>
+            <div class="portfolio-text">
+              <h3>EyeVision</h3>
+              <p>
+                EyeVision reflects the operational side of the group: security, cyber capability,
+                transport, logistics and strategic support under a controlled professional identity.
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-grid">
+            <article class="portfolio-card">
+              <div class="portfolio-image" style="background-image: url('eyevision-1.png');"></div>
+              <div class="portfolio-overlay"></div>
+              <div class="portfolio-content">
+                <h4>Security Division</h4>
+                <p>Operational visual identity for protection and controlled environments.</p>
+              </div>
+            </article>
+
+            <article class="portfolio-card">
+              <div class="portfolio-image" style="background-image: url('eyevision-2.png');"></div>
+              <div class="portfolio-overlay"></div>
+              <div class="portfolio-content">
+                <h4>Cyber Layer</h4>
+                <p>Cyber resilience, strategic oversight and digital control systems.</p>
+              </div>
+            </article>
+
+            <article class="portfolio-card">
+              <div class="portfolio-image" style="background-image: url('eyevision-3.png');"></div>
+              <div class="portfolio-overlay"></div>
+              <div class="portfolio-content">
+                <h4>Mobility and Support</h4>
+                <p>Transport, logistics and future operational support capabilities.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1230,7 +1352,7 @@
             <p>
               Eyedit Group can be presented as a founder-led strategic platform with premium identity,
               modular structure and future assetization potential. The website itself acts as part pitch,
-              part identity system, part institutional interface.
+              part identity system and part institutional interface.
             </p>
 
             <div class="investor-pillars">

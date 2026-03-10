@@ -38,9 +38,10 @@
       margin: 0;
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(90, 130, 255, 0.1), transparent 30%),
-        radial-gradient(circle at top right, rgba(255, 255, 255, 0.04), transparent 25%),
-        linear-gradient(180deg, #04060a 0%, #07101a 38%, #05070c 100%);
+        radial-gradient(circle at 18% 18%, rgba(120, 140, 180, 0.16), transparent 26%),
+        radial-gradient(circle at 82% 22%, rgba(255, 255, 255, 0.05), transparent 18%),
+        radial-gradient(circle at 50% 80%, rgba(90, 110, 145, 0.10), transparent 28%),
+        linear-gradient(180deg, #090c11 0%, #121821 45%, #0b1017 100%);
       color: var(--text);
       overflow-x: hidden;
     }
@@ -277,12 +278,12 @@
 
     .orb {
       position: absolute;
-      width: 420px;
-      height: 420px;
+      width: 460px;
+      height: 460px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(150,190,255,0.18), transparent 65%);
-      filter: blur(12px);
-      opacity: 0.8;
+      background: radial-gradient(circle, rgba(150,190,255,0.14), transparent 68%);
+      filter: blur(18px);
+      opacity: 0.85;
       pointer-events: none;
     }
 
@@ -290,129 +291,54 @@
       position: relative;
       width: 100%;
       max-width: 620px;
-      aspect-ratio: 1 / 1;
-      border-radius: 38px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.09);
+      min-height: 620px;
+      border-radius: 40px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.10);
       box-shadow: var(--shadow);
       overflow: hidden;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
+      display: grid;
+      place-items: center;
     }
 
     .triangle-stage::before {
       content: "";
       position: absolute;
       inset: 22px;
-      border-radius: 28px;
+      border-radius: 30px;
       border: 1px solid rgba(255,255,255,0.08);
       pointer-events: none;
     }
 
     .triangle-core {
-      position: absolute;
-      inset: 0;
+      position: relative;
       display: grid;
       place-items: center;
-    }
-
-    .triangle-svg {
-      width: min(70%, 420px);
-      opacity: 0.9;
-      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.35));
+      width: 100%;
+      height: 100%;
+      padding: 60px;
     }
 
     .center-badge {
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  border-radius: 24px;
-  background: transparent;
-  border: none;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  box-shadow: none;
-  z-index: 6;
-}
-
-.center-badge img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-    
-     border-radius: 50%;
-      background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05));
-      border: 1px solid rgba(255,255,255,0.16);
+      position: relative;
+      width: 320px;
+      height: 320px;
+      border-radius: 36px;
+      background: transparent;
+      border: none;
       display: grid;
       place-items: center;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.34);
-      z-index: 4;
-      transition: var(--transition);
-      cursor: pointer;
-      overflow: hidden;
+      overflow: visible;
+      box-shadow: none;
+      z-index: 6;
     }
 
-    .vertex-logo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 20px 45px rgba(100,150,255,0.18);
-    }
-.vertex-logo img {
-  width: 88%;
-  height: 88%;
-  object-fit: contain;
-}
-    .vertex-top {
-  top: 58px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-    .vertex-left {
-      bottom: 95px;
-      left: 75px;
-    }
-
-    .vertex-right {
-      bottom: 95px;
-      right: 75px;
-    }
-
-    .floating-card {
-      position: absolute;
-      width: 180px;
-      padding: 16px;
-      border-radius: 20px;
-      background: rgba(8, 12, 20, 0.8);
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: var(--shadow);
-      z-index: 2;
-    }
-
-    .floating-card strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-    }
-
-    .floating-card span {
-      color: var(--muted);
-      font-size: 0.85rem;
-      line-height: 1.55;
-    }
-
-    .card-1 {
-      top: 80px;
-      right: 25px;
-    }
-
-    .card-2 {
-      bottom: 40px;
-      left: 18px;
-    }
-
-    .card-3 {
-      bottom: 40px;
-      right: 18px;
+    .center-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 38px rgba(0,0,0,0.35));
     }
 
     .values-grid {
@@ -886,51 +812,12 @@
       }
 
       .triangle-stage {
-        min-height: 560px;
+        min-height: 500px;
       }
 
-      .vertex-logo {
-        width: 94px;
-        height: 94px;
-      }
-
-      .vertex-top {
-        top: 44px;
-      }
-
-      .vertex-left {
-        left: 30px;
-        bottom: 80px;
-      }
-
-      .vertex-right {
-        right: 30px;
-        bottom: 80px;
-      }
-
-    .center-badge {
-  width: 130px;
-  height: 130px;
-  border-radius: 28px;
-}
-
-      .floating-card {
-        position: absolute;
-        width: 150px;
-        padding: 12px;
-      }
-
-      .card-1 {
-        top: 110px;
-        right: 10px;
-      }
-
-      .card-2 {
-        left: 10px;
-      }
-
-      .card-3 {
-        right: 10px;
+      .center-badge {
+        width: 220px;
+        height: 220px;
       }
 
       .footer-grid {
@@ -948,15 +835,16 @@
       }
 
       .triangle-stage {
-        min-height: 510px;
-      }
-
-      .floating-card {
-        display: none;
+        min-height: 420px;
       }
 
       .hero h1 {
         font-size: 2.8rem;
+      }
+
+      .center-badge {
+        width: 180px;
+        height: 180px;
       }
 
       .project-card,
@@ -1005,7 +893,7 @@
           <p>
             Eyedit Group is a premium international holding designed to connect media innovation,
             creative infrastructure, and advanced security ecosystems under one elegant strategic roof.
-            A triangular architecture, three focused projects, one unified global identity.
+            A strong visual identity, three focused projects, one unified global direction.
           </p>
 
           <div class="hero-actions">
@@ -1034,39 +922,8 @@
 
           <div class="triangle-stage">
             <div class="triangle-core">
-              <svg class="triangle-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Triangle structure">
-                <path d="M200 55 L330 290 L70 290 Z" stroke="rgba(255,255,255,0.85)" stroke-width="3.5"/>
-              </svg>
-
               <div class="center-badge">
-                <img src="logo-triangle-obturador.png" alt="Triangle Obturador Logo">
-              </div>
-
-              <a href="#eyedit" class="vertex-logo vertex-top" aria-label="Go to EyeDit Image Quick Service">
-                <img src="logo-eye-dit.png" alt="EyeDit Logo">
-              </a>
-
-              <a href="#ccs" class="vertex-logo vertex-left" aria-label="Go to CCS Can SS AM">
-                <img src="logo-ccs-canssam.png" alt="CCS Can SS AM Logo">
-              </a>
-
-              <a href="#eyevision" class="vertex-logo vertex-right" aria-label="Go to EyeVision">
-                <img src="logo-eye-vision.png" alt="EyeVision Logo">
-              </a>
-
-              <div class="floating-card card-1">
-                <strong>Media & Image</strong>
-                <span>Fast visual distribution, communication systems and editorial identity.</span>
-              </div>
-
-              <div class="floating-card card-2">
-                <strong>Creative & Culture</strong>
-                <span>Design, research, artistic direction and structural innovation.</span>
-              </div>
-
-              <div class="floating-card card-3">
-                <strong>Security & Mobility</strong>
-                <span>Cyber, transport, private security and strategic operational support.</span>
+                <img src="logo-triangle-obturador.png" alt="Eyedit Group Main Logo">
               </div>
             </div>
           </div>
@@ -1081,8 +938,8 @@
           <h2 class="section-title">A corporate constellation with the clarity of Apple and the trajectory of SpaceX.</h2>
           <p class="section-subtitle">
             The Eyedit Group website is conceived as a premium institutional platform: cinematic, minimal,
-            technological, investor-ready and visually memorable. The triangle is not decoration. It is the
-            architecture of the group: three vertices, three engines, one strategic center.
+            technological, investor-ready and visually memorable. The central symbol now leads the visual identity
+            with a cleaner and more stable presentation.
           </p>
         </div>
 
@@ -1114,7 +971,7 @@
       <div class="container">
         <div class="reveal">
           <span class="eyebrow">Three Strategic Projects</span>
-          <h2 class="section-title">Each vertex is a project. Each project is a world.</h2>
+          <h2 class="section-title">Each project is a world.</h2>
           <p class="section-subtitle">
             Inside the holding, every division has its own identity, service logic and visual language,
             while remaining aligned with the wider architecture of Eyedit Group.

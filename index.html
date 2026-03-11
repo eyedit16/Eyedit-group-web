@@ -371,26 +371,20 @@
       place-items: center;
       padding: 0;
       overflow: hidden;
-    }
-
+    
+}
     .triangle-rotator {
   position: absolute;
   inset: 0;
   transform-origin: center center;
-  animation: none;
 }
-    
-
     .center-badge {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      z-index: 2;
-      overflow: hidden;
-      animation: heroFloat 6s ease-in-out infinite;
-      pointer-events: none;
-    }
+  position: relative;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  overflow: hidden;
+}
 
     .center-badge img {
       width: 112%;
@@ -486,7 +480,7 @@
       50% {
         transform: translateY(-10px);
       }
-    }
+    
 
   
 

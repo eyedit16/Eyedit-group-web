@@ -374,11 +374,12 @@
     }
 
     .triangle-rotator {
-      position: absolute;
-      inset: 0;
-      animation: rotateTriangle 40s linear infinite;
-      transform-origin: center center;
-    }
+  position: absolute;
+  inset: 0;
+  transform-origin: center center;
+  animation: none;
+}
+    
 
     .center-badge {
       position: absolute;
@@ -487,14 +488,7 @@
       }
     }
 
-    @keyframes rotateTriangle {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(-360deg);
-      }
-    }
+  
 
     .vision-grid {
       display: grid;
@@ -1010,10 +1004,12 @@
       transition: 0.8s ease;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  #eyedit,
+#ccs,
+#eyevision {
+  scroll-margin-top: 130px;
+}
+    
 
     @media (max-width: 1180px) {
       .hero-grid,

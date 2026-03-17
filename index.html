@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Eyedit Group | International Holding</title>
+
   <meta
     name="description"
     content="Eyedit Group is an international strategic holding integrating Eyedit Audiovisual, CCSCANSSAM and EyeVision across media, wellness and security sectors."
@@ -21,9 +22,12 @@
     property="og:description"
     content="Eyedit Group is an international strategic holding integrating Eyedit Audiovisual, CCSCANSSAM and EyeVision across media, wellness and security sectors."
   />
-  <meta property="og:url" content="https://eyeditgroup.com" />
+  <meta property="og:url" content="https://eyedit16.github.io/Eyedit-group-web/" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://eyeditgroup.com/logo-triangle-obturador.png" />
+  <meta
+    property="og:image"
+    content="https://eyedit16.github.io/Eyedit-group-web/logo-triangle-obturador.png"
+  />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Eyedit Group | International Holding" />
@@ -31,18 +35,30 @@
     name="twitter:description"
     content="Eyedit Group is an international strategic holding with three complementary divisions across media, wellness and security."
   />
-  <meta name="twitter:image" content="https://eyeditgroup.com/logo-triangle-obturador.png" />
+  <meta
+    name="twitter:image"
+    content="https://eyedit16.github.io/Eyedit-group-web/logo-triangle-obturador.png"
+  />
+
+  <link rel="icon" type="image/png" href="logo-triangle-obturador.png" />
 
   <style>
     :root {
-      --bg-main: #04070d;
-      --bg-secondary: #0a1220;
+      --bg-main: #03060b;
+      --bg-second: #07111f;
+      --panel: rgba(255, 255, 255, 0.04);
+      --panel-2: rgba(255, 255, 255, 0.03);
+      --line: rgba(255, 255, 255, 0.08);
       --text: #f4f7fb;
       --muted: #b8c2d0;
-      --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.48);
       --shadow-md: 0 14px 40px rgba(0, 0, 0, 0.28);
       --max-width: 1440px;
       --container: min(var(--max-width), calc(100% - 32px));
+      --radius-xl: 34px;
+      --radius-lg: 28px;
+      --radius-md: 22px;
+      --radius-sm: 16px;
     }
 
     * {
@@ -120,18 +136,14 @@
       min-width: 0;
     }
 
-    .brand-logo-link {
-      flex: 0 0 auto;
-    }
-
     .brand-logo {
       width: 112px;
       max-width: 26vw;
       height: auto;
       object-fit: contain;
+      border-radius: 18px;
       filter: drop-shadow(0 0 12px rgba(0,255,170,0.24));
       transition: transform 0.32s ease, filter 0.32s ease;
-      border-radius: 18px;
     }
 
     .brand-logo:hover {
@@ -168,30 +180,29 @@
       padding: 13px 16px;
       border-radius: 999px;
       font-size: 0.98rem;
-      transition: background 0.26s ease, color 0.26s ease, transform 0.26s ease;
+      transition: background 0.24s ease, color 0.24s ease, transform 0.24s ease;
     }
 
     .nav a:hover {
       background: rgba(255,255,255,0.06);
-      color: white;
+      color: #fff;
       transform: translateY(-1px);
     }
 
     .nav .nav-cta {
       background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.10);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
     }
 
     .hero {
-      position: relative;
       padding: 24px 18px 40px;
     }
 
     .hero-panel {
       position: relative;
       min-height: 920px;
-      border-radius: 34px;
+      border-radius: var(--radius-xl);
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08);
       background:
@@ -263,8 +274,8 @@
       min-height: 50px;
       padding: 0 20px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: transform 0.24s ease, background 0.24s ease, color 0.24s ease;
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: transform 0.24s ease, background 0.24s ease;
     }
 
     .hero-btn:hover {
@@ -273,7 +284,7 @@
 
     .hero-btn.primary {
       background: linear-gradient(135deg, rgba(0,171,255,0.78), rgba(0,255,170,0.55));
-      color: white;
+      color: #fff;
       border: 0;
     }
 
@@ -374,7 +385,7 @@
     .section {
       width: min(var(--max-width), calc(100% - 8px));
       margin: 0 auto 18px;
-      border-radius: 28px;
+      border-radius: var(--radius-lg);
       border: 1px solid rgba(255,255,255,0.08);
       background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
       box-shadow: var(--shadow-md);
@@ -569,7 +580,8 @@
     .operating-card,
     .faq-item,
     .contact-item,
-    .timeline-card {
+    .timeline-card,
+    .portfolio-card {
       border-radius: 20px;
       padding: 18px;
       border: 1px solid rgba(255,255,255,0.08);
@@ -578,37 +590,19 @@
 
     .operating-card h4,
     .faq-item h4,
-    .strategy-item h4 {
+    .strategy-item h4,
+    .portfolio-card h3 {
       margin: 0 0 10px;
       font-size: 1.08rem;
     }
 
     .operating-card p,
     .faq-item p,
-    .timeline-card p {
+    .timeline-card p,
+    .portfolio-card p {
       margin: 0;
       color: var(--muted);
       line-height: 1.75;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .portfolio-item {
-      min-height: 180px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
 
     .strategy-grid {
@@ -642,7 +636,7 @@
       place-items: center;
       background: linear-gradient(135deg, rgba(0,171,255,0.66), rgba(0,255,170,0.44));
       font-weight: 700;
-      color: white;
+      color: #fff;
     }
 
     .strategy-item p {
@@ -660,6 +654,32 @@
 
     .investor-grid {
       grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .portfolio-columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .portfolio-gallery {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .portfolio-item {
+      min-height: 190px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .contact-grid {
@@ -691,9 +711,9 @@
       width: 100%;
       padding: 15px 16px;
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.10);
       background: rgba(255,255,255,0.05);
-      color: white;
+      color: #fff;
       outline: none;
     }
 
@@ -718,7 +738,7 @@
       border: 0;
       padding: 14px 18px;
       border-radius: 16px;
-      color: white;
+      color: #fff;
       font-weight: 700;
       background: linear-gradient(135deg, rgba(0,171,255,0.78), rgba(0,255,170,0.55));
       cursor: pointer;
@@ -736,14 +756,14 @@
       min-height: 48px;
       padding: 0 18px;
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.10);
       background: rgba(255,255,255,0.04);
       color: #e6edf6;
     }
 
     #formMessage {
       min-height: 24px;
-      color: white;
+      color: #fff;
       font-size: 0.98rem;
     }
 
@@ -814,12 +834,9 @@
 
     @media (max-width: 1280px) {
       .project-grid,
-      .operating-grid {
+      .operating-grid,
+      .portfolio-columns {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .portfolio-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
@@ -837,7 +854,9 @@
       .strategy-grid,
       .investor-grid,
       .contact-grid,
-      .footer-grid {
+      .footer-grid,
+      .project-grid,
+      .portfolio-columns {
         grid-template-columns: 1fr;
       }
 
@@ -845,8 +864,8 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .project-grid {
-        grid-template-columns: 1fr;
+      .operating-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -948,7 +967,6 @@
 
       .metrics-grid,
       .operating-grid,
-      .portfolio-grid,
       .field-grid {
         grid-template-columns: 1fr;
       }
@@ -979,7 +997,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand">
-        <a href="#top" class="brand-logo-link" aria-label="Eyedit Group home">
+        <a href="#top" aria-label="Eyedit Group home">
           <img src="logo-triangle-obturador.png" alt="Eyedit Group logo" class="brand-logo" />
         </a>
         <div class="brand-copy">
@@ -1254,21 +1272,40 @@
 
       <section class="section" id="portfolio">
         <div class="section-header">
-          <div class="section-tag">Visual Portfolio</div>
-          <h2 class="section-title">A premium visual universe across the three divisions</h2>
+          <div class="section-tag">Ordered Portfolio</div>
+          <h2 class="section-title">Visual portfolios ordered by project</h2>
           <p class="section-description">
-            The portfolio below acts as a visual sampler of the broader group identity, combining image,
-            care and control inside one coherent corporate atmosphere.
+            Aquí tens els portfolios ordenats per marca, no barrejats. Primer Eyedit, després CCSCANSSAM i al final EyeVision.
           </p>
         </div>
 
-        <div class="portfolio-grid">
-          <div class="portfolio-item"><img src="eyedit-3.png" alt="Eyedit portfolio image" /></div>
-          <div class="portfolio-item"><img src="ccs-3.png" alt="CCSCANSSAM portfolio image" /></div>
-          <div class="portfolio-item"><img src="eyevision-3.png" alt="EyeVision portfolio image" /></div>
-          <div class="portfolio-item"><img src="eyedit-1.png" alt="Eyedit portfolio image" /></div>
-          <div class="portfolio-item"><img src="ccs-1.png" alt="CCSCANSSAM portfolio image" /></div>
-          <div class="portfolio-item"><img src="eyevision-1.png" alt="EyeVision portfolio image" /></div>
+        <div class="portfolio-columns">
+          <div class="portfolio-card">
+            <h3>Eyedit Audiovisual</h3>
+            <p>Visual communication, image development and premium creative presentation.</p>
+            <div class="portfolio-gallery">
+              <div class="portfolio-item"><img src="eyedit-1.png" alt="Eyedit portfolio 1" /></div>
+              <div class="portfolio-item"><img src="eyedit-3.png" alt="Eyedit portfolio 2" /></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>CCSCANSSAM</h3>
+            <p>Wellness, natural therapies and healing-oriented visual identity.</p>
+            <div class="portfolio-gallery">
+              <div class="portfolio-item"><img src="ccs-1.png" alt="CCSCANSSAM portfolio 1" /></div>
+              <div class="portfolio-item"><img src="ccs-3.png" alt="CCSCANSSAM portfolio 2" /></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>EyeVision Security</h3>
+            <p>Security image systems, monitoring concepts and strategic visual control.</p>
+            <div class="portfolio-gallery">
+              <div class="portfolio-item"><img src="eyevision-1.png" alt="EyeVision portfolio 1" /></div>
+              <div class="portfolio-item"><img src="eyevision-3.png" alt="EyeVision portfolio 2" /></div>
+            </div>
+          </div>
         </div>
       </section>
 

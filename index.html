@@ -37,22 +37,10 @@
     :root {
       --bg-main: #04070d;
       --bg-secondary: #0a1220;
-      --bg-soft: rgba(255, 255, 255, 0.04);
-      --bg-soft-2: rgba(255, 255, 255, 0.06);
-      --line: rgba(255, 255, 255, 0.1);
-      --line-soft: rgba(255, 255, 255, 0.06);
       --text: #f4f7fb;
       --muted: #b8c2d0;
-      --accent: #6fe0ff;
-      --accent-2: #5df0b8;
-      --accent-3: #8ab6ff;
-      --success: #88ffcf;
       --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.5);
       --shadow-md: 0 14px 40px rgba(0, 0, 0, 0.28);
-      --radius-xl: 34px;
-      --radius-lg: 26px;
-      --radius-md: 20px;
-      --radius-sm: 14px;
       --max-width: 1440px;
       --container: min(var(--max-width), calc(100% - 32px));
     }
@@ -151,10 +139,6 @@
       filter: drop-shadow(0 0 20px rgba(111,224,255,0.30));
     }
 
-    .brand-copy {
-      min-width: 0;
-    }
-
     .brand-copy h1 {
       margin: 0;
       font-size: 2rem;
@@ -206,7 +190,7 @@
 
     .hero-panel {
       position: relative;
-      min-height: 960px;
+      min-height: 920px;
       border-radius: 34px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08);
@@ -224,17 +208,6 @@
         linear-gradient(180deg, rgba(255,255,255,0.03) 1px, transparent 1px);
       background-size: 140px 140px;
       opacity: 0.18;
-      pointer-events: none;
-    }
-
-    .hero-panel::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 50% 18%, rgba(0,180,255,0.12), transparent 16%),
-        radial-gradient(circle at 22% 78%, rgba(0,255,170,0.08), transparent 14%),
-        radial-gradient(circle at 78% 78%, rgba(60,130,255,0.08), transparent 14%);
       pointer-events: none;
     }
 
@@ -317,135 +290,6 @@
       min-height: 720px;
     }
 
-    .floating-card {
-      position: absolute;
-      border-radius: 0;
-      overflow: hidden;
-      box-shadow: 0 18px 44px rgba(0,0,0,0.38);
-      border: 1px solid rgba(255,255,255,0.12);
-      background: #0f1116;
-      z-index: 6;
-    }
-
-    .floating-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .card-top {
-      left: 50%;
-      top: 8px;
-      width: 150px;
-      height: 180px;
-      transform: translateX(-50%);
-    }
-
-    .card-left {
-      left: 16px;
-      bottom: 70px;
-      width: 150px;
-      height: 180px;
-    }
-
-    .card-right {
-      right: 16px;
-      bottom: 70px;
-      width: 150px;
-      height: 180px;
-    }
-
-    .triangle-stage {
-      position: relative;
-      width: min(920px, 100%);
-      margin: 0 auto;
-      min-height: 720px;
-      z-index: 5;
-    }
-
-    .triangle-base {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-    }
-
-    .triangle-base img {
-      width: 100%;
-      max-width: 920px;
-      object-fit: contain;
-      filter: drop-shadow(0 0 40px rgba(0, 255, 170, 0.25));
-      opacity: 0.98;
-    }
-
-    .triangle-glow-ring {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      z-index: 4;
-    }
-
-    .triangle-glow-ring::before {
-      content: "";
-      width: 66%;
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(111,224,255,0.12), transparent 70%);
-      filter: blur(30px);
-      opacity: 0.9;
-    }
-
-    .vertex-logo {
-      position: absolute;
-      z-index: 9;
-      width: 160px;
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: translate(-50%, -50%);
-      overflow: visible;
-    }
-
-    .vertex-logo a {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .vertex-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transition: transform 0.28s ease, filter 0.28s ease;
-      filter: drop-shadow(0 0 20px rgba(255,255,255,0.16));
-    }
-
-    .vertex-logo:hover img {
-      transform: scale(1.06);
-      filter: drop-shadow(0 0 28px rgba(123, 222, 255, 0.28));
-    }
-
-    .logo-top {
-      left: 50%;
-      top: 20.8%;
-    }
-
-    .logo-left {
-      left: 21.8%;
-      top: 78.2%;
-    }
-
-    .logo-right {
-      left: 78.2%;
-      top: 78.2%;
-    }
-
     .quick-grid-badge {
       position: absolute;
       left: 24px;
@@ -475,6 +319,30 @@
       border: 2px solid rgba(255,255,255,0.45);
       border-radius: 4px;
       display: block;
+    }
+
+    .triangle-stage.single-composition {
+      position: relative;
+      width: min(920px, 100%);
+      margin: 0 auto;
+      min-height: 720px;
+      z-index: 5;
+    }
+
+    .triangle-stage.single-composition .triangle-base {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .triangle-stage.single-composition .triangle-base img {
+      width: 100%;
+      max-width: 920px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 40px rgba(0, 255, 170, 0.25));
+      opacity: 0.98;
     }
 
     .hero-bottom-copy {
@@ -547,11 +415,17 @@
       max-width: 980px;
     }
 
-    .intro-grid {
+    .intro-grid,
+    .strategy-grid,
+    .investor-grid,
+    .contact-grid,
+    .footer-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
       gap: 18px;
-      align-items: stretch;
+    }
+
+    .intro-grid {
+      grid-template-columns: 1.1fr 0.9fr;
     }
 
     .glass-card {
@@ -692,20 +566,26 @@
       gap: 16px;
     }
 
-    .operating-card {
-      border-radius: 22px;
-      padding: 22px;
+    .operating-card,
+    .faq-item,
+    .contact-item,
+    .timeline-card {
+      border-radius: 20px;
+      padding: 18px;
       border: 1px solid rgba(255,255,255,0.08);
       background: rgba(255,255,255,0.03);
     }
 
-    .operating-card h4 {
+    .operating-card h4,
+    .faq-item h4,
+    .strategy-item h4 {
       margin: 0 0 10px;
-      font-size: 1.15rem;
-      letter-spacing: -0.02em;
+      font-size: 1.08rem;
     }
 
-    .operating-card p {
+    .operating-card p,
+    .faq-item p,
+    .timeline-card p {
       margin: 0;
       color: var(--muted);
       line-height: 1.75;
@@ -732,12 +612,13 @@
     }
 
     .strategy-grid {
-      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
     }
 
-    .strategy-list {
+    .strategy-list,
+    .faq-grid,
+    .contact-list,
+    .timeline {
       display: grid;
       gap: 12px;
     }
@@ -764,94 +645,26 @@
       color: white;
     }
 
-    .strategy-item h4 {
-      margin: 0 0 8px;
-      font-size: 1.08rem;
-    }
-
     .strategy-item p {
       margin: 0;
       color: var(--muted);
       line-height: 1.7;
     }
 
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
-
-    .timeline-card {
-      border-radius: 20px;
-      padding: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .timeline-card strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 1.02rem;
-    }
-
-    .timeline-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .investor-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .faq-grid {
-      display: grid;
-      gap: 14px;
-    }
-
-    .faq-item {
-      border-radius: 18px;
-      padding: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .faq-item h4 {
-      margin: 0 0 10px;
-      font-size: 1.04rem;
-    }
-
-    .faq-item p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .contact-item {
-      padding: 16px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.03);
-    }
-
+    .timeline-card strong,
     .contact-item strong {
       display: block;
       margin-bottom: 8px;
       font-size: 1rem;
+    }
+
+    .investor-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .contact-grid {
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: stretch;
     }
 
     .contact-item span,
@@ -948,9 +761,7 @@
     }
 
     .footer-grid {
-      display: grid;
       grid-template-columns: 1.1fr 0.9fr 0.9fr;
-      gap: 18px;
       align-items: start;
     }
 
@@ -1010,14 +821,6 @@
       .portfolio-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
-
-      .hero-panel {
-        min-height: 900px;
-      }
-
-      .triangle-stage {
-        min-height: 660px;
-      }
     }
 
     @media (max-width: 1024px) {
@@ -1044,22 +847,6 @@
 
       .project-grid {
         grid-template-columns: 1fr;
-      }
-
-      .triangle-stage {
-        min-height: 600px;
-      }
-
-      .vertex-logo {
-        width: 138px;
-        height: 138px;
-      }
-
-      .card-top,
-      .card-left,
-      .card-right {
-        width: 120px;
-        height: 150px;
       }
     }
 
@@ -1103,7 +890,7 @@
       }
 
       .hero-panel {
-        min-height: 700px;
+        min-height: 640px;
         border-radius: 22px;
       }
 
@@ -1117,36 +904,12 @@
       }
 
       .hero-visual {
-        min-height: 430px;
+        min-height: 340px;
         margin-top: 28px;
       }
 
-      .triangle-stage {
-        min-height: 420px;
-      }
-
-      .triangle-base img {
-        max-width: 100%;
-      }
-
-      .vertex-logo {
-        width: 94px;
-        height: 94px;
-      }
-
-      .logo-top {
-        left: 50%;
-        top: 22.2%;
-      }
-
-      .logo-left {
-        left: 22.8%;
-        top: 77.5%;
-      }
-
-      .logo-right {
-        left: 77.2%;
-        top: 77.5%;
+      .triangle-stage.single-composition {
+        min-height: 340px;
       }
 
       .quick-grid-badge {
@@ -1164,30 +927,6 @@
         width: 9px;
         height: 9px;
         border-radius: 3px;
-      }
-
-      .floating-card {
-        z-index: 4;
-      }
-
-      .card-top {
-        width: 72px;
-        height: 92px;
-        top: 6px;
-      }
-
-      .card-left {
-        left: 10px;
-        bottom: 12px;
-        width: 72px;
-        height: 84px;
-      }
-
-      .card-right {
-        right: 10px;
-        bottom: 12px;
-        width: 72px;
-        height: 84px;
       }
 
       .hero-bottom-copy {
@@ -1285,41 +1024,9 @@
             </div>
           </div>
 
-          <div class="floating-card card-top">
-            <img src="eyedit-1.png" alt="Eyedit media visual" />
-          </div>
-
-          <div class="floating-card card-left">
-            <img src="ccs-1.png" alt="CCSCANSSAM visual" />
-          </div>
-
-          <div class="floating-card card-right">
-            <img src="eyevision-1.png" alt="EyeVision visual" />
-          </div>
-
-          <div class="triangle-stage">
-            <div class="triangle-glow-ring"></div>
-
+          <div class="triangle-stage single-composition">
             <div class="triangle-base">
               <img src="logo-triangle-obturador.png" alt="Eyedit Group strategic triangle" />
-            </div>
-
-            <div class="vertex-logo logo-top">
-              <a href="#eyedit" aria-label="Go to Eyedit Audiovisual">
-                <img src="Logo-eye-dit.png" alt="Eyedit Audiovisual logo" />
-              </a>
-            </div>
-
-            <div class="vertex-logo logo-left">
-              <a href="#ccs" aria-label="Go to CCSCANSSAM">
-                <img src="logo-ccs-canssam.png" alt="CCSCANSSAM logo" />
-              </a>
-            </div>
-
-            <div class="vertex-logo logo-right">
-              <a href="#eyevision" aria-label="Go to EyeVision Security">
-                <img src="logo-eye-vision.png" alt="EyeVision Security logo" />
-              </a>
             </div>
           </div>
         </div>
@@ -1469,34 +1176,19 @@
         <div class="operating-grid">
           <div class="operating-card">
             <h4>Brand Layer</h4>
-            <p>
-              The corporate layer defines identity, naming architecture, visual coherence and
-              premium symbolic positioning across the whole holding.
-            </p>
+            <p>The corporate layer defines identity, naming architecture, visual coherence and premium symbolic positioning across the whole holding.</p>
           </div>
-
           <div class="operating-card">
             <h4>Service Layer</h4>
-            <p>
-              Each division develops its own services, outputs and sector-facing narrative while
-              remaining visually anchored to the group.
-            </p>
+            <p>Each division develops its own services, outputs and sector-facing narrative while remaining visually anchored to the group.</p>
           </div>
-
           <div class="operating-card">
             <h4>Presentation Layer</h4>
-            <p>
-              The holding can be translated into websites, decks, dossiers, landing pages,
-              investor briefs and institutional communication formats.
-            </p>
+            <p>The holding can be translated into websites, decks, dossiers, landing pages, investor briefs and institutional communication formats.</p>
           </div>
-
           <div class="operating-card">
             <h4>Expansion Layer</h4>
-            <p>
-              The model supports growth through partnerships, licensing, territorial presence,
-              consulting formats and future digital or media products.
-            </p>
+            <p>The model supports growth through partnerships, licensing, territorial presence, consulting formats and future digital or media products.</p>
           </div>
         </div>
       </section>
@@ -1517,43 +1209,28 @@
               <div class="strategy-number">1</div>
               <div>
                 <h4>Unified symbolic core</h4>
-                <p>
-                  The triangle obturator is not decorative. It acts as the holding signature and links
-                  all divisions into one immediately recognizable form.
-                </p>
+                <p>The triangle obturator is not decorative. It acts as the holding signature and links all divisions into one immediately recognizable form.</p>
               </div>
             </div>
-
             <div class="strategy-item">
               <div class="strategy-number">2</div>
               <div>
                 <h4>Independent divisional logic</h4>
-                <p>
-                  Each brand retains its own sector language and audience positioning, which keeps the
-                  portfolio flexible and commercially usable.
-                </p>
+                <p>Each brand retains its own sector language and audience positioning, which keeps the portfolio flexible and commercially usable.</p>
               </div>
             </div>
-
             <div class="strategy-item">
               <div class="strategy-number">3</div>
               <div>
                 <h4>Premium presentation readiness</h4>
-                <p>
-                  The visual system is prepared for websites, PDF dossiers, investor outreach,
-                  brand materials and institutional meetings.
-                </p>
+                <p>The visual system is prepared for websites, PDF dossiers, investor outreach, brand materials and institutional meetings.</p>
               </div>
             </div>
-
             <div class="strategy-item">
               <div class="strategy-number">4</div>
               <div>
                 <h4>Scalable long-term framework</h4>
-                <p>
-                  The holding is designed to support future development without forcing a complete redesign
-                  every time a new activity or collaboration appears.
-                </p>
+                <p>The holding is designed to support future development without forcing a complete redesign every time a new activity or collaboration appears.</p>
               </div>
             </div>
           </div>
@@ -1561,23 +1238,15 @@
           <div class="timeline">
             <div class="timeline-card">
               <strong>Phase 01 · Identity consolidation</strong>
-              <p>
-                Finalization of the visual hierarchy, main holding language, project definitions and public presentation structure.
-              </p>
+              <p>Finalization of the visual hierarchy, main holding language, project definitions and public presentation structure.</p>
             </div>
-
             <div class="timeline-card">
               <strong>Phase 02 · Digital and institutional assets</strong>
-              <p>
-                Website publication, technical dossiers, strategic presentations and formalized outreach materials.
-              </p>
+              <p>Website publication, technical dossiers, strategic presentations and formalized outreach materials.</p>
             </div>
-
             <div class="timeline-card">
               <strong>Phase 03 · Expansion pathways</strong>
-              <p>
-                Partnerships, professional networking, investment conversations, brand extension and long-term operational structure.
-              </p>
+              <p>Partnerships, professional networking, investment conversations, brand extension and long-term operational structure.</p>
             </div>
           </div>
         </div>
@@ -1643,22 +1312,15 @@
             <div class="faq-grid">
               <div class="faq-item">
                 <h4>Why these three sectors together?</h4>
-                <p>
-                  Because the holding is based on a symbolic and strategic logic: image, care and protection
-                  are distinct but complementary value fields.
-                </p>
+                <p>Because the holding is based on a symbolic and strategic logic: image, care and protection are distinct but complementary value fields.</p>
               </div>
               <div class="faq-item">
                 <h4>Can each division be presented independently?</h4>
-                <p>
-                  Yes. Each division can be activated on its own while still benefiting from the prestige of the group framework.
-                </p>
+                <p>Yes. Each division can be activated on its own while still benefiting from the prestige of the group framework.</p>
               </div>
               <div class="faq-item">
                 <h4>Is the structure scalable?</h4>
-                <p>
-                  Yes. The model is intentionally modular and can support future branded lines or partnership vehicles.
-                </p>
+                <p>Yes. The model is intentionally modular and can support future branded lines or partnership vehicles.</p>
               </div>
             </div>
           </div>
@@ -1683,17 +1345,14 @@
                 <strong>Holding</strong>
                 <span>Eyedit Group · International Holding</span>
               </div>
-
               <div class="contact-item">
                 <strong>Email</strong>
                 <a href="mailto:ms.eyedit@outlook.com">ms.eyedit@outlook.com</a>
               </div>
-
               <div class="contact-item">
                 <strong>Focus</strong>
                 <span>Audiovisual · Wellness · Security · Strategic presentation</span>
               </div>
-
               <div class="contact-item">
                 <strong>Format</strong>
                 <span>Institutional dossiers, websites, portfolios, brand identity and strategic outreach</span>
@@ -1742,9 +1401,7 @@
             <img src="logo-triangle-obturador.png" alt="Eyedit Group footer logo" />
             <div>
               <h4>Eyedit Group</h4>
-              <p>
-                International strategic holding integrating image, care and protection within one scalable visual architecture.
-              </p>
+              <p>International strategic holding integrating image, care and protection within one scalable visual architecture.</p>
             </div>
           </div>
 

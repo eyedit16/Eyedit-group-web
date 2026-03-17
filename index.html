@@ -4,22 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eyedit Group | International Holding</title>
-  
-  
-  <meta
-  name="description"
-  content="Eyedit Group is an international strategic holding integrating Eyedit Image Quick Service, CCSCANSSAM and EyeVision across media, wellness and security sectors."
-/>
-  <meta property="og:title" content="Eyedit Group | International Holding" />
-<meta property="og:description" content="Eyedit Group is an international strategic holding integrating Eyedit Image Quick Service, CCSCANSSAM and EyeVision across media, wellness and security sectors." />
-<meta property="og:url" content="https://eyeditgroup.com" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://eyeditgroup.com/logo-eyeditgroup.png" />
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Eyedit Group | International Holding" />
-<meta name="twitter:description" content="International strategic holding integrating media, wellness and security sectors." />
-<meta name="twitter:image" content="https://eyeditgroup.com/logo-eyeditgroup.png" />
+  <meta
+    name="description"
+    content="Eyedit Group is an international strategic holding integrating Eyedit Image Quick Service, CCSCANSSAM and EyeVision across media, wellness and security sectors."
+  />
+  <meta name="author" content="Mikel Skoda" />
+  <meta
+    name="keywords"
+    content="Eyedit Group, Eyedit Image Quick Service, CCSCANSSAM, EyeVision, audiovisual production, natural medicine, satellite telecom"
+  />
+
+  <meta property="og:title" content="Eyedit Group | International Holding" />
+  <meta property="og:description" content="Eyedit Group is an international strategic holding integrating Eyedit Image Quick Service, CCSCANSSAM and EyeVision across media, wellness and security sectors." />
+  <meta property="og:url" content="https://eyeditgroup.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://eyeditgroup.com/logo-triangle-obturador.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Eyedit Group | International Holding" />
+  <meta name="twitter:description" content="International strategic holding integrating media, wellness and security sectors." />
+  <meta name="twitter:image" content="https://eyeditgroup.com/logo-triangle-obturador.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Eyedit Group",
+    "url": "https://eyeditgroup.com",
+    "founder": "Mikel Skoda",
+    "description": "International strategic holding integrating media, wellness and security sectors."
+  }
+  </script>
+
   <style>
     :root {
       --bg: #05070c;
@@ -1031,6 +1048,84 @@
         padding: 0;
       }
     }
+
+    /* TRIANGLE CLICKABLE LOGOS */
+    .triangle-core {
+      position: relative;
+    }
+
+    .triangle-logo {
+      position: absolute;
+      width: 95px;
+      z-index: 7;
+      transition: transform 0.3s ease;
+    }
+
+    .triangle-logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .triangle-logo:hover {
+      transform: scale(1.08);
+    }
+
+    .triangle-logo-top {
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .triangle-logo-left {
+      bottom: 42px;
+      left: 42px;
+    }
+
+    .triangle-logo-right {
+      bottom: 42px;
+      right: 42px;
+    }
+
+    @media (max-width: 820px) {
+      .triangle-logo {
+        width: 80px;
+      }
+
+      .triangle-logo-top {
+        top: 18px;
+      }
+
+      .triangle-logo-left {
+        bottom: 28px;
+        left: 28px;
+      }
+
+      .triangle-logo-right {
+        bottom: 28px;
+        right: 28px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .triangle-logo {
+        width: 64px;
+      }
+
+      .triangle-logo-top {
+        top: 14px;
+      }
+
+      .triangle-logo-left {
+        bottom: 20px;
+        left: 20px;
+      }
+
+      .triangle-logo-right {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1113,9 +1208,23 @@
           <div class="orb"></div>
           <div class="triangle-stage">
             <div class="triangle-core">
+
+              <a href="eyedit.html" class="triangle-logo triangle-logo-top">
+                <img src="eyedit-1.png" alt="Eyedit Image Quick Service">
+              </a>
+
+              <a href="ccs.html" class="triangle-logo triangle-logo-left">
+                <img src="ccs-1.png" alt="CCSCANSSAM">
+              </a>
+
+              <a href="eyevision.html" class="triangle-logo triangle-logo-right">
+                <img src="eyevision-1.png" alt="EyeVision">
+              </a>
+
               <div class="center-badge">
                 <img src="logo-triangle-obturador.png" alt="Eyedit Group Main Triangle Logo">
               </div>
+
             </div>
           </div>
         </div>

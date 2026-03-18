@@ -689,10 +689,20 @@
 
     .investor-grid {
       grid-template-columns: 1.15fr 0.85fr;
+      align-items: start;
+    }
+
+    .investor-grid > div {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-width: 0;
     }
 
     .leadership-card {
-      margin-top: 16px;
+      margin-top: 0;
+      position: relative;
+      z-index: 2;
     }
 
     .leadership-role {
@@ -725,11 +735,14 @@
     }
 
     .portfolio-item {
-      min-height: 220px;
+      height: 220px;
       border-radius: 18px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
+      background: #05070c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 8px;
     }
 
@@ -738,7 +751,7 @@
       height: 100%;
       object-fit: contain;
       object-position: center;
-      background: rgba(255,255,255,0.03);
+      background: #05070c;
       transform: none;
     }
 
@@ -1036,7 +1049,7 @@
       }
 
       .portfolio-item {
-        min-height: 200px;
+        height: 200px;
       }
 
       .footer {

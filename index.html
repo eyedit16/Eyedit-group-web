@@ -520,18 +520,18 @@
       padding: 22px;
     }
 
-    .project-logo {
-      width: 120px;
-      max-width: 60%;
-      margin-bottom: 16px;
-      filter: drop-shadow(0 0 12px rgba(255,255,255,0.12));
-    }
-
     .project-logo-wrap {
       display: flex;
       align-items: center;
       min-height: 52px;
       margin-bottom: 16px;
+    }
+
+    .project-logo {
+      width: 120px;
+      max-width: 60%;
+      margin-bottom: 0;
+      filter: drop-shadow(0 0 12px rgba(255,255,255,0.12));
     }
 
     .project-logo.is-hidden {
@@ -613,7 +613,8 @@
     .faq-item,
     .contact-item,
     .timeline-card,
-    .portfolio-card {
+    .portfolio-card,
+    .leadership-card {
       border-radius: 20px;
       padding: 18px;
       border: 1px solid rgba(255,255,255,0.08);
@@ -623,7 +624,8 @@
     .operating-card h4,
     .faq-item h4,
     .strategy-item h4,
-    .portfolio-card h3 {
+    .portfolio-card h3,
+    .leadership-card h4 {
       margin: 0 0 10px;
       font-size: 1.08rem;
     }
@@ -631,7 +633,8 @@
     .operating-card p,
     .faq-item p,
     .timeline-card p,
-    .portfolio-card p {
+    .portfolio-card p,
+    .leadership-card p {
       margin: 0;
       color: var(--muted);
       line-height: 1.75;
@@ -688,6 +691,27 @@
       grid-template-columns: 1.15fr 0.85fr;
     }
 
+    .leadership-card {
+      margin-top: 16px;
+    }
+
+    .leadership-role {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      color: #deebf8;
+      font-size: 0.86rem;
+    }
+
+    .leadership-name {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
     .portfolio-columns {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -701,7 +725,7 @@
     }
 
     .portfolio-item {
-      min-height: 190px;
+      height: 165px;
       border-radius: 18px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08);
@@ -712,9 +736,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 14%;
       background: #05070c;
-      transform: scale(1.08);
+      transform: scale(1.02);
       transform-origin: center top;
     }
 
@@ -1012,7 +1036,7 @@
       }
 
       .portfolio-item {
-        min-height: 220px;
+        height: 180px;
       }
 
       .footer {
@@ -1162,7 +1186,7 @@
             <div class="project-body">
               <div class="project-logo-wrap">
                 <img
-                  src="Logo-eye-dit.png"
+                  src="logo-eye-dit.png"
                   alt="Eyedit Audiovisual logo"
                   class="project-logo"
                   onerror="this.classList.add('is-hidden'); this.nextElementSibling.classList.add('is-visible');"
@@ -1365,27 +1389,37 @@
         </div>
 
         <div class="investor-grid">
-          <div class="glass-card">
-            <h3>Investment Narrative</h3>
-            <p>
-              Eyedit Group is positioned as a premium strategic platform capable of combining symbolic
-              strength, visual differentiation and sector versatility. This format can be especially useful
-              for selective investor outreach, family office conversations, institutional partnerships,
-              boutique advisory contexts and premium collaboration proposals.
-            </p>
-            <div class="metrics-grid">
-              <div class="metric">
-                <strong>Holding-ready</strong>
-                <span>Framed as a coherent platform, not as disconnected activities.</span>
+          <div>
+            <div class="glass-card">
+              <h3>Investment Narrative</h3>
+              <p>
+                Eyedit Group is positioned as a premium strategic platform capable of combining symbolic
+                strength, visual differentiation and sector versatility. This format can be especially useful
+                for selective investor outreach, family office conversations, institutional partnerships,
+                boutique advisory contexts and premium collaboration proposals.
+              </p>
+              <div class="metrics-grid">
+                <div class="metric">
+                  <strong>Holding-ready</strong>
+                  <span>Framed as a coherent platform, not as disconnected activities.</span>
+                </div>
+                <div class="metric">
+                  <strong>Presentation-ready</strong>
+                  <span>Suitable for decks, websites, PDFs and business conversations.</span>
+                </div>
+                <div class="metric">
+                  <strong>Expansion-ready</strong>
+                  <span>Prepared for future products, partnerships and new geographic visibility.</span>
+                </div>
               </div>
-              <div class="metric">
-                <strong>Presentation-ready</strong>
-                <span>Suitable for decks, websites, PDFs and business conversations.</span>
-              </div>
-              <div class="metric">
-                <strong>Expansion-ready</strong>
-                <span>Prepared for future products, partnerships and new geographic visibility.</span>
-              </div>
+            </div>
+
+            <div class="leadership-card">
+              <div class="leadership-role">Founder & CEO</div>
+              <h3 class="leadership-name">Mikel Skoda</h3>
+              <p>
+                Strategic direction, visual identity development and long-term portfolio architecture for Eyedit Group.
+              </p>
             </div>
           </div>
 
@@ -1426,6 +1460,10 @@
               <div class="contact-item">
                 <strong>Holding</strong>
                 <span>Eyedit Group · International Holding</span>
+              </div>
+              <div class="contact-item">
+                <strong>Leadership</strong>
+                <span>Mikel Skoda · Founder & CEO</span>
               </div>
               <div class="contact-item">
                 <strong>Email</strong>

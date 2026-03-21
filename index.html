@@ -1,487 +1,393 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EYEDIT GROUP | International Holding</title>
-  <meta name="description" content="EYEDIT GROUP is an international holding integrating audiovisual, wellness and security divisions through a premium visual ecosystem." />
+  <title>Eyedit Group | International Holding</title>
+
+  <meta
+    name="description"
+    content="Eyedit Group is an international strategic holding integrating audiovisual, wellness and security projects through Eyedit, CCS CAN SS AM and EyeVision."
+  />
+
   <style>
-    * { box-sizing: border-box; }html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #03070d;
-  color: #f5f7fb;
-  overflow-x: hidden;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-a { color: inherit; text-decoration: none; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at center, rgba(0, 220, 200, 0.08) 0%, rgba(0, 0, 0, 0) 28%),
+        linear-gradient(180deg, #03111d 0%, #020913 50%, #01060c 100%);
+      color: white;
+      overflow-x: hidden;
+    }
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px 80px;
-  background:
-    radial-gradient(circle at center, rgba(0, 204, 255, 0.10) 0%, rgba(0,0,0,0) 35%),
-    radial-gradient(circle at center, rgba(0, 255, 170, 0.08) 0%, rgba(0,0,0,0) 45%),
-    linear-gradient(180deg, #07111d 0%, #03070d 100%);
-  position: relative;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 140px;
-  background: linear-gradient(to bottom, rgba(3,7,13,0), #03070d);
-  pointer-events: none;
-}
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px 120px;
+      position: relative;
+    }
 
-.scene {
-  position: relative;
-  width: min(92vw, 860px);
-  aspect-ratio: 1 / 1;
-}
+    .hero-inner {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
 
-.triangle {
-  position: absolute;
-  inset: 0;
-  animation: rotate 24s linear infinite;
-  transform-origin: center;
-}
+    .triangle-wrap {
+      position: relative;
+      width: min(88vw, 760px);
+      aspect-ratio: 1 / 1;
+    }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
-}
+    .triangle-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      filter: drop-shadow(0 0 10px rgba(0, 255, 220, 0.30));
+    }
 
-.line {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 3px;
-  width: 30%;
-  transform-origin: 0 50%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(0,255,200,0.95), rgba(0,140,255,0.25));
-  box-shadow: 0 0 12px rgba(0,255,200,0.55);
-}
+    .triangle-lines line {
+      stroke: #1cf0df;
+      stroke-width: 3.2;
+      stroke-linecap: round;
+      opacity: 0.95;
+    }
 
-.line-top { transform: translate(-50%, -50%) rotate(-90deg); }
-.line-left { transform: translate(-50%, -50%) rotate(150deg); }
-.line-right { transform: translate(-50%, -50%) rotate(30deg); }
+    .node {
+      position: absolute;
+      width: 178px;
+      height: 178px;
+      border-radius: 50%;
+      background: rgba(7, 16, 28, 0.88);
+      border: 2px solid rgba(120, 180, 190, 0.18);
+      box-shadow:
+        0 0 26px rgba(0, 255, 220, 0.14),
+        inset 0 0 10px rgba(255, 255, 255, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      backdrop-filter: blur(2px);
+    }
 
-.node {
-  position: absolute;
-  width: 28%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
-  background: rgba(255,255,255,0.04);
-  border: 2px solid rgba(255,255,255,0.10);
-  box-shadow:
-    0 0 28px rgba(0,255,200,0.22),
-    0 0 56px rgba(0,120,255,0.12);
-  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  cursor: pointer;
-}
+    .node:hover {
+      transform: scale(1.05);
+      box-shadow:
+        0 0 34px rgba(0, 255, 220, 0.24),
+        inset 0 0 10px rgba(255, 255, 255, 0.06);
+    }
 
-.node:hover {
-  transform: scale(1.06);
-  box-shadow:
-    0 0 34px rgba(0,255,200,0.38),
-    0 0 72px rgba(0,120,255,0.22);
-  border-color: rgba(0,255,200,0.55);
-}
+    .node img {
+      width: 116px;
+      height: 116px;
+      object-fit: contain;
+      display: block;
+      transform: rotate(0deg) !important;
+      filter: drop-shadow(0 0 8px rgba(0, 255, 220, 0.10));
+    }
 
-.node img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    .top-node {
+      top: 6%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-.top { top: 4%; left: 36%; }
-.left { bottom: 10%; left: 6%; }
-.right { bottom: 10%; right: 6%; }
+    .top-node:hover {
+      transform: translateX(-50%) scale(1.05);
+    }
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 22%;
-  aspect-ratio: 1 / 1;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, #17222d 0%, #0f161f 60%, #0a0f16 100%);
-  box-shadow: 0 0 34px rgba(0,255,200,0.22);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: pulse 3.5s ease-in-out infinite;
-}
+    .left-node {
+      left: 12%;
+      bottom: 13%;
+    }
 
-.center::before {
-  content: "";
-  position: absolute;
-  inset: 10%;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.10);
-}
+    .right-node {
+      right: 12%;
+      bottom: 13%;
+    }
 
-@keyframes pulse {
-  0%,100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.05); }
-}
+    .hub {
+      position: absolute;
+      left: 50%;
+      top: 49%;
+      transform: translate(-50%, -50%);
+      width: 190px;
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
 
-.shutter {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  border-radius: 50%;
-}
+    .hub img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      filter:
+        drop-shadow(0 0 12px rgba(0, 255, 220, 0.22))
+        drop-shadow(0 0 24px rgba(0, 255, 220, 0.10));
+    }
 
-.blade {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(50% 4%, 82% 28%, 64% 82%, 22% 70%, 18% 28%);
-  background: linear-gradient(180deg, #2d3a46, #131a22);
-  opacity: 0.94;
-  transform-origin: center;
-}
+    .brand {
+      margin-top: 26px;
+      text-align: center;
+      z-index: 10;
+      padding: 0 20px;
+    }
 
-.blade:nth-child(1) { transform: rotate(0deg); }
-.blade:nth-child(2) { transform: rotate(60deg); }
-.blade:nth-child(3) { transform: rotate(120deg); }
+    .brand h1 {
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      margin-bottom: 14px;
+    }
 
-.title-wrap {
-  position: absolute;
-  left: 50%;
-  bottom: -6%;
-  transform: translateX(-50%);
-  text-align: center;
-  width: min(92vw, 600px);
-  z-index: 4;
-}
+    .brand p {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.72);
+    }
 
-.title-wrap h1 {
-  margin: 0;
-  font-size: clamp(30px, 4.6vw, 54px);
-  letter-spacing: 0.18em;
-}
+    .section {
+      min-height: 100vh;
+      padding: 110px 24px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.title-wrap p {
-  margin: 12px 0 0;
-  color: rgba(255,255,255,0.76);
-  font-size: clamp(14px, 1.5vw, 18px);
-  letter-spacing: 0.08em;
-}
+    .card {
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(8, 16, 28, 0.72);
+      border: 1px solid rgba(120, 180, 190, 0.16);
+      border-radius: 28px;
+      padding: 42px 28px;
+      box-shadow:
+        0 0 30px rgba(0, 255, 220, 0.08),
+        inset 0 0 16px rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(6px);
+    }
 
-.section {
-  padding: 110px 22px;
-}
+    .card h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
 
-.section-inner {
-  max-width: 1150px;
-  margin: 0 auto;
-}
+    .card h3 {
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+      color: #7ef3df;
+      text-transform: uppercase;
+    }
 
-.eyebrow {
-  color: #9cead9;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 12px;
-  margin-bottom: 16px;
-}
+    .card p {
+      font-size: 1.03rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.84);
+      max-width: 850px;
+    }
 
-h2 {
-  margin: 0 0 18px;
-  font-size: clamp(28px, 4vw, 46px);
-  line-height: 1.05;
-}
+    .footer {
+      padding: 30px 20px 50px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+    }
 
-.lead {
-  max-width: 840px;
-  color: rgba(255,255,255,0.8);
-  font-size: clamp(16px, 1.8vw, 19px);
-  line-height: 1.7;
-}
+    @media (max-width: 900px) {
+      .node {
+        width: 145px;
+        height: 145px;
+      }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 42px;
-}
+      .node img {
+        width: 95px;
+        height: 95px;
+      }
 
-.card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 24px;
-  padding: 26px;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
-}
+      .hub {
+        width: 155px;
+        height: 155px;
+      }
 
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 22px;
-}
+      .top-node {
+        top: 9%;
+      }
 
-.card p {
-  margin: 0;
-  color: rgba(255,255,255,0.78);
-  line-height: 1.7;
-}
+      .left-node {
+        left: 7%;
+        bottom: 15%;
+      }
 
-.project {
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
+      .right-node {
+        right: 7%;
+        bottom: 15%;
+      }
+    }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 34px;
-  align-items: center;
-}
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 20px;
+        padding-bottom: 90px;
+      }
 
-.project-panel {
-  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 26px;
-  padding: 30px;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
-}
+      .triangle-wrap {
+        width: 96vw;
+      }
 
-.project-panel ul {
-  margin: 18px 0 0;
-  padding-left: 18px;
-  color: rgba(255,255,255,0.8);
-  line-height: 1.8;
-}
+      .node {
+        width: 118px;
+        height: 118px;
+      }
 
-.project-visual {
-  min-height: 320px;
-  border-radius: 30px;
-  border: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: radial-gradient(circle at center, rgba(0,255,200,0.12) 0%, rgba(0,0,0,0) 58%), linear-gradient(180deg, #0c1219, #06090f);
-  box-shadow: inset 0 0 50px rgba(0,255,200,0.06);
-}
+      .node img {
+        width: 74px;
+        height: 74px;
+      }
 
-.project-visual img {
-  max-width: 72%;
-  max-height: 72%;
-  object-fit: contain;
-  filter: drop-shadow(0 0 18px rgba(0,255,200,0.24));
-}
+      .hub {
+        width: 130px;
+        height: 130px;
+      }
 
-.contact {
-  background: linear-gradient(180deg, #07111d 0%, #04070c 100%);
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
+      .top-node {
+        top: 12%;
+      }
 
-.contact-box {
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 36px;
-  border-radius: 28px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
-  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
-}
+      .left-node {
+        left: 4%;
+        bottom: 18%;
+      }
 
-.contact-box a {
-  color: #9cead9;
-}
+      .right-node {
+        right: 4%;
+        bottom: 18%;
+      }
 
-footer {
-  padding: 24px 20px 40px;
-  text-align: center;
-  color: rgba(255,255,255,0.55);
-  font-size: 14px;
-}
+      .brand h1 {
+        letter-spacing: 0.16em;
+      }
 
-@media (max-width: 920px) {
-  .cards,
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+      .brand p {
+        line-height: 1.7;
+      }
 
-  .title-wrap {
-    bottom: -11%;
-  }
-}
+      .card {
+        padding: 34px 22px;
+        border-radius: 22px;
+      }
 
-@media (max-width: 640px) {
-  .hero {
-    padding-top: 20px;
-  }
-
-  .scene {
-    width: min(96vw, 620px);
-  }
-
-  .node {
-    width: 31%;
-  }
-
-  .top { top: 8%; left: 34.5%; }
-  .left { bottom: 15%; left: 1%; }
-  .right { bottom: 15%; right: 1%; }
-
-  .center {
-    width: 24%;
-  }
-
-  .title-wrap {
-    bottom: -14%;
-  }
-
-  .section {
-    padding: 90px 18px;
-  }
-}
-
+      .card p {
+        font-size: 0.98rem;
+      }
+    }
   </style>
 </head>
-<body>  <section class="hero" id="top">
-    <div class="scene">
-      <div class="triangle">
-        <div class="line line-top"></div>
-        <div class="line line-left"></div>
-        <div class="line line-right"></div><a class="node top" href="#audiovisual" aria-label="Go to Eyedit Audiovisual section">
-      <img src="logo-eye-dit.png" alt="Eyedit Audiovisual logo" />
-    </a>
+<body>
 
-    <a class="node left" href="#wellness" aria-label="Go to CCSCANSSAM section">
-      <img src="logo-ccs-canssam.png" alt="CCSCANSSAM logo" />
-    </a>
+  <section class="hero">
+    <div class="hero-inner">
 
-    <a class="node right" href="#security" aria-label="Go to Eye Vision section">
-      <img src="logo-eye-vision.png" alt="Eye Vision Security logo" />
-    </a>
-  </div>
+      <div class="triangle-wrap">
 
-  <div class="center" aria-hidden="true">
-    <div class="shutter">
-      <div class="blade"></div>
-      <div class="blade"></div>
-      <div class="blade"></div>
+        <svg class="triangle-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="50" y1="21" x2="30" y2="62"></line>
+          <line x1="50" y1="21" x2="70" y2="62"></line>
+          <line x1="30" y1="62" x2="70" y2="62"></line>
+        </svg>
+
+        <a href="#eyevision" class="node top-node" aria-label="Go to EyeVision">
+          <img src="Logo-eye-vision.png" alt="EyeVision logo">
+        </a>
+
+        <a href="#eyedit" class="node left-node" aria-label="Go to Eyedit">
+          <img src="logo-eye-dit.png" alt="Eyedit logo">
+        </a>
+
+        <a href="#ccs" class="node right-node" aria-label="Go to CCS CAN SS AM">
+          <img src="logo-ccs-canssam.png" alt="CCS CAN SS AM logo">
+        </a>
+
+        <div class="hub" aria-hidden="true">
+          <img src="logo-triangle-obturador.png" alt="Triangle obturador Eyedit Group">
+        </div>
+      </div>
+
+      <div class="brand">
+        <h1>EYEDIT GROUP</h1>
+        <p>Audiovisual · Wellness · Security</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="title-wrap">
-    <h1>EYEDIT GROUP</h1>
-    <p>Audiovisual · Wellness · Security</p>
-  </div>
-</div>
-
-  </section>  <section class="section">
-    <div class="section-inner">
-      <div class="eyebrow">Holding Vision</div>
-      <h2>An international visual ecosystem built around three strategic divisions.</h2>
-      <p class="lead">
-        EYEDIT GROUP brings together media, wellness and security into one premium holding structure. The animated triangle acts as the core navigation system and symbolises a connected operating model designed to grow across sectors and territories.
-      </p><div class="cards">
+  <section id="eyevision" class="section">
     <div class="card">
-      <h3>Multi-sector</h3>
-      <p>Three specialised entities working under one shared brand architecture, each with its own identity, mission and commercial potential.</p>
+      <h2>EyeVision</h2>
+      <h3>Security Division</h3>
+      <p>
+        EyeVision represents the security and strategic monitoring dimension of Eyedit Group.
+        It is focused on visual intelligence, surveillance concepts, advanced observation,
+        operational awareness and premium positioning for protection-oriented solutions.
+      </p>
     </div>
-    <div class="card">
-      <h3>Scalable</h3>
-      <p>The structure is designed to expand into new partnerships, services and markets while maintaining a coherent corporate image.</p>
-    </div>
-    <div class="card">
-      <h3>Premium Visual Portfolio</h3>
-      <p>A strong futuristic visual language helps position the holding as bold, contemporary and memorable across web, media and presentations.</p>
-    </div>
-  </div>
-</div>
+  </section>
 
-  </section>  <section class="section project" id="audiovisual">
-    <div class="section-inner project-grid">
-      <div class="project-panel">
-        <div class="eyebrow">Division 01</div>
-        <h2>EYEDIT Audiovisual</h2>
-        <p class="lead">
-          Creative development, visual communication and audiovisual production for projects that need impact, identity and narrative force.
-        </p>
-        <ul>
-          <li>Brand image and visual storytelling</li>
-          <li>Creative concepts and multimedia production</li>
-          <li>Premium communication assets for digital presence</li>
-        </ul>
-      </div>
-      <div class="project-visual">
-        <img src="logo-eye-dit.png" alt="Eyedit Audiovisual logo large display" />
-      </div>
+  <section id="eyedit" class="section">
+    <div class="card">
+      <h2>Eyedit Image Quick Service</h2>
+      <h3>Audiovisual Division</h3>
+      <p>
+        Eyedit Image Quick Service is the audiovisual and creative engine of the group.
+        It connects image, visual communication, content development, creative direction,
+        production identity and scalable international media services with a sharp premium profile.
+      </p>
     </div>
-  </section>  <section class="section project" id="wellness">
-    <div class="section-inner project-grid">
-      <div class="project-panel">
-        <div class="eyebrow">Division 02</div>
-        <h2>CCSCANSSAM</h2>
-        <p class="lead">
-          A wellness-focused initiative oriented toward care, balance and personal improvement through a distinct and recognisable brand universe.
-        </p>
-        <ul>
-          <li>Wellness and holistic identity development</li>
-          <li>Premium positioning for therapeutic and lifestyle services</li>
-          <li>Institutional image for future expansion</li>
-        </ul>
-      </div>
-      <div class="project-visual">
-        <img src="logo-ccs-canssam.png" alt="CCSCANSSAM logo large display" />
-      </div>
+  </section>
+
+  <section id="ccs" class="section">
+    <div class="card">
+      <h2>CCS CAN SS AM</h2>
+      <h3>Wellness Division</h3>
+      <p>
+        CCS CAN SS AM embodies the wellness dimension of Eyedit Group.
+        It brings together holistic positioning, personal balance, natural therapies,
+        human-centered care and a more organic branch within the group’s multi-sector structure.
+      </p>
     </div>
-  </section>  <section class="section project" id="security">
-    <div class="section-inner project-grid">
-      <div class="project-panel">
-        <div class="eyebrow">Division 03</div>
-        <h2>Eye Vision Security</h2>
-        <p class="lead">
-          A security-oriented branch focused on trust, surveillance, technology and strategic visual presence for advanced protection services.
-        </p>
-        <ul>
-          <li>Security identity and brand architecture</li>
-          <li>Technology-oriented positioning</li>
-          <li>Future-ready image for monitoring and protection solutions</li>
-        </ul>
-      </div>
-      <div class="project-visual">
-        <img src="logo-eye-vision.png" alt="Eye Vision Security logo large display" />
-      </div>
-    </div>
-  </section>  <section class="section contact" id="contact">
-    <div class="section-inner">
-      <div class="contact-box">
-        <div class="eyebrow">Contact</div>
-        <h2>Start a conversation with the holding.</h2>
-        <p class="lead" style="margin-left:auto;margin-right:auto;">
-          For partnerships, institutional presentations or strategic opportunities related to EYEDIT GROUP and its divisions, contact the group through its official channels.
-        </p>
-        <p style="margin-top:24px; color: rgba(255,255,255,0.82); line-height:1.8;">
-          Website: <a href="https://eyeditgroup.com">eyeditgroup.com</a><br />
-          Email: <a href="mailto:mikelskoda@gmail.com">mikelskoda@gmail.com</a>
-        </p>
-      </div>
-    </div>
-  </section>  <footer>
-    © EYEDIT GROUP. All rights reserved.
-  </footer></body>
+  </section>
+
+  <footer class="footer">
+    © Eyedit Group. All rights reserved.
+  </footer>
+
+</body>
 </html>

@@ -3,52 +3,807 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EyeDit Group Rotatiu</title>
+  <title>EyeDit Group | Interactive Triangle Portal</title>
+  <meta
+    name="description"
+    content="EyeDit Group interactive portal with rotating triangle navigation for EyeDit Audiovisual, CCS CANSSSAM and Eye Vision Security."
+  />
   <style>
+    :root {
+      --bg: #020305;
+      --bg-soft: #07111a;
+      --text: #eaf6ff;
+      --muted: #9cb7c8;
+      --line: rgba(105, 255, 176, 0.85);
+      --line-glow: rgba(62, 255, 163, 0.65);
+      --card: rgba(10, 20, 30, 0.7);
+      --card-border: rgba(120, 210, 255, 0.18);
+      --blue-glow: rgba(63, 160, 255, 0.35);
+      --green-glow: rgba(46, 255, 144, 0.35);
+      --gold-glow: rgba(255, 176, 58, 0.28);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --radius: 22px;
+      --max-width: 1280px;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: #000;
+      background:
+        radial-gradient(circle at top, rgba(20, 60, 100, 0.18), transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 150, 0.08), transparent 30%),
+        radial-gradient(circle at 80% 75%, rgba(50, 120, 255, 0.10), transparent 30%),
+        linear-gradient(180deg, #000 0%, #03070c 45%, #020305 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* HERO */
+    .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
+      position: relative;
       overflow: hidden;
+      padding: 32px 0 64px;
     }
 
-    .logo-wrap {
-      width: min(88vw, 700px);
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at center, rgba(30, 255, 180, 0.08), transparent 24%),
+        radial-gradient(circle at center, rgba(65, 155, 255, 0.08), transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 48px;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy {
+      padding-top: 20px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid rgba(124, 201, 255, 0.25);
+      background: rgba(10, 20, 30, 0.45);
+      color: #bfe9ff;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 5vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #86ecff, #59ffb1, #ffc46a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: clamp(1rem, 1.8vw, 1.18rem);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 170px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 210, 255, 0.22);
+      background: rgba(8, 18, 28, 0.72);
+      color: #eef9ff;
+      font-weight: 700;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(85, 255, 185, 0.5);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38), 0 0 18px rgba(60, 255, 170, 0.18);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, rgba(12, 35, 60, 0.96), rgba(5, 25, 34, 0.96));
+    }
+
+    .hero-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: #a8c0d0;
+      font-size: 0.95rem;
+    }
+
+    .hero-mini span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(8, 18, 28, 0.56);
+      border: 1px solid rgba(135, 202, 255, 0.14);
+    }
+
+    /* TRIANGLE MACHINE */
+    .triangle-stage {
+      position: relative;
+      width: min(92vw, 720px);
+      aspect-ratio: 1 / 1;
+      margin-inline: auto;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .rotating-logo {
-      width: 100%;
-      height: auto;
-      display: block;
-      animation: spin 22s linear infinite;
+    .triangle-rotator {
+      position: absolute;
+      inset: 0;
+      animation: rotateTriangle 26s linear infinite;
       transform-origin: center center;
-      filter: drop-shadow(0 0 20px rgba(0, 255, 180, 0.25));
     }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(-360deg); }
+    .triangle-rotator.paused {
+      animation-play-state: paused;
+    }
+
+    .triangle-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 16px rgba(40, 255, 160, 0.22));
+      pointer-events: none;
+    }
+
+    .triangle-svg polygon {
+      fill: none;
+      stroke: var(--line);
+      stroke-width: 5;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 12px var(--line-glow));
+    }
+
+    .center-core {
+      position: absolute;
+      width: 34%;
+      max-width: 230px;
+      z-index: 5;
+      filter:
+        drop-shadow(0 0 18px rgba(45, 255, 163, 0.22))
+        drop-shadow(0 0 26px rgba(30, 120, 255, 0.16));
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .node {
+      position: absolute;
+      width: 28%;
+      max-width: 190px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      overflow: visible;
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.22s ease, filter 0.22s ease;
+    }
+
+    .node:hover {
+      transform: scale(1.05);
+      filter: brightness(1.08);
+    }
+
+    .node img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter:
+        drop-shadow(0 0 18px rgba(0, 0, 0, 0.45))
+        drop-shadow(0 0 22px rgba(70, 200, 255, 0.14));
+    }
+
+    .node-top {
+      left: 50%;
+      top: 3%;
+      transform: translateX(-50%);
+    }
+
+    .node-left {
+      left: 2%;
+      bottom: 10%;
+    }
+
+    .node-right {
+      right: 2%;
+      bottom: 10%;
+    }
+
+    .project-tooltip {
+      position: absolute;
+      left: 50%;
+      bottom: -16px;
+      transform: translateX(-50%);
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(3, 10, 20, 0.78);
+      border: 1px solid rgba(128, 208, 255, 0.18);
+      color: #eaf9ff;
+      font-size: 0.83rem;
+      letter-spacing: 0.04em;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+    }
+
+    .node:hover .project-tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(8px);
+    }
+
+    .triangle-controls {
+      position: absolute;
+      left: 50%;
+      bottom: 4%;
+      transform: translateX(-50%);
+      z-index: 8;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .control-btn {
+      border: 1px solid rgba(120, 210, 255, 0.18);
+      background: rgba(5, 14, 24, 0.7);
+      color: #ebf8ff;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .control-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(67, 255, 180, 0.4);
+      background: rgba(8, 22, 34, 0.85);
+    }
+
+    @keyframes rotateTriangle {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    /* SECTIONS */
+    .projects {
+      padding: 30px 0 90px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .project-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+      scroll-margin-top: 30px;
+      position: relative;
+    }
+
+    .project-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at center, rgba(80, 160, 255, 0.05), transparent 35%);
+    }
+
+    .project-card {
+      width: 100%;
+      background: linear-gradient(180deg, rgba(9, 20, 31, 0.76), rgba(5, 12, 20, 0.82));
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -30% auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(80, 200, 255, 0.12), transparent 65%);
+      pointer-events: none;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .project-logo-box {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(7, 16, 28, 0.72);
+      border: 1px solid rgba(125, 207, 255, 0.15);
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-logo-box img {
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 24px rgba(80, 180, 255, 0.16));
+    }
+
+    .project-tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(7, 16, 28, 0.7);
+      border: 1px solid rgba(126, 205, 255, 0.18);
+      color: #c8ecff;
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-content h3 {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 1rem;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 28px;
+    }
+
+    .feature {
+      padding: 14px 16px;
+      background: rgba(8, 18, 28, 0.62);
+      border: 1px solid rgba(132, 203, 255, 0.14);
+      border-radius: 16px;
+      color: #dfefff;
+      font-size: 0.96rem;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .small-btn {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(8, 20, 30, 0.82);
+      border: 1px solid rgba(130, 205, 255, 0.18);
+      color: #eff9ff;
+      font-weight: 700;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .small-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(67, 255, 180, 0.42);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 28px 0 44px;
+      color: #8fa9b7;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions,
+      .hero-mini {
+        justify-content: center;
+      }
+
+      .triangle-stage {
+        width: min(94vw, 680px);
+      }
+
+      .project-logo-box {
+        min-height: 260px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding-top: 26px;
+      }
+
+      .triangle-stage {
+        width: min(96vw, 560px);
+      }
+
+      .center-core {
+        width: 38%;
+      }
+
+      .node {
+        width: 31%;
+      }
+
+      .node-top {
+        top: 6%;
+      }
+
+      .node-left {
+        left: 0;
+        bottom: 13%;
+      }
+
+      .node-right {
+        right: 0;
+        bottom: 13%;
+      }
+
+      .triangle-controls {
+        bottom: 1.5%;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .btn,
+      .small-btn {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .triangle-stage {
+        aspect-ratio: 1 / 1.06;
+      }
+
+      .project-tooltip {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="logo-wrap">
-    <img
-      src="logo-triangle-obturador.png"
-      alt="Logo rotatiu EyeDit Group"
-      class="rotating-logo"
-    />
-  </div>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Eyedit Group Interactive Portal</span>
+        <h1>
+          Triangle navigation
+          <span>en moviment</span>
+        </h1>
+        <p>
+          Estructura central fixa, triangle rotatiu i accés directe als tres projectes.
+          Aquí el logo ja no és una foto quieta. És una porta orbital que obre EyeDit Audiovisual,
+          CCS CANSSSAM i Eye Vision Security.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#portal" class="btn btn-primary">Entrar al portal</a>
+          <a href="#eyedit" class="btn">Anar a EyeDit</a>
+        </div>
+
+        <div class="hero-mini">
+          <span>Centre fix</span>
+          <span>Triangle rotatiu</span>
+          <span>Logos clicables</span>
+          <span>HTML únic definitiu</span>
+        </div>
+      </div>
+
+      <div class="triangle-stage" id="portal">
+        <img
+          src="logo-triangle-obturador.png"
+          alt="Obturador central EyeDit Group"
+          class="center-core"
+        />
+
+        <div class="triangle-rotator" id="triangleRotator">
+          <svg class="triangle-svg" viewBox="0 0 100 100" aria-hidden="true">
+            <polygon points="50,10 14,76 86,76"></polygon>
+          </svg>
+
+          <a href="#eyedit" class="node node-top" data-target="eyedit">
+            <img src="logo-eye-dit.png" alt="EyeDit Audiovisual" />
+            <span class="project-tooltip">Obrir EyeDit Audiovisual</span>
+          </a>
+
+          <a href="#ccs" class="node node-left" data-target="ccs">
+            <img src="logo-ccs-canssam.png" alt="CCS CANSSSAM" />
+            <span class="project-tooltip">Obrir CCS CANSSSAM</span>
+          </a>
+
+          <a href="#eyevision" class="node node-right" data-target="eyevision">
+            <img src="logo-eye-vision.png" alt="Eye Vision Security" />
+            <span class="project-tooltip">Obrir Eye Vision Security</span>
+          </a>
+        </div>
+
+        <div class="triangle-controls">
+          <button class="control-btn" id="pauseBtn" type="button">Pausar rotació</button>
+          <button class="control-btn" id="playBtn" type="button">Reprendre rotació</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="projects">
+    <div class="container section-title">
+      <h2>Strategic Project Structure</h2>
+      <p>
+        Tres divisions, un nucli visual. Cada logo obre el seu projecte amb una identitat clara
+        i una funció específica dins l’ecosistema EyeDit Group.
+      </p>
+    </div>
+
+    <section class="project-section" id="eyedit">
+      <div class="container">
+        <div class="project-card">
+          <div class="project-grid">
+            <div class="project-logo-box">
+              <img src="logo-eye-dit.png" alt="Logo EyeDit Audiovisual" />
+            </div>
+
+            <div class="project-content">
+              <span class="project-tag">Media Division</span>
+              <h3>EyeDit Audiovisual</h3>
+              <p>
+                Plataforma creativa i audiovisual orientada a ràdio, televisió, agència creativa
+                i contingut visual de marca. És la branca de comunicació, imatge i narrativa.
+              </p>
+              <p>
+                Pensada per producció de continguts, desenvolupament de formats, identitat visual,
+                cobertura de projectes i desplegament digital multimèdia.
+              </p>
+
+              <div class="feature-list">
+                <div class="feature">Ràdio i televisió</div>
+                <div class="feature">Producció audiovisual</div>
+                <div class="feature">Agència creativa</div>
+                <div class="feature">Brand image & content</div>
+              </div>
+
+              <div class="project-actions">
+                <a class="small-btn" href="#portal">Tornar al triangle</a>
+                <a class="small-btn" href="javascript:void(0)">Entrar al projecte</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="ccs">
+      <div class="container">
+        <div class="project-card">
+          <div class="project-grid">
+            <div class="project-logo-box">
+              <img src="logo-ccs-canssam.png" alt="Logo CCS CANSSSAM" />
+            </div>
+
+            <div class="project-content">
+              <span class="project-tag">Wellness Division</span>
+              <h3>CCS CANSSSAM</h3>
+              <p>
+                Divisió enfocada a teràpies alternatives, benestar integral, medicina natural
+                i experiències de salut complementària amb una identitat pròpia i memorable.
+              </p>
+              <p>
+                Aquesta branca pot créixer com a centre, marca, comunitat o línia de serveis
+                especialitzats vinculats a salut natural, benestar i desenvolupament personal.
+              </p>
+
+              <div class="feature-list">
+                <div class="feature">Teràpies alternatives</div>
+                <div class="feature">Benestar integral</div>
+                <div class="feature">Medicina natural</div>
+                <div class="feature">Experiència holística</div>
+              </div>
+
+              <div class="project-actions">
+                <a class="small-btn" href="#portal">Tornar al triangle</a>
+                <a class="small-btn" href="javascript:void(0)">Entrar al projecte</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="eyevision">
+      <div class="container">
+        <div class="project-card">
+          <div class="project-grid">
+            <div class="project-logo-box">
+              <img src="logo-eye-vision.png" alt="Logo Eye Vision Security" />
+            </div>
+
+            <div class="project-content">
+              <span class="project-tag">Security Division</span>
+              <h3>Eye Vision Security</h3>
+              <p>
+                Àrea orientada a seguretat visual, monitoratge, control, protecció i solucions
+                intel·ligents per vigilància, mobilitat i infraestructura tecnològica.
+              </p>
+              <p>
+                Pot evolucionar com a divisió de seguretat premium, serveis visuals,
+                sistemes de control o plataforma híbrida entre hardware, tecnologia i operativa.
+              </p>
+
+              <div class="feature-list">
+                <div class="feature">Security systems</div>
+                <div class="feature">Visual control</div>
+                <div class="feature">Monitoring solutions</div>
+                <div class="feature">Tech protection layer</div>
+              </div>
+
+              <div class="project-actions">
+                <a class="small-btn" href="#portal">Tornar al triangle</a>
+                <a class="small-btn" href="javascript:void(0)">Entrar al projecte</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      EyeDit Group · Interactive rotating triangle portal
+    </div>
+  </footer>
+
+  <script>
+    const triangleRotator = document.getElementById("triangleRotator");
+    const pauseBtn = document.getElementById("pauseBtn");
+    const playBtn = document.getElementById("playBtn");
+    const nodes = document.querySelectorAll(".node");
+
+    pauseBtn.addEventListener("click", () => {
+      triangleRotator.classList.add("paused");
+    });
+
+    playBtn.addEventListener("click", () => {
+      triangleRotator.classList.remove("paused");
+    });
+
+    nodes.forEach((node) => {
+      node.addEventListener("click", () => {
+        triangleRotator.classList.add("paused");
+        setTimeout(() => {
+          triangleRotator.classList.remove("paused");
+        }, 2500);
+      });
+    });
+  </script>
+
 </body>
 </html>

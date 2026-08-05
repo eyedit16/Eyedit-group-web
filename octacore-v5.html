@@ -1,54 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EyeDit OctaCore V5 | EyeDit Group</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#05070d;
-    color:white;
-}
-header{
-    text-align:center;
-    padding:80px 20px;
-    background:linear-gradient(135deg,#0b1633,#111,#061428);
-}
-h1{
-    font-size:48px;
-    color:#00d4ff;
-}
-p{
-    font-size:20px;
-    max-width:900px;
-    margin:auto;
-    line-height:1.7;
-}
-.section{
-    padding:60px 20px;
-    max-width:1200px;
-    margin:auto;
-}
-</style>
+  <title>EyeDit OctaCore V5</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050713;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.16), transparent 35%),
+        radial-gradient(circle at 80% 40%, rgba(108, 92, 231, 0.18), transparent 35%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      background: rgba(5, 7, 19, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #00d4ff;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #00d4ff;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero-content {
+      max-width: 950px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(0, 212, 255, 0.45);
+      border-radius: 999px;
+      color: #00d4ff;
+      background: rgba(0, 212, 255, 0.08);
+      font-size: 0.9rem;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 1;
+      margin-bottom: 24px;
+      background: linear-gradient(90deg, #ffffff, #00d4ff, #8b7cff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      font-size
+    section{
+      max-width:1200px;
+      margin:auto;
+      padding:90px 8%;
+    }
+
+    h2{
+      font-size:2.4rem;
+      margin-bottom:20px;
+      color:#00d4ff;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;
+      margin-top:40px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      padding:30px;
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:#00d4ff;
+    }
+
+    footer{
+      text-align:center;
+      padding:50px 20px;
+      color:#9aa0b5;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<h1>EyeDit OctaCore V5</h1>
-<p>The next generation AI communication ecosystem created by EyeDit Group.</p>
+<nav>
+<div class="logo">EyeDit Group</div>
+
+<div>
+<a href="#">Home</a>
+<a href="#">Technology</a>
+<a href="#">Contact</a>
+</div>
+</nav>
+
+<header class="hero">
+<div class="hero-content">
+
+<div class="badge">
+EyeDit OctaCore V5
+</div>
+
+<h1>Future AI Platform</h1>
+
+<p>
+A next-generation ecosystem combining Artificial Intelligence,
+Security, Audiovisual Innovation and Wellness Technology
+into a single intelligent platform.
+</p>
+
+<div class="buttons">
+<a class="button button-primary" href="#">Explore</a>
+<a class="button button-secondary" href="#">Learn More</a>
+</div>
+
+</div>
 </header>
 
-<div class="section">
-<h2>Coming Soon</h2>
-<p>
-EyeDit OctaCore V5 is our vision for a secure AI communication platform integrating
-Audiovisual Innovation, Wellness Technology and Advanced Security.
-</p>
+<section>
+
+<h2>Core Technologies</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Artificial Intelligence</h3>
+<p>Advanced AI engines designed for intelligent communication and automation.</p>
 </div>
+
+<div class="card">
+<h3>Cyber Security</h3>
+<p>Enterprise-grade protection with privacy-first architecture.</p>
+</div>
+
+<div class="card">
+<h3>Audiovisual Innovation</h3>
+<p>Immersive multimedia experiences powered by next generation technologies.</p>
+</div>
+
+</div>
+
+</section>
+<section>
+
+<h2>Our Vision</h2>
+
+<p>
+EyeDit OctaCore V5 is designed to become the central intelligence
+platform for businesses, creators and organizations, combining
+Artificial Intelligence, secure communications and immersive
+digital experiences into one unified ecosystem.
+</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 EyeDit Group. All rights reserved.</p>
+
+</footer>
 
 </body>
 </html>

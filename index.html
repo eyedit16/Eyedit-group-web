@@ -860,6 +860,10 @@
               Central coordination of visual identity, project structure, OctaCore V5 development
               and long-term strategic narrative.
             </p>
+            <p style="margin-top:14px;">
+              <strong>Investor relations:</strong>
+              <a href="mailto:invest@eyeditgroup.com">invest@eyeditgroup.com</a>
+            </p>
           </div>
         </div>
       </section>
@@ -875,9 +879,22 @@
 
         <div class="contact-grid">
           <div class="contact-list">
-            <div class="contact-item"><strong>Holding Focus</strong><span>Media, wellness, security and artificial intelligence.</span></div>
-            <div class="contact-item"><strong>Email</strong><a href="mailto:ms.eyedit@outlook.com">ms.eyedit@outlook.com</a></div>
-            <div class="contact-item"><strong>Flagship Platform</strong><span>Eyedit OctaCore V5</span></div>
+            <div class="contact-item">
+              <strong>General Information</strong>
+              <a href="mailto:info@eyeditgroup.com">info@eyeditgroup.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Investors</strong>
+              <a href="mailto:invest@eyeditgroup.com">invest@eyeditgroup.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Partnerships</strong>
+              <a href="mailto:partners@eyeditgroup.com">partners@eyeditgroup.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Flagship Platform</strong>
+              <span>Eyedit OctaCore V5</span>
+            </div>
           </div>
 
           <div class="glass-card">
@@ -903,7 +920,7 @@
 
               <div class="form-actions">
                 <button type="submit" class="submit-btn">Send inquiry</button>
-                <a href="mailto:ms.eyedit@outlook.com" class="ghost-btn">Direct email</a>
+                <a href="mailto:info@eyeditgroup.com" class="ghost-btn">Direct email</a>
               </div>
               <div id="formMessage"></div>
             </form>
@@ -934,9 +951,9 @@
 
         <div class="footer-col">
           <h5>Contact</h5>
-          <a href="mailto:ms.eyedit@outlook.com">ms.eyedit@outlook.com</a>
-          <a href="#investors">Investors</a>
-          <a href="#contact">Open conversation</a>
+          <a href="mailto:info@eyeditgroup.com">info@eyeditgroup.com</a>
+          <a href="mailto:invest@eyeditgroup.com">invest@eyeditgroup.com</a>
+          <a href="mailto:partners@eyeditgroup.com">partners@eyeditgroup.com</a>
         </div>
       </div>
 
@@ -957,12 +974,23 @@
           event.preventDefault();
 
           const data = new FormData(form);
-          const subject = encodeURIComponent('Eyedit Group inquiry: ' + (data.get('interest') || 'General'));
+          const interest = data.get('interest') || 'General';
+          let recipient = 'info@eyeditgroup.com';
+
+          if (interest === 'Investment or partnership') {
+            recipient = 'invest@eyeditgroup.com';
+          } else if (interest === 'OctaCore V5') {
+            recipient = 'invest@eyeditgroup.com';
+          } else if (interest === 'Eyedit Audiovisual' || interest === 'CCSCANSSAM' || interest === 'EyeVision Security') {
+            recipient = 'partners@eyeditgroup.com';
+          }
+
+          const subject = encodeURIComponent('Eyedit Group inquiry: ' + interest);
           const body = encodeURIComponent(
             'Name: ' + (data.get('name') || '') + '\n' +
             'Email: ' + (data.get('email') || '') + '\n' +
             'Company: ' + (data.get('company') || '') + '\n' +
-            'Interest: ' + (data.get('interest') || '') + '\n\n' +
+            'Interest: ' + interest + '\n\n' +
             'Message:\n' + (data.get('message') || '')
           );
 
@@ -970,7 +998,7 @@
             message.textContent = 'Opening your email application...';
           }
 
-          window.location.href = 'mailto:ms.eyedit@outlook.com?subject=' + subject + '&body=' + body;
+          window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
         });
       }
     })();

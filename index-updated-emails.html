@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Eyedit Group | International Holding | OctaCore V5</title>
+
+  <meta name="description" content="Eyedit Group is an international strategic holding integrating audiovisual, wellness, security and artificial intelligence through Eyedit Audiovisual, CCSCANSSAM, EyeVision and OctaCore V5." />
+  <meta name="keywords" content="Eyedit Group, OctaCore V5, international holding, audiovisual, wellness, security, artificial intelligence" />
+  <meta name="author" content="Eyedit Group" />
+  <meta name="theme-color" content="#07111f" />
+
+  <meta property="og:title" content="Eyedit Group | International Holding" />
+  <meta property="og:description" content="A connected ecosystem across audiovisual, wellness, security and artificial intelligence." />
+  <meta property="og:url" content="https://eyeditgroup.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://eyeditgroup.com/eyedit-group-future-poster.png" />
+
+  <link rel="icon" type="image/png" href="logo-triangle-obturador.png" />
+
+  <style>
+    :root {
+      --bg-main: #03060b;
+      --bg-second: #07111f;
+      --panel: rgba(255, 255, 255, 0.04);
+      --line: rgba(255, 255, 255, 0.08);
+      --text: #f4f7fb;
+      --muted: #b8c2d0;
+      --blue: #35b8ff;
+      --green: #27e8b0;
+      --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.48);
+      --shadow-md: 0 14px 40px rgba(0, 0, 0, 0.28);
+      --max-width: 1440px;
+      --container: min(var(--max-width), calc(100% - 32px));
+      --radius-xl: 34px;
+      --radius-lg: 28px;
+      --radius-md: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(0, 170, 255, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(0, 255, 170, 0.08), transparent 24%),
+        radial-gradient(circle at bottom center, rgba(70, 120, 255, 0.08), transparent 30%),
+        linear-gradient(180deg, #03060b 0%, #07111f 36%, #03060b 100%);
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+
+    .page-shell {
+      width: var(--container);
+      margin: 16px auto 30px;
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(180deg, rgba(3, 8, 16, 0.97), rgba(3, 8, 16, 0.90));
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .topbar-inner {
+      width: var(--container);
+      margin: 0 auto;
+      min-height: 108px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 112px;
+      max-width: 26vw;
+      border-radius: 18px;
+      filter: drop-shadow(0 0 12px rgba(0,255,170,0.24));
+      transition: transform 0.3s ease;
+    }
+
+    .brand-logo:hover { transform: scale(1.05) rotate(2deg); }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-copy p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.86rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: #d7deea;
+      padding: 12px 14px;
+      border-radius: 999px;
+      font-size: 0.94rem;
+      transition: background 0.24s ease, color 0.24s ease, transform 0.24s ease;
+    }
+
+    .nav a:hover {
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .nav .nav-cta {
+      background: linear-gradient(135deg, rgba(0,171,255,0.35), rgba(0,255,170,0.22));
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .hero { padding: 24px 18px 40px; }
+
+    .hero-panel {
+      position: relative;
+      min-height: 940px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025)),
+        radial-gradient(circle at center, rgba(255,255,255,0.02), transparent 65%);
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 140px 140px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .hero-topline {
+      position: relative;
+      z-index: 5;
+      width: min(980px, calc(100% - 40px));
+      margin: 0 auto;
+      padding-top: 42px;
+      text-align: center;
+    }
+
+    .hero-kicker, .section-tag, .octa-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: #deebf8;
+      font-size: 0.9rem;
+    }
+
+    .hero-title {
+      margin: 22px 0 0;
+      font-size: clamp(2.4rem, 6vw, 5.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-subtitle {
+      max-width: 900px;
+      margin: 20px auto 0;
+      font-size: 1.08rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .hero-actions, .octa-actions, .form-actions {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn, .octa-btn, .project-link, .ghost-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: transform 0.24s ease, background 0.24s ease;
+    }
+
+    .hero-btn:hover, .octa-btn:hover, .project-link:hover, .ghost-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary {
+      background: linear-gradient(135deg, rgba(0,171,255,0.84), rgba(0,255,170,0.58));
+      border: 0;
+      color: white;
+    }
+
+    .secondary, .ghost-btn, .project-link {
+      background: rgba(255,255,255,0.045);
+      color: #edf5fc;
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 5;
+      width: min(1040px, 96%);
+      margin: 34px auto 0;
+      min-height: 610px;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-visual img {
+      width: min(920px, 100%);
+      filter: drop-shadow(0 0 40px rgba(0, 255, 170, 0.25));
+    }
+
+    .hero-bottom-copy {
+      position: relative;
+      z-index: 5;
+      width: min(940px, calc(100% - 32px));
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+
+    .hero-bottom-copy h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-bottom-copy p {
+      margin: 14px auto 0;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 860px;
+    }
+
+    .section-stack { padding: 10px 18px 30px; }
+
+    .section {
+      width: min(var(--max-width), calc(100% - 8px));
+      margin: 0 auto 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+      box-shadow: var(--shadow-md);
+      padding: 34px 28px;
+    }
+
+    .section-header {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .section-description {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 980px;
+    }
+
+    .intro-grid, .strategy-grid, .investor-grid, .contact-grid, .footer-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .intro-grid { grid-template-columns: 1.1fr 0.9fr; }
+    .strategy-grid { grid-template-columns: 1fr 1fr; }
+    .investor-grid { grid-template-columns: 1.15fr 0.85fr; }
+    .contact-grid { grid-template-columns: 0.9fr 1.1fr; }
+
+    .glass-card, .operating-card, .contact-item, .timeline-card, .portfolio-card, .leadership-card, .octa-card, .octa-pillar {
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      padding: 22px;
+    }
+
+    .glass-card h3, .portfolio-card h3, .octa-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .glass-card p, .operating-card p, .timeline-card p, .portfolio-card p, .leadership-card p, .octa-card p, .octa-pillar span {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .metrics-grid, .project-grid, .operating-grid, .portfolio-columns, .octa-grid, .octa-pillars {
+      display: grid;
+      gap: 16px;
+    }
+
+    .metrics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 16px; }
+    .project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .operating-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .portfolio-columns { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .octa-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .octa-pillars { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 16px; }
+
+    .metric {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .metric strong { display: block; font-size: 1.35rem; margin-bottom: 8px; }
+
+    .metric span { color: var(--muted); line-height: 1.5; font-size: 0.95rem; }
+
+    .project-card {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .project-image { height: 260px; overflow: hidden; border-bottom: 1px solid var(--line); }
+    .project-image img { width: 100%; height: 100%; object-fit: cover; }
+    .project-body { padding: 22px; }
+    .project-logo { width: 120px; max-width: 60%; margin-bottom: 16px; }
+    .project-body h3 { margin: 0 0 10px; }
+    .project-body p { margin: 0 0 14px; color: var(--muted); line-height: 1.75; }
+
+    .project-points, .strategy-list, .timeline, .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .project-points { margin-bottom: 18px; }
+
+    .project-points div, .strategy-item {
+      border-radius: 16px;
+      padding: 13px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #e6edf6;
+      line-height: 1.55;
+    }
+
+    .strategy-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .strategy-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(0,171,255,0.76), rgba(0,255,170,0.50));
+      font-weight: 700;
+    }
+
+    .strategy-item h4 { margin: 0 0 8px; }
+    .strategy-item p { margin: 0; color: var(--muted); line-height: 1.7; }
+
+    .portfolio-gallery { display: grid; gap: 12px; margin-top: 14px; }
+
+    .portfolio-item {
+      height: 220px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #05070c;
+    }
+
+    .portfolio-item img { width: 100%; height: 100%; object-fit: cover; }
+
+    .octa-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.09);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(0,171,255,.16), transparent 32%),
+        radial-gradient(circle at 85% 30%, rgba(0,255,170,.10), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+    }
+
+    .octa-hero {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 24px;
+      align-items: center;
+      padding: 28px;
+    }
+
+    .octa-title {
+      margin: 18px 0 12px;
+      font-size: clamp(2rem, 5vw, 4.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
+    .octa-lead { margin: 0; color: var(--muted); line-height: 1.8; }
+
+    .octa-main-render {
+      min-height: 430px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #03060b;
+      box-shadow: 0 20px 60px rgba(0,0,0,.34);
+    }
+
+    .octa-main-render img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+    }
+
+    .octa-content { padding: 0 28px 28px; }
+
+    .octa-card { padding: 0; overflow: hidden; }
+    .octa-card img { width: 100%; aspect-ratio: 16/11; object-fit: cover; border-bottom: 1px solid var(--line); }
+    .octa-card-body { padding: 18px; }
+    .octa-pillar strong { display: block; margin-bottom: 6px; }
+
+    .contact-form { display: grid; gap: 14px; }
+    .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .contact-form input, .contact-form textarea, .contact-form select {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      outline: none;
+    }
+
+    .contact-form textarea { min-height: 170px; resize: vertical; }
+
+    .submit-btn {
+      border: 0;
+      padding: 14px 18px;
+      border-radius: 16px;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(135deg, rgba(0,171,255,0.78), rgba(0,255,170,0.55));
+      cursor: pointer;
+    }
+
+    .footer { padding: 10px 18px 28px; }
+
+    .footer-panel {
+      width: min(var(--max-width), calc(100% - 8px));
+      margin: 0 auto;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      padding: 24px;
+    }
+
+    .footer-grid { grid-template-columns: 1.1fr 0.9fr 0.9fr; }
+
+    .footer-brand { display: flex; gap: 14px; align-items: center; }
+    .footer-brand img { width: 84px; }
+    .footer-brand h4, .footer-col h5 { margin: 0 0 8px; }
+    .footer-brand p, .footer-col a { color: var(--muted); line-height: 1.8; }
+    .footer-col { display: grid; gap: 8px; }
+
+    .footer-bottom {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #aeb8c5;
+    }
+
+    @media (max-width: 1100px) {
+      .project-grid, .portfolio-columns, .octa-grid { grid-template-columns: 1fr 1fr; }
+      .operating-grid, .octa-pillars { grid-template-columns: 1fr 1fr; }
+      .intro-grid, .strategy-grid, .investor-grid, .contact-grid, .footer-grid, .octa-hero { grid-template-columns: 1fr; }
+      .topbar-inner { flex-direction: column; align-items: flex-start; }
+      .nav { justify-content: flex-start; }
+    }
+
+    @media (max-width: 760px) {
+      .page-shell { width: calc(100% - 12px); margin: 8px auto 16px; border-radius: 24px; }
+      .topbar-inner { width: calc(100% - 20px); }
+      .brand-logo { width: 82px; }
+      .brand-copy h1 { font-size: 1.35rem; }
+      .brand-copy p { font-size: 0.7rem; letter-spacing: 0.15em; }
+      .hero { padding: 12px 10px 22px; }
+      .hero-panel { min-height: auto; border-radius: 22px; }
+      .hero-visual { min-height: 320px; }
+      .section-stack { padding: 4px 10px 18px; }
+      .section { padding: 22px 16px; border-radius: 20px; }
+      .metrics-grid, .project-grid, .operating-grid, .portfolio-columns, .octa-grid, .octa-pillars, .field-grid { grid-template-columns: 1fr; }
+      .octa-hero, .octa-content { padding: 18px; }
+      .octa-content { padding-top: 0; }
+      .octa-main-render, .octa-main-render img { min-height: 270px; }
+      .project-image { height: 220px; }
+      .portfolio-item { height: 200px; }
+      .footer { padding: 4px 10px 18px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <a href="#top" aria-label="Eyedit Group home">
+          <img src="logo-triangle-obturador.png" alt="Eyedit Group logo" class="brand-logo" />
+        </a>
+        <div class="brand-copy">
+          <h1>Eyedit Group</h1>
+          <p>International Holding</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#vision">Vision</a>
+        <a href="#projects">Divisions</a>
+        <a href="#octacore-v5">OctaCore V5</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#investors">Investors</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell" id="top">
+    <section class="hero">
+      <div class="hero-panel">
+        <div class="hero-topline">
+          <div class="hero-kicker">Strategic architecture for a connected international ecosystem</div>
+          <h1 class="hero-title">Three divisions.<br />One holding.<br />One intelligent future.</h1>
+          <p class="hero-subtitle">
+            Eyedit Group connects audiovisual development, wellness innovation, security intelligence
+            and artificial intelligence within a premium holding framework designed for global visibility,
+            strategic growth and long-term partnership.
+          </p>
+          <div class="hero-actions">
+            <a href="#octacore-v5" class="hero-btn primary">Discover OctaCore V5</a>
+            <a href="#projects" class="hero-btn secondary">Explore divisions</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="logo-triangle-obturador.png" alt="Eyedit Group strategic triangle" />
+        </div>
+
+        <div class="hero-bottom-copy">
+          <h2>One group, three divisions, endless connected solutions</h2>
+          <p>
+            The triangle functions as the central corporate sign of Eyedit Group. Each vertex represents
+            a specialized division, while OctaCore V5 connects the full ecosystem through technology,
+            visual identity and strategic intelligence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-stack">
+      <section class="section" id="vision">
+        <div class="section-header">
+          <div class="section-tag">Our Vision</div>
+          <h2 class="section-title">A coherent ecosystem, not isolated projects</h2>
+          <p class="section-description">
+            Eyedit Group is structured as a strategic umbrella capable of hosting premium brands,
+            services, visual assets, intelligent platforms and institutional narratives.
+          </p>
+        </div>
+
+        <div class="intro-grid">
+          <div class="glass-card">
+            <h3>Corporate Philosophy</h3>
+            <p>
+              Image, care, protection and intelligence can operate together. Eyedit Group connects these
+              fields into one scalable architecture with a strong symbolic identity and a clear international vision.
+            </p>
+
+            <div class="metrics-grid">
+              <div class="metric"><strong>3</strong><span>Strategic divisions under one holding identity.</span></div>
+              <div class="metric"><strong>1</strong><span>Connected technology ecosystem through OctaCore V5.</span></div>
+              <div class="metric"><strong>2026–2035</strong><span>Long-term roadmap for growth and global development.</span></div>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <h3>Brand Logic</h3>
+            <p>
+              The triangle obturator acts as the main sign of the holding. Its three points define the divisions,
+              while its central geometry communicates integration, focus and controlled expansion.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-header">
+          <div class="section-tag">Strategic Divisions</div>
+          <h2 class="section-title">Three complementary operating lines</h2>
+          <p class="section-description">
+            Each division can operate independently or as part of a larger commercial, institutional or technological proposition.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-image"><img src="eyedit-2.png" alt="Eyedit Audiovisual" /></div>
+            <div class="project-body">
+              <img src="logo-eye-dit.png" alt="Eyedit logo" class="project-logo" />
+              <h3>Eyedit Audiovisual</h3>
+              <p>Visual communication, premium identity, digital presentation systems and audiovisual creative direction.</p>
+              <div class="project-points">
+                <div>Visual communication and strategic brand presentation</div>
+                <div>Photography, media and creative direction</div>
+                <div>Premium digital identity and AI-assisted media</div>
+              </div>
+              <a href="#contact" class="project-link">Explore collaboration</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image"><img src="ccs-2.png" alt="CCSCANSSAM" /></div>
+            <div class="project-body">
+              <img src="logo-ccs-canssam.png" alt="CCSCANSSAM logo" class="project-logo" />
+              <h3>CCSCANSSAM Wellness</h3>
+              <p>Wellness, natural therapies, balance, recovery and smart human-centered care concepts.</p>
+              <div class="project-points">
+                <div>Natural therapies and wellbeing services</div>
+                <div>Human-centered healing environments</div>
+                <div>Smart wellness and therapeutic innovation</div>
+              </div>
+              <a href="#contact" class="project-link">Request dossier</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image"><img src="eyevision-2.png" alt="EyeVision Security" /></div>
+            <div class="project-body">
+              <img src="logo-eye-vision.png" alt="EyeVision logo" class="project-logo" />
+              <h3>EyeVision Security</h3>
+              <p>Monitoring, visual control, cybersecurity, intelligent protection and smart transport concepts.</p>
+              <div class="project-points">
+                <div>Advanced monitoring and visual control</div>
+                <div>Cybersecurity and protective architecture</div>
+                <div>Intelligent transport and security systems</div>
+              </div>
+              <a href="#contact" class="project-link">Discuss opportunities</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="octacore-v5">
+        <div class="section-header">
+          <div class="section-tag">Flagship Ecosystem</div>
+          <h2 class="section-title">Eyedit OctaCore V5</h2>
+          <p class="section-description">
+            A strategic technology ecosystem connecting artificial intelligence, audiovisual creation,
+            wellness innovation and intelligent security within the Eyedit Group holding architecture.
+          </p>
+        </div>
+
+        <div class="octa-shell">
+          <div class="octa-hero">
+            <div>
+              <span class="octa-badge">Corporate Book 2026–2035</span>
+              <h3 class="octa-title">One core. Three divisions. A connected future.</h3>
+              <p class="octa-lead">
+                OctaCore V5 brings the group’s divisions into one premium presentation layer,
+                combining strategic identity, product vision, AI platforms and long-term global positioning.
+              </p>
+              <div class="octa-actions">
+                <a class="octa-btn primary" href="octacore-v5.html">Open OctaCore V5 page</a>
+                <a class="octa-btn secondary" href="octacore-book-overview.jpg" target="_blank" rel="noopener">View Corporate Book overview</a>
+              </div>
+            </div>
+
+            <div class="octa-main-render">
+              <img src="octacore-v5-corporate-book.png" alt="Eyedit OctaCore V5 corporate book presentation" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="octa-content">
+            <div class="octa-grid">
+              <article class="octa-card">
+                <img src="octacore-holding-structure.png" alt="Eyedit Group holding structure" loading="lazy" />
+                <div class="octa-card-body">
+                  <h3>Holding Architecture</h3>
+                  <p>Three specialized divisions connected by one strategic identity and one scalable ecosystem.</p>
+                </div>
+              </article>
+
+              <article class="octa-card">
+                <img src="eyedit-group-future-poster.png" alt="Eyedit Group connected future ecosystem" loading="lazy" />
+                <div class="octa-card-body">
+                  <h3>Connected Ecosystem</h3>
+                  <p>Audiovisual, wellness and security converge through artificial intelligence and innovation.</p>
+                </div>
+              </article>
+
+              <article class="octa-card">
+                <img src="octacore-book-overview.jpg" alt="OctaCore V5 corporate book overview" loading="lazy" />
+                <div class="octa-card-body">
+                  <h3>Vision 2026–2035</h3>
+                  <p>A visual roadmap for products, international presence, partnerships and future development.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="octa-pillars">
+              <div class="octa-pillar"><strong>Artificial Intelligence</strong><span>Intelligent platforms and connected services.</span></div>
+              <div class="octa-pillar"><strong>Audiovisual</strong><span>Media, visual communication and creative systems.</span></div>
+              <div class="octa-pillar"><strong>Wellness</strong><span>Human-centered care and smart wellbeing concepts.</span></div>
+              <div class="octa-pillar"><strong>Security</strong><span>Monitoring, cyber protection and intelligent control.</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="model">
+        <div class="section-header">
+          <div class="section-tag">Strategic Operating Model</div>
+          <h2 class="section-title">A modular structure with premium visual consistency</h2>
+          <p class="section-description">
+            The group functions as a premium brand system where services, dossiers, communications,
+            intelligent platforms and partnerships can be assembled according to context.
+          </p>
+        </div>
+
+        <div class="operating-grid">
+          <div class="operating-card"><h3>Brand Layer</h3><p>Identity, naming architecture and symbolic positioning across the holding.</p></div>
+          <div class="operating-card"><h3>Service Layer</h3><p>Each division develops specialized services while remaining anchored to the group.</p></div>
+          <div class="operating-card"><h3>Technology Layer</h3><p>OctaCore V5 connects products, AI systems and future digital platforms.</p></div>
+          <div class="operating-card"><h3>Expansion Layer</h3><p>Partnerships, licensing, global presence and long-term growth pathways.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="portfolio">
+        <div class="section-header">
+          <div class="section-tag">Portfolio</div>
+          <h2 class="section-title">Visual work organized by division</h2>
+          <p class="section-description">A clear portfolio structure for Eyedit, CCSCANSSAM and EyeVision.</p>
+        </div>
+
+        <div class="portfolio-columns">
+          <div class="portfolio-card">
+            <h3>Eyedit Audiovisual</h3>
+            <p>Visual communication, image development and premium creative presentation.</p>
+            <div class="portfolio-gallery">
+              <div class="portfolio-item"><img src="eyedit-1.png" alt="Eyedit portfolio 1" /></div>
+              <div class="portfolio-item"><img src="eyedit-2.png" alt="Eyedit portfolio 2" /></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>CCSCANSSAM</h3>
+            <p>Wellness, natural therapies and healing-oriented visual identity.</p>
+            <div class="portfolio-gallery">
+              <div class="portfolio-item"><img src="ccs-2.png" alt="CCSCANSSAM portfolio 1" /></div>
+              <div class="portfolio-item"><img src="ccs-3.png" alt="CCSCANSSAM portfolio 2" /></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>EyeVision Security</h3>
+            <p>Security image systems, monitoring concepts and strategic visual control.</p>
+            <div class="portfolio-gallery">
+              <div class="portfolio-item"><img src="eyevision-2.png" alt="EyeVision portfolio 1" /></div>
+              <div class="portfolio-item"><img src="eyevision-3.png" alt="EyeVision portfolio 2" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="investors">
+        <div class="section-header">
+          <div class="section-tag">Investors & Partners</div>
+          <h2 class="section-title">Prepared for strategic conversations</h2>
+          <p class="section-description">
+            Eyedit Group combines symbolic strength, sector versatility, product vision and premium visual clarity.
+          </p>
+        </div>
+
+        <div class="investor-grid">
+          <div class="glass-card">
+            <h3>Investment Narrative</h3>
+            <p>
+              Eyedit Group is positioned as a strategic platform suitable for selective investor outreach,
+              family office conversations, institutional partnerships and premium collaboration proposals.
+            </p>
+            <div class="metrics-grid">
+              <div class="metric"><strong>Holding-ready</strong><span>One coherent platform, not disconnected activities.</span></div>
+              <div class="metric"><strong>Presentation-ready</strong><span>Prepared for decks, websites, books and dossiers.</span></div>
+              <div class="metric"><strong>Expansion-ready</strong><span>Designed for partnerships and international growth.</span></div>
+            </div>
+          </div>
+
+          <div class="leadership-card">
+            <h3>Founder Vision</h3>
+            <p>
+              Central coordination of visual identity, project structure, OctaCore V5 development
+              and long-term strategic narrative.
+            </p>
+            <p style="margin-top:14px;">
+              <strong>Investor relations:</strong>
+              <a href="mailto:invest@eyeditgroup.com">invest@eyeditgroup.com</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-header">
+          <div class="section-tag">Contact</div>
+          <h2 class="section-title">Open a strategic conversation</h2>
+          <p class="section-description">
+            For partnerships, investment conversations, institutional introductions or premium project presentation.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>General Information</strong>
+              <a href="mailto:info@eyeditgroup.com">info@eyeditgroup.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Investors</strong>
+              <a href="mailto:invest@eyeditgroup.com">invest@eyeditgroup.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Partnerships</strong>
+              <a href="mailto:partners@eyeditgroup.com">partners@eyeditgroup.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Flagship Platform</strong>
+              <span>Eyedit OctaCore V5</span>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <form class="contact-form" id="contactForm">
+              <div class="field-grid">
+                <input type="text" name="name" placeholder="Your name" required />
+                <input type="email" name="email" placeholder="Your email" required />
+              </div>
+
+              <div class="field-grid">
+                <input type="text" name="company" placeholder="Company or organization" />
+                <select name="interest">
+                  <option value="">Area of interest</option>
+                  <option>OctaCore V5</option>
+                  <option>Eyedit Audiovisual</option>
+                  <option>CCSCANSSAM</option>
+                  <option>EyeVision Security</option>
+                  <option>Investment or partnership</option>
+                </select>
+              </div>
+
+              <textarea name="message" placeholder="Write your message" required></textarea>
+
+              <div class="form-actions">
+                <button type="submit" class="submit-btn">Send inquiry</button>
+                <a href="mailto:info@eyeditgroup.com" class="ghost-btn">Direct email</a>
+              </div>
+              <div id="formMessage"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-panel">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo-triangle-obturador.png" alt="Eyedit Group logo" />
+          <div>
+            <h4>Eyedit Group</h4>
+            <p>International holding connecting audiovisual, wellness, security and artificial intelligence.</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <a href="#vision">Vision</a>
+          <a href="#projects">Divisions</a>
+          <a href="#octacore-v5">OctaCore V5</a>
+          <a href="#portfolio">Portfolio</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:info@eyeditgroup.com">info@eyeditgroup.com</a>
+          <a href="mailto:invest@eyeditgroup.com">invest@eyeditgroup.com</a>
+          <a href="mailto:partners@eyeditgroup.com">partners@eyeditgroup.com</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Eyedit Group</span>
+        <span>Creating the future together</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const form = document.getElementById('contactForm');
+      const message = document.getElementById('formMessage');
+
+      if (form) {
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const data = new FormData(form);
+          const interest = data.get('interest') || 'General';
+          let recipient = 'info@eyeditgroup.com';
+
+          if (interest === 'Investment or partnership') {
+            recipient = 'invest@eyeditgroup.com';
+          } else if (interest === 'OctaCore V5') {
+            recipient = 'invest@eyeditgroup.com';
+          } else if (interest === 'Eyedit Audiovisual' || interest === 'CCSCANSSAM' || interest === 'EyeVision Security') {
+            recipient = 'partners@eyeditgroup.com';
+          }
+
+          const subject = encodeURIComponent('Eyedit Group inquiry: ' + interest);
+          const body = encodeURIComponent(
+            'Name: ' + (data.get('name') || '') + '\n' +
+            'Email: ' + (data.get('email') || '') + '\n' +
+            'Company: ' + (data.get('company') || '') + '\n' +
+            'Interest: ' + interest + '\n\n' +
+            'Message:\n' + (data.get('message') || '')
+          );
+
+          if (message) {
+            message.textContent = 'Opening your email application...';
+          }
+
+          window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EyeDit Group Corporate Film</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #05080d;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-weight: 300;
+      letter-spacing: 5px;
+    }
+
+    p {
+      color: #c8a56a;
+      letter-spacing: 3px;
+    }
+
+    video {
+      width: 100%;
+      margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0,120,255,.15);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <p>EYEDIT GROUP · CORPORATE FILM 2026</p>
+
+  <h1>CREATING THE FUTURE TOGETHER</h1>
+
+  <video controls playsinline preload="metadata">
+    <source src="EyeDit_Group_V3_FINAL.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <p>PEOPLE · TECHNOLOGY · CONSCIOUSNESS · PLANET</p>
+
+</div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EyeDit Group Corporate Film</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #05080d;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-weight: 300;
+      letter-spacing: 5px;
+    }
+
+    p {
+      color: #c8a56a;
+      letter-spacing: 3px;
+    }
+
+    video {
+      width: 100%;
+      margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0,120,255,.15);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <p>EYEDIT GROUP · CORPORATE FILM 2026</p>
+
+  <h1>CREATING THE FUTURE TOGETHER</h1>
+
+  <video controls playsinline preload="metadata">
+    <source src="EyeDit_Group_V3_FINAL.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <p>PEOPLE · TECHNOLOGY · CONSCIOUSNESS · PLANET</p>
+
+</div>
+
+</body>
+</html>

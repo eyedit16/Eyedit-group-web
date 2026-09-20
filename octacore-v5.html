@@ -1,12 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>EyeDit OctaCore V5</title>
+  <meta name="description" content="OctaCore V5 - Eyedit Group">
+  <title>OctaCore V5 | Eyedit Group</title>
 
   <style>
+    :root {
+      --negre: #071014;
+      --fosc: #0d2027;
+      --verd: #58d68d;
+      --blau: #39bde8;
+      --taronja: #ff8a35;
+      --blanc: #f4fbff;
+      --gris: #a9c0c9;
+      --targeta: rgba(255,255,255,.08);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,209 +31,535 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #050713;
-      color: #ffffff;
+      background:
+        radial-gradient(circle at top right, rgba(57,189,232,.16), transparent 35%),
+        linear-gradient(135deg, var(--negre), var(--fosc));
+      color: var(--blanc);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.16), transparent 35%),
-        radial-gradient(circle at 80% 40%, rgba(108, 92, 231, 0.18), transparent 35%);
-      pointer-events: none;
-      z-index: -1;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contenidor {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(7,16,20,.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.1);
     }
 
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      min-height: 72px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 18px 8%;
-      background: rgba(5, 7, 19, 0.85);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    .logo {
-      font-size: 1.3rem;
+    .marca {
+      font-size: 1.15rem;
       font-weight: bold;
       letter-spacing: 1px;
-      color: #00d4ff;
     }
 
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 0.95rem;
+    .marca span {
+      color: var(--taronja);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      color: var(--gris);
+      font-size: .95rem;
     }
 
     nav a:hover {
-      color: #00d4ff;
+      color: var(--verd);
     }
 
     .hero {
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: 82vh;
+      display: grid;
+      place-items: center;
       text-align: center;
-      padding: 80px 20px;
+      padding: 90px 0 70px;
     }
 
-    .hero-content {
-      max-width: 950px;
+    .orbita {
+      width: 190px;
+      height: 190px;
+      margin: 0 auto 28px;
+      border: 2px solid var(--blau);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow:
+        0 0 25px rgba(57,189,232,.55),
+        inset 0 0 35px rgba(88,214,141,.18);
+      position: relative;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 8px 16px;
-      margin-bottom: 24px;
-      border: 1px solid rgba(0, 212, 255, 0.45);
-      border-radius: 999px;
-      color: #00d4ff;
-      background: rgba(0, 212, 255, 0.08);
-      font-size: 0.9rem;
+    .orbita::before,
+    .orbita::after {
+      content: "";
+      position: absolute;
+      border: 1px solid var(--verd);
+      border-radius: 50%;
+      transform: rotate(35deg);
+    }
+
+    .orbita::before {
+      width: 245px;
+      height: 80px;
+    }
+
+    .orbita::after {
+      width: 80px;
+      height: 245px;
+      transform: rotate(-35deg);
+    }
+
+    .orbita strong {
+      font-size: 3.8rem;
+      color: var(--blanc);
+      text-shadow: 0 0 18px var(--blau);
     }
 
     h1 {
-      font-size: clamp(3rem, 9vw, 7rem);
-      line-height: 1;
-      margin-bottom: 24px;
-      background: linear-gradient(90deg, #ffffff, #00d4ff, #8b7cff);
-      -webkit-background-clip: text;
-      color: transparent;
+      font-size: clamp(2.6rem, 8vw, 5.8rem);
+      letter-spacing: 5px;
+      margin-bottom: 12px;
     }
 
-    .hero p {
+    h1 span {
+      color: var(--blau);
+    }
+
+    .subtitol {
+      color: var(--gris);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .botons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .boto {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      background: linear-gradient(90deg, var(--taronja), #ffb347);
+      color: #17100a;
+      transition: .25s;
+    }
+
+    .boto:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255,138,53,.3);
+    }
+
+    .boto.secundari {
+      background: transparent;
+      color: var(--blanc);
+      border: 1px solid var(--blau);
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .titol-seccio {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .titol-seccio h2 {
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      margin-bottom: 10px;
+    }
+
+    .titol-seccio p {
+      color: var(--gris);
+    }
+
+    .graella {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .targeta {
+      background: var(--targeta);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px;
+      padding: 27px;
+      transition: .25s;
+    }
+
+    .targeta:hover {
+      transform: translateY(-5px);
+      border-color: var(--verd);
+    }
+
+    .icona {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .targeta h3 {
+      color: var(--verd);
+      margin-bottom: 9px;
+    }
+
+    .targeta p {
+      color: var(--gris);
+    }
+
+    .arquitectura {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .llista {
+      list-style: none;
+      display: grid;
+      gap: 13px;
+    }
+
+    .llista li {
+      padding: 15px 18px;
+      background: rgba(0,0,0,.2);
+      border-left: 3px solid var(--blau);
+      border-radius: 8px;
+    }
+
+    .fitxa {
+      background: linear-gradient(145deg, rgba(57,189,232,.13), rgba(88,214,141,.08));
+      border: 1px solid rgba(57,189,232,.35);
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .fitxa table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .fitxa td {
+      padding: 12px 4px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .fitxa td:last-child {
+      text-align: right;
+      color: var(--verd);
+      font-weight: bold;
+    }
+
+    .mvp {
+      text-align: center;
+      background:
+        linear-gradient(rgba(7,16,20,.75), rgba(7,16,20,.9)),
+        radial-gradient(circle, rgba(255,138,53,.22), transparent 55%);
+      border-top: 1px solid rgba(255,138,53,.4);
+      border-bottom: 1px solid rgba(255,138,53,.4);
+    }
+
+    .mvp h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--taronja);
+      margin-bottom: 15px;
+    }
+
+    .mvp p {
       max-width: 760px;
-      margin: 0 auto 34px;
-      font-size
-    section{
-      max-width:1200px;
-      margin:auto;
-      padding:90px 8%;
+      margin: auto;
+      color: var(--gris);
+      font-size: 1.1rem;
     }
 
-    h2{
-      font-size:2.4rem;
-      margin-bottom:20px;
-      color:#00d4ff;
+    .passos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:24px;
-      margin-top:40px;
+    .pas {
+      text-align: center;
+      padding: 22px 12px;
+      border-top: 3px solid var(--blau);
+      background: rgba(255,255,255,.06);
+      border-radius: 12px;
     }
 
-    .card{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:18px;
-      padding:30px;
-      transition:.3s;
+    .pas strong {
+      display: block;
+      color: var(--taronja);
+      font-size: 1.5rem;
+      margin-bottom: 7px;
     }
 
-    .card:hover{
-      transform:translateY(-8px);
-      border-color:#00d4ff;
+    footer {
+      padding: 35px 0;
+      text-align: center;
+      color: var(--gris);
+      border-top: 1px solid rgba(255,255,255,.1);
     }
 
-    footer{
-      text-align:center;
-      padding:50px 20px;
-      color:#9aa0b5;
-      border-top:1px solid rgba(255,255,255,.08);
+    footer strong {
+      color: var(--blanc);
+    }
+
+    @media (max-width: 800px) {
+      nav ul {
+        display: none;
+      }
+
+      .graella,
+      .arquitectura,
+      .passos {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 78vh;
+        padding-top: 60px;
+      }
+
+      section {
+        padding: 58px 0;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<nav>
-<div class="logo">EyeDit Group</div>
+  <header>
+    <div class="contenidor">
+      <nav>
+        <a class="marca" href="#inici">EYE<span>DIT</span> GROUP</a>
+        <ul>
+          <li><a href="#concepte">Concepte</a></li>
+          <li><a href="#tecnologia">Tecnologia</a></li>
+          <li><a href="#especificacions">Fitxa</a></li>
+          <li><a href="#contacte">Contacte</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<div>
-<a href="#">Home</a>
-<a href="#">Technology</a>
-<a href="#">Contact</a>
-</div>
-</nav>
+  <main id="inici">
 
-<header class="hero">
-<div class="hero-content">
+    <section class="hero">
+      <div class="contenidor">
+        <div class="orbita">
+          <strong>V5</strong>
+        </div>
 
-<div class="badge">
-EyeDit OctaCore V5
-</div>
+        <h1>OCTA<span>CORE</span></h1>
 
-<h1>Future AI Platform</h1>
+        <p class="subtitol">
+          Una nova generació de comunicació, mobilitat, seguretat i consciència digital.
+          Tecnologia pensada per connectar persones sense dependència del mòbil.
+        </p>
 
-<p>
-A next-generation ecosystem combining Artificial Intelligence,
-Security, Audiovisual Innovation and Wellness Technology
-into a single intelligent platform.
-</p>
+        <div class="botons">
+          <a class="boto" href="#concepte">Descobrir el projecte</a>
+          <a class="boto secundari" href="#contacte">Eyedit Group</a>
+        </div>
+      </div>
+    </section>
 
-<div class="buttons">
-<a class="button button-primary" href="#">Explore</a>
-<a class="button button-secondary" href="#">Learn More</a>
-</div>
+    <section id="concepte">
+      <div class="contenidor">
+        <div class="titol-seccio">
+          <h2>El concepte OctaCore V5</h2>
+          <p>Vuit àrees de tecnologia integrades en una sola visió.</p>
+        </div>
 
-</div>
-</header>
+        <div class="graella">
+          <article class="targeta">
+            <div class="icona">◉</div>
+            <h3>Connectivitat</h3>
+            <p>Comunicació híbrida mitjançant xarxes mesh, LoRa, satèl·lit i altres sistemes de llarg abast.</p>
+          </article>
 
-<section>
+          <article class="targeta">
+            <div class="icona">✦</div>
+            <h3>OctaMind</h3>
+            <p>Una capa d’intel·ligència assistiva orientada a la informació, la seguretat i el benestar de l’usuari.</p>
+          </article>
 
-<h2>Core Technologies</h2>
+          <article class="targeta">
+            <div class="icona">⌁</div>
+            <h3>Experiència 360°</h3>
+            <p>Interacció immersiva amb visualització hologràfica, àudio espacial i entorns digitals avançats.</p>
+          </article>
 
-<div class="grid">
+          <article class="targeta">
+            <div class="icona">♢</div>
+            <h3>Wellness</h3>
+            <p>Biofeedback, respiració, descans, freqüències i eines de suport per a una vida més equilibrada.</p>
+          </article>
 
-<div class="card">
-<h3>Artificial Intelligence</h3>
-<p>Advanced AI engines designed for intelligent communication and automation.</p>
-</div>
+          <article class="targeta">
+            <div class="icona">⚡</div>
+            <h3>Emergència</h3>
+            <p>Modes de localització, alerta i comunicació prioritària en situacions de risc o falta de cobertura.</p>
+          </article>
 
-<div class="card">
-<h3>Cyber Security</h3>
-<p>Enterprise-grade protection with privacy-first architecture.</p>
-</div>
+          <article class="targeta">
+            <div class="icona">⌘</div>
+            <h3>Privacitat</h3>
+            <p>Disseny centrat en el control de les dades, la identitat digital i la protecció de les comunicacions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-<h3>Audiovisual Innovation</h3>
-<p>Immersive multimedia experiences powered by next generation technologies.</p>
-</div>
+    <section id="tecnologia">
+      <div class="contenidor">
+        <div class="titol-seccio">
+          <h2>Arquitectura tecnològica</h2>
+          <p>Una plataforma modular preparada per evolucionar.</p>
+        </div>
 
-</div>
+        <div class="arquitectura">
+          <div class="targeta">
+            <ul class="llista">
+              <li><strong>01 · Mesh</strong><br>Comunicació distribuïda entre dispositius.</li>
+              <li><strong>02 · LoRa</strong><br>Baix consum i gran abast.</li>
+              <li><strong>03 · Satèl·lit</strong><br>Connectivitat en zones remotes.</li>
+              <li><strong>04 · Làser</strong><br>Enllaços òptics d’alta velocitat.</li>
+              <li><strong>05 · Mode nit</strong><br>Estalvi d’energia i mínima interferència.</li>
+            </ul>
+          </div>
 
-</section>
-<section>
+          <div class="fitxa" id="especificacions">
+            <h3>Fitxa inicial del projecte</h3>
+            <br>
+            <table>
+              <tr>
+                <td>Projecte</td>
+                <td>OctaCore V5</td>
+              </tr>
+              <tr>
+                <td>Desenvolupador</td>
+                <td>Eyedit Group</td>
+              </tr>
+              <tr>
+                <td>Categoria</td>
+                <td>Deep Technology</td>
+              </tr>
+              <tr>
+                <td>Objectiu MVP</td>
+                <td>Comunicació híbrida</td>
+              </tr>
+              <tr>
+                <td>Pressupost inicial</td>
+                <td>5.000–7.000 €</td>
+              </tr>
+              <tr>
+                <td>Mercat objectiu</td>
+                <td>2030–2035</td>
+              </tr>
+              <tr>
+                <td>Estat</td>
+                <td>Concepte / MVP</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<h2>Our Vision</h2>
+    <section class="mvp">
+      <div class="contenidor">
+        <h2>Del concepte al primer MVP</h2>
+        <p>
+          OctaCore V5 neix com una plataforma oberta i escalable.
+          El primer prototip validarà la connectivitat, la seguretat,
+          el mode d’emergència i l’experiència d’usuari.
+        </p>
+      </div>
+    </section>
 
-<p>
-EyeDit OctaCore V5 is designed to become the central intelligence
-platform for businesses, creators and organizations, combining
-Artificial Intelligence, secure communications and immersive
-digital experiences into one unified ecosystem.
-</p>
+    <section>
+      <div class="contenidor">
+        <div class="titol-seccio">
+          <h2>Full de ruta</h2>
+          <p>Les primeres fases de desenvolupament.</p>
+        </div>
 
-</section>
+        <div class="passos">
+          <div class="pas">
+            <strong>01</strong>
+            Concepte
+          </div>
 
-<footer>
+          <div class="pas">
+            <strong>02</strong>
+            Disseny del sistema
+          </div>
 
-<p>© 2026 EyeDit Group. All rights reserved.</p>
+          <div class="pas">
+            <strong>03</strong>
+            Prototip funcional
+          </div>
 
-</footer>
+          <div class="pas">
+            <strong>04</strong>
+            Validació i partners
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacte">
+      <div class="contenidor">
+        <div class="titol-seccio">
+          <h2>Eyedit Group</h2>
+          <p>
+            Creativitat, tecnologia i consciència per construir el futur.
+          </p>
+
+          <div class="botons">
+            <a class="boto" href="https://eyeditgroup.com" target="_blank">
+              Visita eyeditgroup.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="contenidor">
+      <p><strong>Eyedit Group</strong> · OctaCore V5</p>
+      <p>© 2026 Eyedit Group. Projecte conceptual.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

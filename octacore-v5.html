@@ -15,7 +15,12 @@
   --light:#edf7fb;
   --muted:#a8bbc5;
 }
-*{box-sizing:border-box;scroll-behavior:smooth}
+
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   background:var(--dark);
@@ -23,6 +28,7 @@ body{
   font-family:Arial,sans-serif;
   line-height:1.6;
 }
+
 nav{
   position:sticky;
   top:0;
@@ -34,20 +40,33 @@ nav{
   justify-content:space-between;
   align-items:center;
 }
-.logo{font-weight:bold;font-size:1.15rem}
-.logo span{color:var(--orange)}
+
+.logo{
+  font-weight:bold;
+  font-size:1.15rem;
+}
+
+.logo span{
+  color:var(--orange);
+}
+
 nav a{
   color:var(--light);
   text-decoration:none;
   margin-left:18px;
   font-size:.9rem;
 }
-nav a:hover{color:var(--orange)}
+
+nav a:hover{
+  color:var(--orange);
+}
+
 section{
   padding:85px 8%;
   max-width:1200px;
   margin:auto;
 }
+
 .hero{
   min-height:90vh;
   display:flex;
@@ -55,35 +74,47 @@ section{
   gap:45px;
   background:radial-gradient(circle at 80% 20%,#164965 0,#071018 48%);
 }
-.hero-content{flex:1}
+
+.hero-content{
+  flex:1;
+}
+
 .hero-image{
   width:48%;
   border-radius:22px;
   box-shadow:0 0 35px #168bd055;
 }
+
 .kicker{
   color:var(--green);
   font-weight:bold;
   letter-spacing:3px;
   font-size:.8rem;
 }
+
 .hero h1{
   font-size:clamp(2.6rem,7vw,6rem);
   line-height:1;
   margin:15px 0;
 }
-.hero h1 span{color:var(--orange)}
+
+.hero h1 span{
+  color:var(--orange);
+}
+
 .lead{
   font-size:1.2rem;
   max-width:720px;
   color:var(--muted);
 }
+
 .buttons{
   display:flex;
   flex-wrap:wrap;
   gap:14px;
   margin-top:28px;
 }
+
 .btn{
   display:inline-block;
   padding:13px 21px;
@@ -92,17 +123,28 @@ section{
   font-weight:bold;
   border:1px solid var(--orange);
   color:white;
+  transition:.2s;
 }
+
 .btn.primary{
   background:var(--orange);
   color:#101010;
 }
+
 .btn:hover{
   transform:translateY(-2px);
   filter:brightness(1.15);
 }
-h2{font-size:2.5rem;margin-top:10px}
-h3{color:var(--orange)}
+
+h2{
+  font-size:2.5rem;
+  margin-top:10px;
+}
+
+h3{
+  color:var(--orange);
+}
+
 .tag{
   display:inline-block;
   color:var(--blue);
@@ -111,6 +153,7 @@ h3{color:var(--orange)}
   padding:5px 12px;
   font-size:.75rem;
 }
+
 .section-image{
   width:100%;
   max-height:520px;
@@ -119,49 +162,89 @@ h3{color:var(--orange)}
   margin:25px 0 35px;
   box-shadow:0 0 30px #0008;
 }
+
+.image-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+  margin:25px 0 35px;
+}
+
+.image-grid img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 0 30px #0008;
+}
+
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
 }
+
 .card{
   background:var(--card);
   border:1px solid #23404e;
   border-radius:18px;
   padding:25px;
 }
-.card p{color:var(--muted)}
+
+.card p{
+  color:var(--muted);
+}
+
 .specs{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
   gap:16px;
 }
+
 .spec{
   padding:20px;
   border-left:3px solid var(--green);
   background:#0d1a23;
 }
+
 .spec strong{
   display:block;
   color:var(--green);
   font-size:1.4rem;
 }
+
 footer{
   text-align:center;
   padding:35px;
   color:var(--muted);
   border-top:1px solid #23404e;
 }
+
 @media(max-width:800px){
-  nav{display:block}
-  nav div:last-child{margin-top:12px}
-  nav a{margin:0 12px 0 0}
-  .hero{display:block}
+  nav{
+    display:block;
+  }
+
+  nav div:last-child{
+    margin-top:12px;
+  }
+
+  nav a{
+    margin:0 12px 0 0;
+  }
+
+  .hero{
+    display:block;
+  }
+
   .hero-image{
     width:100%;
     margin-top:35px;
   }
-  section{padding:65px 6%}
+
+  section{
+    padding:65px 6%;
+  }
 }
 </style>
 </head>
@@ -170,6 +253,7 @@ footer{
 
 <nav>
   <div class="logo">Eye<span>Dit</span> Group</div>
+
   <div>
     <a href="index.html">Home</a>
     <a href="#concept">Concept</a>
@@ -184,30 +268,48 @@ footer{
 <section class="hero">
   <div class="hero-content">
     <div class="kicker">FLAGSHIP ECOSYSTEM · CONCEPT EDITION</div>
-    <h1>EyeDit <span>OctaCore V5</span></h1>
+
+    <h1>
+      EyeDit <span>OctaCore V5</span>
+    </h1>
+
     <p class="lead">
       More than a device. A new personal ecosystem connecting artificial
       intelligence, creativity, wellbeing, security and global communication.
     </p>
 
     <div class="buttons">
-      <a class="btn primary" href="#concept">Explore the concept</a>
-      <a class="btn" href="#contact">Contact EyeDit Group</a>
+      <a class="btn primary" href="#concept">
+        Explore the concept
+      </a>
+
+      <a class="btn" href="#contact">
+        Contact EyeDit Group
+      </a>
     </div>
   </div>
 
-  <img class="hero-image"
-       src="octacore-v5-hero.png"
-       alt="EyeDit OctaCore V5 concept render">
+  <!-- Correct existing image filename -->
+  <img
+    class="hero-image"
+    src="octacore-v5-corporate-book.png"
+    alt="EyeDit OctaCore V5 concept render"
+  >
 </section>
 
 <section id="concept">
   <span class="tag">THE CONCEPT</span>
-  <h2>One core. Three divisions. A connected future.</h2>
 
-  <img class="section-image"
-       src="octacore-v5-ecosystem.png"
-       alt="EyeDit OctaCore V5 ecosystem render">
+  <h2>
+    One core. Three divisions. A connected future.
+  </h2>
+
+  <!-- Correct existing image filename -->
+  <img
+    class="section-image"
+    src="octacore-v5-ecosystem-1.png"
+    alt="EyeDit OctaCore V5 ecosystem render"
+  >
 
   <p class="lead">
     OctaCore V5 is the flagship concept of EyeDit Group: an intelligent
@@ -218,91 +320,159 @@ footer{
   <div class="grid">
     <div class="card">
       <h3>EyeDit</h3>
-      <p>Audiovisual production, streaming, creative services and digital experiences.</p>
+      <p>
+        Audiovisual production, streaming, creative services and digital experiences.
+      </p>
     </div>
 
     <div class="card">
       <h3>CCSCANSSAM</h3>
-      <p>Wellbeing, natural medicine, therapeutic animals and restorative environments.</p>
+      <p>
+        Wellbeing, natural medicine, therapeutic animals and restorative environments.
+      </p>
     </div>
 
     <div class="card">
       <h3>EyeVision</h3>
-      <p>Cybersecurity, privacy, transport, telecommunications and satellite systems.</p>
+      <p>
+        Cybersecurity, privacy, transport, telecommunications and satellite systems.
+      </p>
     </div>
   </div>
 </section>
 
 <section id="technology">
   <span class="tag">CORE TECHNOLOGIES</span>
-  <h2>Designed around people</h2>
 
-  <img class="section-image"
-       src="octacore-v5-technology.png"
-       alt="EyeDit OctaCore V5 technology render">
+  <h2>
+    Designed around people
+  </h2>
+
+  <div class="image-grid">
+    <!-- Correct existing image filenames -->
+    <img
+      src="octacore-v5-technology-2.png"
+      alt="EyeDit OctaCore V5 technology render"
+    >
+
+    <img
+      src="octacore-v5-technology-3.png"
+      alt="EyeDit OctaCore V5 technology render two"
+    >
+  </div>
 
   <div class="grid">
     <div class="card">
       <h3>OctaMind AI</h3>
-      <p>An intelligent interface designed to support communication, creativity and personal assistance.</p>
+      <p>
+        An intelligent interface designed to support communication,
+        creativity and personal assistance.
+      </p>
     </div>
 
     <div class="card">
       <h3>Global Connectivity</h3>
-      <p>A concept architecture combining mesh communication, LoRa, satellite links and laser communication.</p>
+      <p>
+        A concept architecture combining mesh communication, LoRa,
+        satellite links and laser communication.
+      </p>
     </div>
 
     <div class="card">
       <h3>Immersive Interface</h3>
-      <p>Holographic and 360-degree interaction designed for a more natural digital experience.</p>
+      <p>
+        Holographic and 360-degree interaction designed for a more natural
+        digital experience.
+      </p>
     </div>
 
     <div class="card">
       <h3>Wellness Layer</h3>
-      <p>Biofeedback, wellbeing tools, emergency support and night-mode assistance.</p>
+      <p>
+        Biofeedback, wellbeing tools, emergency support and night-mode assistance.
+      </p>
     </div>
   </div>
 </section>
 
 <section id="specifications">
   <span class="tag">CONCEPT SPECIFICATIONS</span>
-  <h2>From vision to MVP</h2>
+
+  <h2>
+    From vision to MVP
+  </h2>
 
   <div class="specs">
-    <div class="spec"><strong>V5</strong>Flagship concept generation</div>
-    <div class="spec"><strong>360°</strong>Immersive experience direction</div>
-    <div class="spec"><strong>Mesh</strong>Distributed communication concept</div>
-    <div class="spec"><strong>AI</strong>OctaMind intelligent layer</div>
-    <div class="spec"><strong>€5–7k</strong>Initial MVP estimate</div>
-    <div class="spec"><strong>2030–35</strong>Long-term market horizon</div>
+    <div class="spec">
+      <strong>V5</strong>
+      Flagship concept generation
+    </div>
+
+    <div class="spec">
+      <strong>360°</strong>
+      Immersive experience direction
+    </div>
+
+    <div class="spec">
+      <strong>Mesh</strong>
+      Distributed communication concept
+    </div>
+
+    <div class="spec">
+      <strong>AI</strong>
+      OctaMind intelligent layer
+    </div>
+
+    <div class="spec">
+      <strong>€5–7k</strong>
+      Initial MVP estimate
+    </div>
+
+    <div class="spec">
+      <strong>2030–35</strong>
+      Long-term market horizon
+    </div>
   </div>
 </section>
 
 <section id="roadmap">
   <span class="tag">ROADMAP</span>
-  <h2>Building the ecosystem</h2>
+
+  <h2>
+    Building the ecosystem
+  </h2>
 
   <div class="grid">
     <div class="card">
       <h3>Phase 1 · Foundation</h3>
-      <p>Define the product architecture, visual identity, technology partners and MVP scope.</p>
+      <p>
+        Define the product architecture, visual identity, technology partners
+        and MVP scope.
+      </p>
     </div>
 
     <div class="card">
       <h3>Phase 2 · MVP</h3>
-      <p>Develop the first functional OctaCore V5 communication and interface prototype.</p>
+      <p>
+        Develop the first functional OctaCore V5 communication and interface prototype.
+      </p>
     </div>
 
     <div class="card">
       <h3>Phase 3 · Expansion</h3>
-      <p>Connect EyeDit, CCSCANSSAM and EyeVision into a global innovation ecosystem.</p>
+      <p>
+        Connect EyeDit, CCSCANSSAM and EyeVision into a global innovation ecosystem.
+      </p>
     </div>
   </div>
 </section>
 
 <section id="contact">
-  <span class="tag">EYE DIT GROUP</span>
-  <h2>Let’s build the next layer of communication.</h2>
+  <span class="tag">EYEDIT GROUP</span>
+
+  <h2>
+    Let’s build the next layer of communication.
+  </h2>
 
   <p class="lead">
     For partnerships, investment discussions or technology collaboration,
@@ -310,19 +480,25 @@ footer{
   </p>
 
   <div class="buttons">
-    <a class="btn primary"
-       href="mailto:info@eyeditgroup.com?subject=OctaCore%20V5%20Enquiry">
-       Email EyeDit Group
+    <a
+      class="btn primary"
+      href="mailto:info@eyeditgroup.com?subject=OctaCore%20V5%20Enquiry"
+    >
+      Email EyeDit Group
     </a>
 
-    <a class="btn"
-       href="https://eyeditgroup.com"
-       target="_blank"
-       rel="noopener">
-       Visit eyeditgroup.com
+    <a
+      class="btn"
+      href="https://eyeditgroup.com"
+      target="_blank"
+      rel="noopener"
+    >
+      Visit eyeditgroup.com
     </a>
 
-    <a class="btn" href="investors.html">Open Investor Room</a>
+    <a class="btn" href="investors.html">
+      Open Investor Room
+    </a>
   </div>
 </section>
 
